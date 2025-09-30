@@ -1,0 +1,15 @@
+.navbar{
+    background-color: black;
+}
+
+.bg-site-theme{
+    background-color: var(--cite-theme-color);
+}
+
+.text-site-theme{
+    color: var(--cite-theme-color);
+}
+
+:root{
+    --cite-theme-color: rgb(175, 147, 21);
+}

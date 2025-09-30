@@ -6,7 +6,7 @@
     background-color: var(--site-theme-color);
 }
 
-.bg-dark{
+.bg-black{
     background-color: var(--site-dark);
 }
 .text-site-theme{

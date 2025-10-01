@@ -1,6 +1,4 @@
-.navbar{
-    background-color: black;
-}
+
 
 .bg-site-theme{
     background-color: var(--site-theme-color);
@@ -8,6 +6,10 @@
 
 .bg-black{
     background-color: var(--site-dark);
+}
+
+.navbar{
+    background-color: black;
 }
 .text-site-theme{
     color: var(--site-theme-color) !important;

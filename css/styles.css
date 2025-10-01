@@ -10,7 +10,7 @@
     background-color: var(--site-dark);
 }
 .text-site-theme{
-    color: var(--site-theme-color);
+    color: var(--site-theme-color) !important;
 }
 
 :root{

@@ -1,11 +1,11 @@
 
 
 .bg-site-theme{
-    background-color: var(--site-theme-color);
+    background-color: var(--site-theme-color) !important;
 }
 
 .bg-black{
-    background-color: var(--site-dark);
+    background-color: var(--site-dark) !important;
 }
 
 .navbar{

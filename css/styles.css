@@ -21,11 +21,19 @@
 }
 
 .footer {
-    background-color: #000000;
+    background-color: #292524;
 }
 
 .footer-details {
-    color: #1c1c1d
+    color: #edc351;
+}
+
+.footer-details a i {
+    color: #edc351;
+}
+
+.footer-details p {
+    font-size: 1rem;
 }
 
 /* Underline animations */

@@ -13,3 +13,23 @@
 :root{
     --cite-theme-color: rgb(175, 147, 21);
 }
+
+
+
+
+#header{
+    background-image: url("../img/airplanesunset.png");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat; 
+    height: 900px;
+    width: auto;
+    align-items: center;
+    display:flex;
+}
+
+#header-text{
+    position: relative;
+    align-items: center
+    bottom: 25%;
+}

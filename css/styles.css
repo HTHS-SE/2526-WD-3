@@ -75,7 +75,8 @@ html, body {
     font-size: 1rem;
 }
 
-/* Underline animations */
+
+/* ---------------------- Underline animations  --------------------- */
 .hover-underline-animation {
     display: inline-block;
     position: relative;

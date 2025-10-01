@@ -16,8 +16,16 @@
 }
 
 :root{
-    --site-theme-color: rgb(175, 147, 21);
+    --site-theme-color: #edc351;
     --site-dark:black;
+}
+
+.footer {
+    background-color: #000000;
+}
+
+.footer-details {
+    color: #1c1c1d
 }
 
 /* Underline animations */

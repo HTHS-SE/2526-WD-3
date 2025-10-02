@@ -1,11 +1,8 @@
 .background-container{
-    min-height:400vh;
+    min-height:200vh;
     background: linear-gradient(to bottom, black 0%, rgb(0, 0, 136) 100%);
     position: relative;
     z-index: 1;
-    scroll-snap-type: y mandatory;
-    overflow-y: hidden;
-    height: 100vh;
 }
 
 .content{
@@ -28,14 +25,23 @@
     z-index: 1;
 }
 
+html {
+  scroll-snap-type: y mandatory;
+  overflow-x: hidden;
+}
+
 html body{
     height: auto;
     scroll-behavior: smooth;
-    overflow: hidden; 
 }
 
 .mw-70{
     max-width: 70%;
+}
+nav{
+    position: fixed !important;
+    z-index: 3;
+    width: 100%;
 }
 
 .pb-5{
@@ -49,20 +55,23 @@ html body{
 .scroll-container section{
     scroll-snap-align: start;
     /*height: 100vh;  Make each section fill the container */
-    scroll-snap-align: start;
     display: flex;
     align-items: center;
     justify-content: center;
     padding:0 2rem;
+    min-height: 100vh;
 }
 
 .scroll-container{
-    height: 100vh;
-    overflow-y: scroll;
-    scroll-snap-type: y mandatory;
+    /*height: 100vh; - Breaks the gradient. If removed, please add comment explaining how you didn't break gradient.*/
+    /* overflow-y: scroll; */
+    /* scroll-snap-type: y mandatory; */
     scrollbar-width: smooth;
     scrollbar-color: rgba(0, 0, 0, 0) transparent; /* Sets scrollbar to transparent */
 
+}
+.snap-start{
+    scroll-snap-align: start;
 }
 
 .timeline {
@@ -117,4 +126,3 @@ ul li::marker {
         transform: translateY(0);
     }
 }
-

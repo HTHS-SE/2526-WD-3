@@ -18,8 +18,8 @@
     height: 100vh; /* Make each section fill the container */
     scroll-snap-align: start;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     padding:0 2rem;
 }
 
@@ -44,11 +44,20 @@ html body{
     max-width: 70%;
 }
 
+.pb-5{
+    padding-bottom: 5rem !important;
+}
+
+.pb-7{
+    padding-bottom: 7rem !important;
+}
+
 .scroll-container{
     height: 100vh;
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
     scrollbar-width: smooth;
+    scrollbar-color: rgba(0, 0, 0, 0) transparent; /* Sets scrollbar to transparent */
 
 }
 

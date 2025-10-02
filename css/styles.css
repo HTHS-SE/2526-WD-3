@@ -32,6 +32,29 @@ html, body {
 }
 
 :root{
+<<<<<<< HEAD
+    --cite-theme-color: rgb(175, 147, 21);
+}
+
+
+
+
+#header{
+    background-image: url("../img/airplanesunset.png");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat; 
+    height: 900px;
+    width: auto;
+    align-items: center;
+    display:flex;
+}
+
+#header-text{
+    position: relative;
+    align-items: center
+    bottom: 25%;
+=======
     --site-theme-color: #edc351;
     --site-dark:black;
 }
@@ -76,4 +99,5 @@ html, body {
 .hover-underline-animation:hover:after {
     transform: scaleX(1);
     /*transform-origin: bottom left;*/
+>>>>>>> bad8bd01e6e7c2f81c6250931a3a836ba1ccd229
 }

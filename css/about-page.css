@@ -4,7 +4,7 @@
     position: relative;
     z-index: 1;
     scroll-snap-type: y mandatory;
-    overflow-y: scroll;
+    overflow-y: hidden;
     height: 100vh;
 }
 
@@ -13,9 +13,14 @@
     z-index:2;
 }
 
-.content section{
+.scroll-container section{
     scroll-snap-align: start;
     height: 100vh; /* Make each section fill the container */
+    scroll-snap-align: start;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:0 2rem;
 }
 
 .full-screen{
@@ -29,7 +34,7 @@
     z-index: 1;
 }
 
-html{
+html body{
     height: auto;
     scroll-behavior: smooth;
     overflow: hidden; 
@@ -38,6 +43,15 @@ html{
 .mw-70{
     max-width: 70%;
 }
+
+.scroll-container{
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scrollbar-width: smooth;
+
+}
+
 /* ----------- ID Based Styles - --------------------------*/
 #procedure-table{
     height:100%

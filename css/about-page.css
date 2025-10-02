@@ -1,12 +1,31 @@
+.background-container{
+    min-height:400vh;
+    background: linear-gradient(to bottom, black 0%, rgb(0, 0, 136) 100%);
+    position: relative;
+    z-index: 1;
+}
 
+.content{
+    position:relative;
+    z-index:2;
+}
 
 .full-screen{
     height: 100vh;
 }
 
+.initial-background-color {
+    height: 150vh;
+    background-color: rgb(160,196,255);
+    position: sticky;
+    z-index: 1;
+}
 
+html{
+    height: auto; 
+}
 
-/* ID Based Styles - --------------------------*/
+/* ----------- ID Based Styles - --------------------------*/
 #procedure-table{
     height:100%
 }

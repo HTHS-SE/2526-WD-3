@@ -3,11 +3,19 @@
     background: linear-gradient(to bottom, black 0%, rgb(0, 0, 136) 100%);
     position: relative;
     z-index: 1;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
 }
 
 .content{
     position:relative;
     z-index:2;
+}
+
+.content section{
+    scroll-snap-align: start;
+    height: 100vh; /* Make each section fill the container */
 }
 
 .full-screen{
@@ -22,9 +30,14 @@
 }
 
 html{
-    height: auto; 
+    height: auto;
+    scroll-behavior: smooth;
+    overflow: hidden; 
 }
 
+.mw-70{
+    max-width: 70%;
+}
 /* ----------- ID Based Styles - --------------------------*/
 #procedure-table{
     height:100%

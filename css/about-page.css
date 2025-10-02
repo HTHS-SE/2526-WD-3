@@ -2,10 +2,12 @@
     background-image: linear-gradient(to bottom,black,blue);
 }
 
+.full-screen{
+    height: 100vh;
+}
+
+/* ID Based Styles - --------------------------*/
 #procedure-table{
     height:100%
 }
 
-.full-screen{
-    height: 100vh;
-}

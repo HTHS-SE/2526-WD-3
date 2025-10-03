@@ -74,9 +74,7 @@ nav{
     scrollbar-color: rgba(0, 0, 0, 0) transparent; /* Sets scrollbar to transparent */
 
 }
-.snap-start{
-    scroll-snap-align: start;
-}
+
 
 .timeline {
   border-left: 1px solid white;

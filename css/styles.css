@@ -52,6 +52,10 @@ html, body {
     --site-dark:black;
 }
 
+.snap-start{
+    scroll-snap-align: start;
+}
+
 /* Id based styling */
 
 #header{
@@ -97,4 +101,20 @@ html, body {
 .hover-underline-animation:hover:after {
     transform: scaleX(1);
     /*transform-origin: bottom left;*/
+}
+
+
+@media (min-width: 768px) {
+    
+}
+
+
+@media (max-width: 768px) {
+    #about-top-statement{
+        visibility: hidden;
+        width:0%
+    }
+    #slogan-img-top{
+        width:100%;
+    }
 }

@@ -18,6 +18,12 @@
     height: 100vh;
 }
 
+.fade-out{
+    animation: fade-out linear; 
+    animation-timeline: view(block);
+    animation-range: exit 0% exit 100%;
+}
+
 .initial-background-color {
     height: 150vh;
     background-color: rgb(160,196,255);
@@ -63,9 +69,7 @@ nav{
 }
 
 .scroll-container{
-    /*height: 100vh; - Breaks the gradient. If removed, please add comment explaining how you didn't break gradient.*/
-    /* overflow-y: scroll; */
-    /* scroll-snap-type: y mandatory; */
+    /*height: 100vh; - Breaks the gradient. If removed, please add comment explaining how you didn't break gradient and/or tell Ethan.*/
     scrollbar-width: smooth;
     scrollbar-color: rgba(0, 0, 0, 0) transparent; /* Sets scrollbar to transparent */
 
@@ -124,5 +128,14 @@ ul li::marker {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
     }
 }

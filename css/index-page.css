@@ -1,0 +1,16 @@
+#header{
+    background-image: url("../img/airplanesunset.png");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat; 
+    height: 900px;
+    width: auto;
+    align-items: center;
+    display:flex;
+}
+
+#header-text{
+    position: relative;
+    text-align: center;
+    bottom: 5%;
+}

@@ -74,9 +74,7 @@ nav{
     scrollbar-color: rgba(0, 0, 0, 0) transparent; /* Sets scrollbar to transparent */
 
 }
-.snap-start{
-    scroll-snap-align: start;
-}
+
 
 .timeline {
   border-left: 1px solid white;
@@ -137,5 +135,19 @@ ul li::marker {
     }
     100% {
         opacity: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    #about-top-statement{
+        visibility: hidden;
+        width:0%
+    }
+    #slogan-img-top{
+        width:100%;
+    }
+    .black-bg-mobile{  
+        background-color: rgba(0,0,0,0.9);
+        padding-left: 1rem;
     }
 }

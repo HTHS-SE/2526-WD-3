@@ -3,14 +3,20 @@
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat; 
-    height: 900px;
+    height: 100vh;
     width: auto;
     align-items: center;
     display:flex;
+    justify-content: center;
+    padding-bottom: 10%;
 }
 
 #header-text{
-    position: relative;
-    text-align: center;
-    bottom: 5%;
+    color: #edc351;
+}
+
+@media (max-width: 768px) {
+    #header{
+        padding-bottom: 25vh;
+    }
 }

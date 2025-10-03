@@ -146,4 +146,8 @@ ul li::marker {
     #slogan-img-top{
         width:100%;
     }
+    .black-bg-mobile{  
+        background-color: rgba(0,0,0,0.9);
+        padding-left: 1rem;
+    }
 }

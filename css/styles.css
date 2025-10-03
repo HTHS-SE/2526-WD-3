@@ -30,8 +30,19 @@ html, body {
   padding: 0;
 }
 
+
 .navbar{
     background-color: black;
+    height: 90px;
+}
+
+.navbar-item{
+    font-size: x-large !important;
+}
+
+#nav-logo{
+    height: 75px;
+    width: auto;
 }
 
 .noborder{

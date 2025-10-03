@@ -137,3 +137,13 @@ ul li::marker {
         opacity: 0;
     }
 }
+
+@media (max-width: 768px) {
+    #about-top-statement{
+        visibility: hidden;
+        width:0%
+    }
+    #slogan-img-top{
+        width:100%;
+    }
+}

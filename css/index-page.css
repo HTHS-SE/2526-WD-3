@@ -7,10 +7,10 @@
     width: auto;
     align-items: center;
     display:flex;
+    justify-content: center;
+    padding-bottom: 10%;
 }
 
 #header-text{
-    position: relative;
-    text-align: center;
-    bottom: 5%;
+    color: #edc351;
 }

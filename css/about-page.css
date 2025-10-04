@@ -10,9 +10,6 @@
     z-index:2;
 }
 
-.h100{
-    height: 100%;
-}
 
 .full-screen{
     height: 100vh;
@@ -22,6 +19,10 @@
     animation: fade-out linear; 
     animation-timeline: view(block);
     animation-range: exit 0% exit 100%;
+}
+
+.h100{
+    height: 100%;
 }
 
 .initial-background-color {
@@ -133,6 +134,9 @@ ul li::marker {
     0% {
         opacity: 1;
     }
+    40%{
+        opacity:0.5;
+    }
     100% {
         opacity: 0;
     }
@@ -149,5 +153,11 @@ ul li::marker {
     .black-bg-mobile{  
         background-color: rgba(0,0,0,0.9);
         padding-left: 1rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .limit-width-desktop-80{
+        max-width: 80%;
     }
 }

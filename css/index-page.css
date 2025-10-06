@@ -8,11 +8,14 @@
     align-items: center;
     display:flex;
     justify-content: center;
-    padding-bottom: 10%;
+    padding-bottom: 15%;
 }
 
 #header-text{
     color: #edc351;
+    font-family: "Hanken Grotesk";
+    font-weight: bold;
+    font-size: 12vh;
 }
 
 @media (max-width: 768px) {

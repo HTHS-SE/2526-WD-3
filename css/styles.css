@@ -42,8 +42,9 @@ html, body {
 }
 
 #nav-logo{
-    height: 75px;
+    height: 3.5rem;
     width: auto;
+    max-height:20vh;
 }
 
 .noborder{

@@ -64,11 +64,13 @@ nav{
 }
 
 :root{
-    --max-plane-width: 50vw;
+    --max-plane-width: 60vw;
     --a380-800-len:72.72;
     --a310-300-len:46.7;
     --b737-max-8-len:39.5;
     --jetstream-41-len: 19.25;
+    --largest-plane-len: max(var(--a380-800-len),var(--a310-300-len),var(--b737-max-8-len),var(--jetstream-41-len));
+    --plane-scale-factor: calc(var(--max-plane-width) / var(--largest-plane-len));
 }
 
 .scroll-container section{
@@ -123,7 +125,7 @@ ul li::marker {
 
 /* ----------- ID Based Styles - --------------------------*/
 #jetstream-41{
-    width:19.8113208vw;
+    width:calc(var(--jetstream-41-len)*var(--plane-scale-factor));
     height:auto;
 }  
 
@@ -132,12 +134,16 @@ ul li::marker {
 }
 
 #plane-737-max-8{
-    width:40.5660377vw;
+    width:calc(var(--b737-max-8-len)*var(--plane-scale-factor));
     height:auto;
 }
 
 #plane-a310-300{
-    width:50vw;
+    width:calc(var(--a310-300-len)*var(--plane-scale-factor));
+    height:auto;
+}
+#plane-A380-800{
+    width:calc(var(--a380-800-len)*var(--plane-scale-factor));
     height:auto;
 }
 

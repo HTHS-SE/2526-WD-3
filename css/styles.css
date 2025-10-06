@@ -107,13 +107,11 @@ html, body {
     /*transform-origin: bottom left;*/
 }
 
+
+
 @media (max-width: 768px) {
-  .footer .row > div {
-    text-align: center !important;
-    margin-top: 0.75rem;
-  }
-  .footer .col-md-4.text-end.d-flex {
-    justify-content: center !important;
-    flex-direction: column;
-  }
+    .navbar-item{
+        background: black !important;
+        padding: 10px;
+    }
 }

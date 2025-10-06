@@ -7,8 +7,9 @@
     width: auto;
     align-items: center;
     display:flex;
+    flex-direction: column;
     justify-content: center;
-    padding-bottom: 15%;
+    padding-bottom: 45vh;
 }
 
 #header-text{
@@ -18,8 +19,27 @@
     font-size: 12vh;
 }
 
+#subheader-text{
+    color: #edc351;
+    font-family: "Hanken Grotesk";
+    font-weight: bold;
+    font-size: 4vh;
+}
+
 @media (max-width: 768px) {
     #header{
         padding-bottom: 25vh;
+    }
+    #header-text{
+        color: #edc351;
+        padding-top: 3rem;
+        font-size: 9vh;
+        text-align: center;
+    }
+    #subheader-text{
+        color: #382900;
+        font-size: 3vh;
+        text-align: center;
+        margin: 1rem;
     }
 }

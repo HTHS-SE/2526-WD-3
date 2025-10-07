@@ -24,6 +24,10 @@
     font-size: 1rem;
 }
 
+.footer .small {
+  font-size: 0.75rem;
+}
+
 html, body {
   height: 100%;
   margin: 0;

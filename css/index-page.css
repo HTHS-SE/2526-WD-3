@@ -44,7 +44,7 @@
 }
 
 .text-description{
-    margin-top: 20px;
+    margin: 20px;
 }
 
 
@@ -58,10 +58,22 @@
         font-size: 9vh;
         text-align: center;
     }
-    #subheader-text{
+    #disclaimer-text{
         color: #382900;
         font-size: 3vh;
         text-align: center;
         margin: 1rem;
     }
+    .subheader-text{
+        margin-left: 0px;
+        padding: auto;
+    }
+    #second-row{
+        margin:10px;
+    }
+    #second-text{
+        margin:0px !important;
+    }
+
 }
+

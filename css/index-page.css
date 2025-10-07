@@ -26,13 +26,26 @@
     font-size: 12vh;
 }
 
-#subheader-text{
+#disclaimer-text{
     color: #edc351;
     font-family: "Hanken Grotesk";
     font-weight: bold;
     font-size: 4vh;
 }
 
+.subheader-text{
+    background-color: #edc351;
+    color: #292524;
+    border-color: #292524;
+    border-radius: 30px;
+    padding:20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.text-description{
+    margin-top: 20px;
+}
 
 
 @media (max-width: 768px) {

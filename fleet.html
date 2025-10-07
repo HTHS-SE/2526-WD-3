@@ -15,6 +15,40 @@
     <title>Twilight Airline - About Us</title>
 </head>
 <body>
+        <nav class="navbar navbar-expand-lg navbar-dark p-2"> 
+            <!-- lg = large breakpoint, navbar-dark will make all text light-->
+             <div class="container">
+                <a href="index.html" class="navbar-brand" >
+                    <img src="img/navbar-logo.png" id="nav-logo"    >
+                </a>
+                <!-- Hamburger Menu Button-->
+                <button class="navbar-toggler"   type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                    <span class="navbar-toggler-icon">
+
+                    </span>
+                </button>
+
+                <!-- Collapseable navbar Menu with custom hover under -->
+                 <div class="collapse navbar-collapse" id="navmenu">
+                    <!-- Links to hamburger menu button-->
+                     <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a href="about.html" class="text-site-theme nav-underline nav-link hover-underline-animation nbMenuItem  navbar-item">
+                                About Us
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="loyalty.html" class="text-site-theme nav-underline nav-link hover-underline-animation nbMenuItem  navbar-item">
+                                Loyalty Program
+                            </a>
+                        </li>
+
+                     </ul>
+
+                 </div>
+            </div>
+    </nav>
+
     <section class="container-fluid h100 snap-start" id='section-1'>
         <div class="row noborder text-white text-center align-items-center pb-5 content-anim">
             <div class="col-md-6 bg-transparent fade-out">
@@ -29,5 +63,30 @@
 
         </div>
     </section>
-
+    <section class="py-5 snap-start" id="section-three">
+                    <div class="dontainer text-light">
+                        <h1 class="text-light text-center fade-out">Our Fleet:</h1><br><hr>
+                        <div>
+                            <h2 class="text-center fade-out">British Aerospace Jetstream 41</h2>
+                            <br>
+                            <img class="mx-auto d-block fade-out" id="jetstream-41" src="./img/Jetstream-41.png" alt="British Aerospace Jetstream 41">
+                        </div>
+                        <br><hr>
+                        <div>
+                            <h2 class="text-center fade-out">Boeing 737 MAX 8</h2>
+                            <img class="mx-auto d-block fade-out" id='plane-737-max-8' src="./img/737Max8.png" alt="Boeing 737 MAX 8">
+                        </div>
+                        <br><hr>
+                        <div>
+                            <h2 class="text-center fade-out">Airbus A310-300</h2>
+                            <img class="mx-auto d-block fade-out" id="plane-a310-300" src="./img/A310-300.png" alt="Airbus A310-300">
+                        </div>
+                        <br><hr>
+                        <div>
+                            <h2 class="text-center fade-out">Airbus A380-800</h2>
+                            <img class="mx-auto d-block fade-out" id="plane-A380-800" src="./img/A380-800.png" alt="Airbus A380-800">
+                        </div>
+                        
+                    </div>
+                </section>
 </body>

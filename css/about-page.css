@@ -134,29 +134,10 @@ ul li::marker {
 }
 
 /* ----------- ID Based Styles - --------------------------*/
-#jetstream-41{
-    width:calc(var(--jetstream-41-len)*var(--plane-scale-factor));
-    height:auto;
-}  
 
 #procedure-table{
     height:100%
 }
-
-#plane-737-max-8{
-    width:calc(var(--b737-max-8-len)*var(--plane-scale-factor));
-    height:auto;
-}
-
-#plane-a310-300{
-    width:calc(var(--a310-300-len)*var(--plane-scale-factor));
-    height:auto;
-}
-#plane-A380-800{
-    width:calc(var(--a380-800-len)*var(--plane-scale-factor));
-    height:auto;
-}
-
 
 
 /* ----------- Animation Styles - --------------------------*/

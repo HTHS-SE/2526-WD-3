@@ -13,10 +13,6 @@
     height:auto;
 }  
 
-#procedure-table{
-    height:100%
-}
-
 #plane-737-max-8{
     width:calc(var(--b737-max-8-len)*var(--plane-scale-factor));
     height:auto;

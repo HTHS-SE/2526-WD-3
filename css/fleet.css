@@ -6,6 +6,15 @@
     --jetstream-41-len: 19.25;
     --largest-plane-len: max(var(--a380-800-len),var(--a310-300-len),var(--b737-max-8-len),var(--jetstream-41-len));
     --plane-scale-factor: calc(var(--max-plane-width) / var(--largest-plane-len));
+
+    --bg-co:#292524;
+}
+
+html{
+    background-color:var(--bg-co);
+}
+.bg{
+    background-color:var(--bg-co);
 }
 
 #jetstream-41{

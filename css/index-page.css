@@ -1,3 +1,10 @@
+
+#airline-description{
+    background-color: #292524;
+    color: #edc351;
+}
+
+
 #header{
     background-image: url("../img/airplanesunset.png");
     background-size: cover;
@@ -25,6 +32,8 @@
     font-weight: bold;
     font-size: 4vh;
 }
+
+
 
 @media (max-width: 768px) {
     #header{

@@ -28,7 +28,7 @@
 .fade-out{
     animation: fade-out linear; 
     animation-timeline: view(block);
-    animation-range: exit 0% exit 100%;
+    animation-range: enter 0% enter 100%;
 }
 
 .h100{
@@ -59,6 +59,7 @@ html body{
 .mw-90{
     max-width: 70%;
 }
+
 nav{
     position: fixed !important;
     z-index: 3;
@@ -156,13 +157,10 @@ ul li::marker {
 
 @keyframes fade-out {
     0% {
-        opacity: 1;
-    }
-    40%{
-        opacity:0.5;
+        opacity: 0;
     }
     100% {
-        opacity: 0;
+        opacity: 1;
     }
 }
 

@@ -46,10 +46,6 @@
 .text-description{
     margin: 20px;
 }
-#map-header{  
-    margin-left: 25%;  
-    width: 50%;
-}
 
 
 @media (max-width: 768px) {
@@ -72,9 +68,12 @@
         margin-left: 0px;
         padding: auto;
     }
-    .row{
-        padding:10px;
-    }   
+    #second-row{
+        margin:10px;
+    }
+    #second-text{
+        margin:0px !important;
+    }
 
 }
 

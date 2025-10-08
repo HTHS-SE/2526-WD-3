@@ -47,6 +47,12 @@
     margin: 20px;
 }
 
+#map-header{
+    width:50%;
+    justify-content: center;
+}
+
+
 
 @media (max-width: 768px) {
     #header{
@@ -68,12 +74,8 @@
         margin-left: 0px;
         padding: auto;
     }
-    #second-row{
-        margin:10px;
+    #map-header{
+        width:95% !important;
     }
-    #second-text{
-        margin:0px !important;
-    }
-
 }
 

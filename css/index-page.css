@@ -46,8 +46,9 @@
 .text-description{
     margin: 20px;
 }
-#map-header{    
-
+#map-header{  
+    margin-left: 25%;  
+    width: 50%;
 }
 
 
@@ -73,7 +74,7 @@
     }
     .row{
         padding:10px;
-    }
+    }   
 
 }
 

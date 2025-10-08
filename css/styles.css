@@ -88,6 +88,10 @@ html, body {
     scroll-snap-align: start;
 }
 
+.sticky-up-button{
+    left: 95% !important;
+    bottom: 3% !important; 
+}
 
 
 /* Underline animations */

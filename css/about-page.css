@@ -152,6 +152,9 @@ ul li::marker {
     0% {
         opacity: 0;
     }
+    17% {
+        opacity: 1;
+    }
     100% {
         opacity: 1;
     }

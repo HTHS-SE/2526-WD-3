@@ -28,6 +28,14 @@
   font-size: 0.75rem;
 }
 
+.hoveranimated:hover{
+    transform:translateY(-1rem);
+}
+
+.hoveranimated-light:hover{
+    transform:translateY(-0.5rem);
+}
+
 html, body {
   height: 100%;
   margin: 0;

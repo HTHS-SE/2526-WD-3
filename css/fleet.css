@@ -10,22 +10,35 @@
     --bg-co:#292524;
 }
 
+
+.bg{
+    background-color:var(--bg-co);
+}
+
+.content-anim {
+     opacity: 0;
+     transform: translateY(20px);
+     animation: fadeInUp 0.8s ease-out forwards;
+}
+
 html{
     background-color:var(--bg-co);
     scroll-snap-type: y mandatory;
     overflow-x: hidden;
 }
 
-
-.bg{
-    background-color:var(--bg-co);
-}
-
 .mw-90{
     max-width: 70%;
 }
+
 section{
     min-height:100vh;
+}
+
+.slide-in-left {
+    animation: slide-in-left linear;
+  animation-timeline: view(); /* Link to the element's visibility in the viewport */
+  animation-range: entry 0% cover 50%; /* Start when entering, finish when 50% covered */
 }
 
 #jetstream-41{
@@ -45,4 +58,22 @@ section{
 #plane-A380-800{
     width:calc(var(--a380-800-len)*var(--plane-scale-factor));
     height:auto;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slide-in-left {
+  from {
+    transform: translateX(-100%); /* Start off-screen to the left */
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0); /* Move to original position */
+    opacity: 1;
+  }
 }

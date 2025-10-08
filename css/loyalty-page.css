@@ -16,3 +16,10 @@
 .loyalty-image {
   max-width: 20px;
 }
+
+.leftrotate:hover{
+  transform: rotate(-5deg);
+}
+.rightrotate:hover{
+  transform: rotate(-5deg);
+}

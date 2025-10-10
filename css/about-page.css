@@ -25,12 +25,6 @@
     height: 100vh;
 }
 
-.fade-in{
-    animation: fade-in linear; 
-    animation-timeline: view(block);
-    animation-range: enter 0% enter 100%;
-}
-
 .h100{
     height: 100%;
 }
@@ -146,18 +140,6 @@ ul li::marker {
      opacity: 0;
      transform: translateY(20px);
      animation: fadeInUp 0.8s ease-out forwards;
-}
-
-@keyframes fade-in {
-    0% {
-        opacity: 0;
-    }
-    17% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 1;
-    }
 }
 
 @media (max-width: 768px) {

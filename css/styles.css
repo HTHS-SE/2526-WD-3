@@ -120,12 +120,20 @@ html, body {
 }
 
 @media (max-width: 768px) {
-  .footer .row > div {
-    text-align: center !important;
-    margin-top: 0.75rem;
-  }
-  .footer .col-md-4.text-end.d-flex {
-    justify-content: center !important;
-    flex-direction: column;
-  }
+    .footer .row > div {
+        text-align: center !important;
+        margin-top: 0.75rem;
+    }
+    .footer .col-md-4.text-end.d-flex {
+        justify-content: center !important;
+        flex-direction: column;
+    }
+    #hamburger-icon{
+        color: #edc351 !important;
+        border-width: 5px;
+        border-color: #edc351;
+    }
+    .nav-item{
+        background-color: black;
+    }
 }

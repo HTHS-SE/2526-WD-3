@@ -25,12 +25,6 @@
     height: 100vh;
 }
 
-.fade-in{
-    animation: fade-in linear; 
-    animation-timeline: view(block);
-    animation-range: enter 0% enter 100%;
-}
-
 .h100{
     height: 100%;
 }
@@ -86,7 +80,8 @@ nav{
 
 .scroll-container section{
     scroll-snap-align: start;
-    /*height: 100vh;  Make each section fill the container */
+    /*height: 100vh;  Made each section fill the container. Removed for increaced maintainablility.
+    Use h100 */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -95,7 +90,8 @@ nav{
 }
 
 .scroll-container{
-    /*height: 100vh; - Breaks the gradient. If removed, please add comment explaining how you didn't break gradient and/or tell Ethan.*/
+    /*height: 100vh; - Breaks the gradient. 
+    If removed, please add comment explaining how you didn't break gradient and/or tell Ethan.*/
     scrollbar-width: smooth;
     scrollbar-color: rgba(0, 0, 0, 0) transparent; /* Sets scrollbar to transparent */
 
@@ -146,18 +142,6 @@ ul li::marker {
      opacity: 0;
      transform: translateY(20px);
      animation: fadeInUp 0.8s ease-out forwards;
-}
-
-@keyframes fade-in {
-    0% {
-        opacity: 0;
-    }
-    17% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 1;
-    }
 }
 
 @media (max-width: 768px) {

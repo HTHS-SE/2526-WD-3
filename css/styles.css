@@ -37,6 +37,14 @@
     transform:translateY(-0.5rem);
 }
 
+.logo{
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.logo:hover{
+    transform: scale(1.1);
+}
+
 /* HTML Body */
 html, body {
   height: 100%;

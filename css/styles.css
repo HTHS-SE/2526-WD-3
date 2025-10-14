@@ -129,17 +129,25 @@ html, body {
 /*mobile css*/
 
 @media (max-width: 768px) {
-  .footer .row > div {
-    text-align: center !important;
-    margin-top: 0.75rem;
-  }
-  .footer .col-md-4.text-end.d-flex {
-    justify-content: center !important;
-    flex-direction: column;
-  }
-  .leftabitmobile-md{
-    transform: translateX(-1rem);
-  }
+    .footer .row > div {
+        text-align: center !important;
+        margin-top: 0.75rem;
+    }
+    .footer .col-md-4.text-end.d-flex {
+        justify-content: center !important;
+        flex-direction: column;
+    }
+    #hamburger-icon{
+        color: #edc351 !important;
+        border-width: 5px;
+        border-color: #edc351;
+    }
+    .nav-item{
+        background-color: black;
+
+    .leftabitmobile-md{
+        transform: translateX(-1rem);
+    }
 }
 
 /*fade in animation*/

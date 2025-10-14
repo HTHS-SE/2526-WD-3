@@ -60,12 +60,6 @@ section{
     height:auto;
 }
 
-@keyframes fadeInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
 
 @keyframes slide-in-left {
   from {

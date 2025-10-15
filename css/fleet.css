@@ -68,11 +68,14 @@ section{ /* Each section takes up the full viewport height,
     height:auto;
 }
 
-/* Ensure the size 
+/* Ensure the size */
 #page-title{
-    font-size: 5vh;
+    font-size: 10vh;
 }
-*/
+
+#about-top-statement {
+    font-size: 6vh;
+}
 
 @keyframes slide-in-left {
   from {
@@ -83,4 +86,20 @@ section{ /* Each section takes up the full viewport height,
     transform: translateX(0); /* Move to original position */
     opacity: 1;
   }
+}
+
+
+@media (max-width: 768px) {
+    #about-top-statement{
+        visibility: hidden;
+        width:0%
+    }
+    
+    .black-bg-mobile{  
+        background-color: rgba(0,0,0,0.9);
+        padding-left: 1rem;
+    }
+    #slogan-img-top{
+        width:100%;
+    }
 }

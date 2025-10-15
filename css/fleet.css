@@ -1,5 +1,8 @@
 :root{
-    --max-plane-width: 60vw;
+    --max-plane-width: 60vw; /* This is the longest width that'll be applied to the 
+    longest plane*/
+
+    /* Inclusion of the length of each plane in meters to accurately display their lengths*/
     --a380-800-len:72.72;
     --a310-300-len:46.7;
     --b737-max-8-len:39.5;
@@ -7,7 +10,7 @@
     --largest-plane-len: max(var(--a380-800-len),var(--a310-300-len),var(--b737-max-8-len),var(--jetstream-41-len));
     --plane-scale-factor: calc(var(--max-plane-width) / var(--largest-plane-len));
 
-    --bg-co:#292524;
+    --bg-co:#292524; /* Standard site bg*/
 }
 
 
@@ -15,23 +18,26 @@
     background-color:var(--bg-co);
 }
 
+/* When the user enters the website, these elements will fade up into view*/
 .content-anim {
-     opacity: 0;
-     transform: translateY(20px);
-     animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease-out forwards;
 }
+
 
 html{
     background-color:var(--bg-co);
-    scroll-snap-type: y mandatory;
-    overflow-x: hidden;
+    scroll-snap-type: y mandatory; /* Enable vertical scroll snapping */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 .mw-90{
     max-width: 70%;
 }
 
-section{
+section{ /* Each section takes up the full viewport height, 
+    so they aren't immediately visible by other sections */
     min-height:100vh;
 }
 
@@ -40,6 +46,8 @@ section{
   animation-timeline: view(); /* Link to the element's visibility in the viewport */
   animation-range: entry 0% cover 50%; /* Start when entering, finish when 50% covered */
 }
+
+/* Plane sizing based on their real lengths using their ID's*/
 
 #jetstream-41{
     width:calc(var(--jetstream-41-len)*var(--plane-scale-factor));
@@ -59,6 +67,12 @@ section{
     width:calc(var(--a380-800-len)*var(--plane-scale-factor));
     height:auto;
 }
+
+/* Ensure the size 
+#page-title{
+    font-size: 5vh;
+}
+    */
 
 @keyframes fadeInUp {
     to {

@@ -1,10 +1,9 @@
-
+/* Style for body section*/
 #airline-description{
     background-color: #292524;
     color: #edc351;
 }
-
-
+/* Style for header section and background image*/
 #header{
     background-image: url("../img/airplanesunset.png");
     background-size: cover;
@@ -18,21 +17,21 @@
     justify-content: center;
     padding-bottom: 45vh;
 }
-
+/* Style for header text*/
 #header-text{
     color: #edc351;
     font-family: "Hanken Grotesk";
     font-weight: bold;
     font-size: 12vh;
 }
-
+/* Style for disclaimer subheader below main header text*/
 #disclaimer-text{
     color: #edc351;
     font-family: "Hanken Grotesk";
     font-weight: bold;
     font-size: 4vh;
 }
-
+/* Style for subheaders in body text*/
 .subheader-text{
     background-color: #edc351;
     color: #292524;
@@ -42,38 +41,43 @@
     margin-top: 20px;
     margin-bottom: 20px;
 }
-
+/* Style for body text*/
 .text-description{
     margin: 20px;
 }
-
+/* Style for map*/
 #map-header{
     width:50%;
     justify-content: center;
 }
 
 
-
+/* Media tag to adjust styling when on mobile screen*/
 @media (max-width: 768px) {
+    /* Moves header up and adjusts background image so it is centered*/
     #header{
         padding-bottom: 25vh;
         background-position: 65% 75%;
     }
+    /* Adjusts header text for better visibility*/
     #header-text{
         color: #edc351;
         padding-top: 3rem;
         font-size: 9vh;
         text-align: center;
     }
+    /* Makes disclaimer text black for better visibility and changes size*/
     #disclaimer-text{
         color: black;   
         font-size: 3vh;
         text-align: center;
         margin: 1rem;
     }
+    /* Changes width of map subheader*/
     #map-header{
         width:95% !important;
     }
+    /* Adjusts margin and padding for all subheaders to center them*/
     .subheader-text{
         margin-left: 0px;
         padding: auto;

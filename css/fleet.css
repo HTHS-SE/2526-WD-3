@@ -72,14 +72,7 @@ section{ /* Each section takes up the full viewport height,
 #page-title{
     font-size: 5vh;
 }
-    */
-
-@keyframes fadeInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+*/
 
 @keyframes slide-in-left {
   from {

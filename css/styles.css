@@ -1,5 +1,4 @@
-
-
+/* Site color themes */
 .bg-site-theme{
     background-color: var(--site-theme-color) !important;
 }
@@ -8,6 +7,7 @@
     background-color: var(--site-dark) !important;
 }
 
+/* Footer font color and size */
 .footer {
     background-color: #292524;
 }
@@ -28,6 +28,7 @@
   font-size: 0.75rem;
 }
 
+/* Hover animations */
 .hoveranimated:hover{
     transform:translateY(-1rem);
 }
@@ -44,13 +45,14 @@
     transform: scale(1.1);
 }
 
+/* HTML Body */
 html, body {
   height: 100%;
   margin: 0;
   padding: 0;
 }
 
-
+/* Navbar styling */
 .navbar{
     background-color: black;
     height: 90px;
@@ -79,6 +81,7 @@ html, body {
     border-style:none !important;
 }
 
+/* Text color themes */
 .text-site-theme{
     color: var(--site-theme-color) !important;
 }
@@ -126,8 +129,8 @@ html, body {
     /*transform-origin: bottom left;*/
 }
 
-/*mobile css*/
 
+/*mobile css*/
 @media (max-width: 768px) {
     .footer .row > div {
         text-align: center !important;
@@ -144,19 +147,27 @@ html, body {
     }
     .nav-item{
         background-color: black;
-    }
+    }    }
+
     .leftabitmobile-md{
         transform: translateX(-1rem);
     }
 }
 
-/*fade in animation*/
+/*fade in and out animations*/
+
+.content-anim {
+     opacity: 0;
+     transform: translateY(20px);
+     animation: fadeInUp 0.8s ease-out forwards;
+}
 
 .fade-in{
     animation: fade-in linear; 
     animation-timeline: view(block);
     animation-range: enter 0% enter 100%;
 }
+
 
 @keyframes fade-in { 
     0% {
@@ -167,5 +178,12 @@ html, body {
     }
     100% {
         opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }

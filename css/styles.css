@@ -76,7 +76,7 @@ html, body {
     max-height:20vh;
 }
 
-.noborder{
+.noborder {
     border: none !important;
     border-style:none !important;
 }

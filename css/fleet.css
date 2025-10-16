@@ -68,7 +68,7 @@ section{ /* Each section takes up the full viewport height,
     height:auto;
 }
 
-/* Ensure the size */
+/* Ensure the font size top slide */
 #page-title{
     font-size: 10vh;
 }
@@ -77,6 +77,7 @@ section{ /* Each section takes up the full viewport height,
     font-size: 6vh;
 }
 
+/* Keyframes for sliding in from the left */
 @keyframes slide-in-left {
   from {
     transform: translateX(-100%); /* Start off-screen to the left */
@@ -88,7 +89,7 @@ section{ /* Each section takes up the full viewport height,
   }
 }
 
-
+/* Media statement for mobile devices */
 @media (max-width: 768px) {
     #about-top-statement{
         visibility: hidden;

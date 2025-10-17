@@ -1,3 +1,4 @@
+/* Set widths for about section and images*/
 .about{
     width:400px;
     margin: auto;
@@ -8,6 +9,7 @@
   height: 100%;
 }
 
+/* Create background gradient effect*/
 .background-container{
     min-height:200vh;
     background: linear-gradient(to bottom, black 0%, rgb(0, 0, 136) 100%);
@@ -15,6 +17,7 @@
     z-index: 1;
 }
 
+/* Ajdust heights and positions for different elements*/
 .content{
     position:relative;
     z-index:2;
@@ -29,23 +32,26 @@
     height: 100%;
 }
 
+/* Set initial background color*/
 .initial-background-color {
     height: 150vh;
     background-color: rgb(160,196,255);
     position: sticky;
     z-index: 1;
 }
-
+/* Create scroll snap effect*/
 html {
   scroll-snap-type: y mandatory;
   overflow-x: hidden;
 }
 
+/* Set scroll behaviour and heigh*/
 html body{
     height: auto;
     scroll-behavior: smooth;
 }
 
+/* Set max width values*/
 .mw-70{
     max-width: 70%;
 }
@@ -54,12 +60,14 @@ html body{
     max-width: 70%;
 }
 
+/* Set navbar position*/
 nav{
     position: fixed !important;
     z-index: 3;
     width: 100%;
 }
 
+/* Change padding for different elements*/
 .pb-5{
     padding-bottom: 5rem !important;
 }
@@ -67,7 +75,7 @@ nav{
 .pb-7{
     padding-bottom: 7rem !important;
 }
-
+/* Root variables*/
 :root{
     --max-plane-width: 60vw;
     --a380-800-len:72.72;
@@ -78,6 +86,7 @@ nav{
     --plane-scale-factor: calc(var(--max-plane-width) / var(--largest-plane-len));
 }
 
+/* Style scroll container section and set scroll behavior*/
 .scroll-container section{
     scroll-snap-align: start;
     /*height: 100vh;  Made each section fill the container. Removed for increaced maintainablility.
@@ -97,7 +106,7 @@ nav{
 
 }
 
-
+/* Style timeline and individual items in timeline*/
 .timeline {
   border-left: 1px solid white;
   position: relative;

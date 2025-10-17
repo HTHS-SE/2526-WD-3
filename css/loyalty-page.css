@@ -1,3 +1,4 @@
+/* Set background colors for page and main section*/
 body{
   background: #292524 !important;
 }
@@ -7,6 +8,7 @@ body{
   color: #edc351;
 }
 
+/* Set font colors and size for text*/
 .loyalty-title {
   color: #edc351;
   letter-spacing: 2px;
@@ -17,10 +19,12 @@ body{
   color: #edc351;
 }
 
+/* Set width for images*/
 .loyalty-image {
   max-width: 20px;
 }
 
+/* Image hover animations*/
 .leftrotate:hover{
   transform: rotate(-3deg);
 }

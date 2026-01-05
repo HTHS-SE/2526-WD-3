@@ -71,10 +71,21 @@ animation: slide-in-left linear;
 /* Ensure the font size top slide */
 #page-title{
     font-size: 10vh;
+    font-family: "Hanken Grotesk";
+    font-weight: bold;
 }
 
+/* Font and size styling for header text */
 #about-top-statement {
-    font-size: 6vh;
+    font-size: 2.5vh;
+     font-family: "Hanken Grotesk";
+     padding: 20px;
+}
+
+#slogan-text{
+    font-family: "Hanken Grotesk";
+    font-weight: bold;
+    color: #edc351;
 }
 
 /* Keyframes for sliding in from the left */
@@ -93,7 +104,6 @@ animation: slide-in-left linear;
 @media (max-width: 768px) {
     #about-top-statement{
         visibility: hidden;
-        width:0%
     }
     
     .black-bg-mobile{  

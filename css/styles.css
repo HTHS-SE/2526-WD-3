@@ -70,6 +70,13 @@ html, body {
     font-weight: bold !important;
 }
 
+.navbar-highlighted-button{
+    background-color: #edc351 !important;
+    color:#292524 !important;
+    border: 4px solid #edc351 !important;
+    border-radius: 20px;
+}
+
 #nav-logo{
     height: 3.5rem;
     width: auto;

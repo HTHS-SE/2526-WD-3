@@ -42,7 +42,7 @@ section{ /* Each section takes up the full viewport height,
 }
 
 .slide-in-left {
-    animation: slide-in-left linear;
+animation: slide-in-left linear;
   animation-timeline: view(); /* Link to the element's visibility in the viewport */
   animation-range: entry 0% cover 50%; /* Start when entering, finish when 50% covered */
 }

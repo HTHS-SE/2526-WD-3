@@ -1,6 +1,9 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js";
   
-import { getAuth } from 'https://www.gstatic.com/firebasejs/12.7.0/firebase-auth.js';
+import { getAuth,signOut } from 'https://www.gstatic.com/firebasejs/12.7.0/firebase-auth.js';
+
+import {getDatabase, ref, set, push, update, child, get, remove} from 'https://www.gstatic.com/firebasejs/12.7.0/firebase-database.js';
+
 
   // Your web app's Firebase configuration
   const firebaseConfig = {
@@ -18,5 +21,87 @@ import { getAuth } from 'https://www.gstatic.com/firebasejs/12.7.0/firebase-auth
   const auth = getAuth();
   const db= getDatabase(app);
 
+function getUserName(){
+  //Grab value for the 'keep logged in' switch
+  const keepLoggedIn = localStorage.getItem("keepLoggedIn");
 
-export {app, firebaseConfig, auth, db};
+  //grab user info
+
+  if (keepLoggedIn === "Yes"){
+    currentUser = JSON.parse(localStorage.getItem("user"));
+  }
+  else{
+    currentUser = JSON.parse(sessionStorage.getItem("user"));
+  }
+}
+
+function signOutUser(){
+  //Remove user info from local/session storage
+  sessionStorage.removeItem("user");
+  localStorage.removeItem("user");
+  localStorage.removeItem("keepLoggedIn");
+
+  signOut(auth)
+  .then((auth)=>{
+    alert("Sign-out successful!");
+    window.location = "signIn.html"; //redirect to sign-in page
+  })
+  .catch((error)=>{
+    alert("Error signing out: " + error.message);
+  });
+}
+
+
+// ------------------------Set (insert) data into FRD ------------------------
+function setData(db, path,data,datapoint_name){
+  //must use brackets around variable name to use it as a key
+  set(ref(db, path), {
+    [datapoint_name]: data
+  }).then(() => {
+    //alert("Data set successful!");
+    })
+  .catch((error) => {
+    //alert("Data set failed: " + error.message);
+  });
+}
+// -------------------------Update data in database --------------------------
+async function updateData(db, path,data,datapoint_name){
+  //must use brackets around variable name to use it as a key
+  update(ref(db, path), {
+    [datapoint_name]: data
+  }).then(() => {
+    alert("Data set successful!");
+    })
+  .catch((error) => {
+    alert("Data set failed: " + error.message);
+  });
+}
+
+// ----------------------Get a datum from FRD (single data point)---------------
+
+function getData(uid, year, month, day){
+
+  const yearDom = document.getElementById("yearVal");
+  const monthDom = document.getElementById("monthVal");
+  const dayDom = document.getElementById("dayVal");
+  const tempDom = document.getElementById("tempVal");
+
+
+  get(child(ref(db), 'users/' + uid + '/data/'+year+"/"+month))
+  .then((snapshot) => {
+    if (!snapshot.exists()) {
+      alert("No data found for " + month + "/" + year);
+      return;
+    }
+    yearVal.textContent = year;
+    monthVal.textContent = month;
+    dayVal.textContent = day;
+    tempVal.textContent = snapshot.val()[day];
+    console.log(JSON.stringify(snapshot.val()));
+  })
+  .catch((error) => {
+    alert("Data retrieval failed: " + error.message);
+  });
+}
+
+export {app, firebaseConfig, auth, db, getUserName, signOutUser, setData, updateData, getData};

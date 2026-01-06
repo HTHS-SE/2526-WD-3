@@ -1,0 +1,39 @@
+@media (max-width: 1200px) {
+    .footer .row > div {
+        text-align: center !important;
+        margin-top: 0.75rem;
+    }
+    .footer .col-md-4.text-end.d-flex {
+        justify-content: center !important;
+        flex-direction: column;
+    }
+    #hamburger-icon{
+        color: #edc351 !important;
+        border-width: 5px;
+        border-color: #edc351;
+    }
+
+    #navlist{
+        border: 4px solid #edc351 ;
+        border-radius: 7.5px;
+    }
+    .nav-item{
+        background-color: black;
+    }
+    .navbar-item, #nav-button-container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #navbar-container{
+        width: 100%;
+        padding-bottom: 10px;
+        background-color: black;
+    }
+
+
+    .leftabitmobile-md{
+        transform: translateX(-1rem);
+    }
+}

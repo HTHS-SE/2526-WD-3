@@ -19,4 +19,4 @@ import { getAuth } from 'https://www.gstatic.com/firebasejs/12.7.0/firebase-auth
   const db= getDatabase(app);
 
 
-export {app, firebaseConfig,auth,db};
+export {app, firebaseConfig, auth, db};

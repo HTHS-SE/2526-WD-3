@@ -53,24 +53,24 @@ function signOutUser(){
 
 
 // ------------------------Set (insert) data into FRD ------------------------
-function setData(uid, year, month, day, temp){
+function setData(db, path,data,datapoint_name){
   //must use brackets around variable name to use it as a key
-  set(ref(db, 'users/' + uid + '/data/'+year+"/"+month), {
-    [day]: temp
+  set(ref(db, path), {
+    [datapoint_name]: data
   }).then(() => {
-    alert("Data set successful!");
+    //alert("Data set successful!");
     })
   .catch((error) => {
-    alert("Data set failed: " + error.message);
+    //alert("Data set failed: " + error.message);
   });
 }
 // -------------------------Update data in database --------------------------
-function updateData(uid, year, month, day, temp){
+async function updateData(db, path,data,datapoint_name){
   //must use brackets around variable name to use it as a key
-  update(ref(db, 'users/' + uid + '/data/'+year+"/"+month), {
-    [day]: temp
+  update(ref(db, path), {
+    [datapoint_name]: data
   }).then(() => {
-    alert("Data set successful!");
+    //alert("Data set successful!");
     })
   .catch((error) => {
     alert("Data set failed: " + error.message);

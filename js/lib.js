@@ -70,7 +70,7 @@ async function updateData(db, path,data,datapoint_name){
   update(ref(db, path), {
     [datapoint_name]: data
   }).then(() => {
-    //alert("Data set successful!");
+    alert("Data set successful!");
     })
   .catch((error) => {
     alert("Data set failed: " + error.message);

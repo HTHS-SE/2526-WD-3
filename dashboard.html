@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Dashboard</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/loyalty-page.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <link rel="icon" href="./img/navbar-logo-resized.png" type="image/x-icon" />
+    <title>Twilight Airlines - Loyalty Program</title>
+</head>
+
+<body>
+    <div>
+        <!--Navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark p-2">
+            <!-- lg = large breakpoint, navbar-dark will make all text light-->
+            <div class="container">
+                <a href="index.html" class="logo navbar-brand">
+                    <img src="img/navbar-logo.png" id="nav-logo">
+                </a>
+                <!-- Hamburger Menu Button-->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- Collapseable navbar Menu with custom hover under -->
+                <div class="collapse navbar-collapse" id="navmenu">
+                    <!-- Links to hamburger menu button-->
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a href="fleet.html"
+                                class="text-site-theme nav-underline nav-link hover-underline-animation nbMenuItem  navbar-item">
+                                Our Fleet
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="loyalty.html"
+                                class="text-site-theme nav-underline nav-link hover-underline-animation nbMenuItem  navbar-item">
+                                Loyalty Program
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="about.html"
+                                class="text-site-theme nav-underline nav-link hover-underline-animation nbMenuItem  navbar-item">
+                                About Us
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!--Main Body-->
+        <section class="py-5 dashboard-body">
+            <div class="container">
+                <!-- Title -->
+                <div class="text-center mb-5">
+                    <h1 class="display-4 fw-bold loyalty-title">User Dashboard</h1>
+                </div>
+
+                
+            </div>
+        </section>
+
+        <!--Footer-->
+        <footer class="p-4 footer footer-details">
+            <div class="container">
+                <div class="row align-items-center">
+                    <!-- Left Part -->
+                    <div class="col-md-4 text-start">
+                        <p class="fw-bold mb-0">© 2025 TWILIGHT AIR</p>
+                    </div>
+                    <!-- Center Part -->
+                    <div class="col-md-4 text-center">
+                        <p class="mb-1">@twilightwings</p>
+                        <a><i class="bi bi-instagram mx-2"></i></a>
+                        <a><i class="bi bi-twitter-x mx-2"></i></a>
+                        <a><i class="bi bi-snapchat mx-2"></i></a>
+                        <a><i class="bi bi-facebook mx-2"></i></a>
+                    </div>
+                    <!-- Right Part -->
+                    <div class="col-md-4 text-end d-flex justify-content-end align-items-center">
+                        <p class="mb-0 small me-2">
+                            Disclaimer: This isn't a real airline, just a website made for a school project.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Sticky Up arrow on the bottom right corner-->
+        <div class="d-sticky fixed-bottom float-end sticky-up-button leftabitmobile-md">
+            <a href="#" class="up-btn ms-2">
+                <i class="bi bi-arrow-up-circle-fill h2"></i>
+            </a>
+        </div>
+    </div>
+</body>
+
+</html>

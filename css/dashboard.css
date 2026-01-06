@@ -1,0 +1,33 @@
+/* Set background colors for page and main section*/
+body{
+  background: #292524 !important;
+}
+
+.dashboard-body {
+  background-color: #292524;
+  color: #edc351;
+}
+
+/* Set font colors and size for text*/
+.dashborad-title {
+  color: #edc351;
+  letter-spacing: 2px;
+}
+
+.dashboard-text {
+  font-size: 1rem;
+  color: #edc351;
+}
+
+/* Set width for images*/
+.dashboard-image {
+  max-width: 20px;
+}
+
+/* Image hover animations*/
+.leftrotate:hover{
+  transform: rotate(-3deg);
+}
+.rightrotate:hover{
+  transform: rotate(3deg);
+}

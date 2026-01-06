@@ -21,5 +21,5 @@ import {getDatabase} from 'https://www.gstatic.com/firebasejs/12.7.0/firebase-da
   const auth = getAuth();
   const db= getDatabase(app);
 
-
+  
 export {app, firebaseConfig,auth,db};

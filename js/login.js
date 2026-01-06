@@ -62,11 +62,11 @@ function logIn(user){
     let keeploggedIn = document.getElementById("keepLoggedInSwitch").ariaChecked;
     if (!keeploggedIn){
         sessionStorage.setItem("user", JSON.stringify(user));
-        window.location = "home.html"; 
+        window.location = "dashboard.html"; 
     }
     else{
         localStorage.setItem("user", JSON.stringify(user));
         localStorage.setItem("keepLoggedIn", "Yes");
-        window.location = "home.html";
+        window.location = "dashboard.html";
     }
 }

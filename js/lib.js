@@ -2,6 +2,9 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/12.7.0/firebas
   
 import { getAuth } from 'https://www.gstatic.com/firebasejs/12.7.0/firebase-auth.js';
 
+import {getDatabase} from 'https://www.gstatic.com/firebasejs/12.7.0/firebase-database.js';
+
+
   // Your web app's Firebase configuration
   const firebaseConfig = {
     apiKey: "AIzaSyBd7QCKQ7DH_VXSGqq8PrzseJNsG5G_LFo",

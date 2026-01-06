@@ -21,28 +21,63 @@
 </head>
 
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light headerBG">
-        <!-- lg = large breakpoint, headerBG = custom css BG color -->
-        <div class="container"> <!-- Container will contain content in certain space in middle of page -->
+   
+    <nav class="navbar navbar-expand-lg navbar-dark p-2 fixed-top">
+        <!-- lg = large breakpoint, navbar-dark will make all text light-->
+        <div class="container">
             <a href="index.html" class="navbar-brand">
-                <img src="./img/Built_with_Firebase_Logo_LightTP.png" alt="Built wtih Firebase" class="d-inline-block align-text-top">
+                <img src="img/navbar-logo.png" id="nav-logo">
             </a>
-
             <!-- Hamburger Menu Button-->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
-                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon">
+
+                </span>
             </button>
 
-            <!-- Collapsible navbar menu with custom hover underline CSS animation -->
+            <!-- Collapseable navbar Menu with custom hover under -->
             <div class="collapse navbar-collapse" id="navmenu">
-                <!-- Links to hamburger menu button -->
+                <!-- Links to hamburger menu button-->
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item nbMenuItem">
+                    <li class="nav-item">
+                        <a href="flights.html"
+                            class="text-site-theme nav-underline nav-link hover-underline-animation nbMenuItem  navbar-item">
+                            My Flights
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="booking.html"
+                            class="text-site-theme nav-underline nav-link hover-underline-animation nbMenuItem  navbar-item">
+                            Booking
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="fleet.html"
+                            class="text-site-theme nav-underline nav-link hover-underline-animation nbMenuItem  navbar-item">
+                            Our Fleet
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="loyalty.html"
+                            class="text-site-theme nav-underline nav-link hover-underline-animation nbMenuItem  navbar-item">
+                            Loyalty Program
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html"
+                            class="text-site-theme nav-underline nav-link hover-underline-animation nbMenuItem  navbar-item">
+                            About Us
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <button 
+                            class="nav-underline nav-link nbMenuItem navbar-item navbar-highlighted-button">
+                            Log Out
+                        </button>
                     </li>
                 </ul>
-            </div>
 
+            </div>
         </div>
     </nav>
 

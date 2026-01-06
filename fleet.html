@@ -24,7 +24,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark p-2 snap-start">
         <!-- lg = large breakpoint, navbar-dark will make all text light-->
-        <div class="container">
+        <div class="container-fluid w-100" id="navbar-container">
             <a href="index.html" class="logo navbar-brand">
                 <img src="img/navbar-logo.png" id="nav-logo">
             </a>
@@ -37,7 +37,7 @@
             <!-- Collapseable navbar Menu with custom hover under -->
             <div class="collapse navbar-collapse" id="navmenu">
                 <!-- Links to hamburger menu button-->
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto" id="navlist">
                     <li class="nav-item">
                         <a href="fleet.html"
                             class="text-site-theme nav-underline nav-link hover-underline-animation nbMenuItem  navbar-item">
@@ -57,10 +57,12 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <button 
-                            class="nav-underline nav-link nbMenuItem navbar-item navbar-highlighted-button">
-                            Log In
-                        </button>
+                        <div class="container text-site-theme nav-underline nav-link nbMenuItem navbar-item" id="nav-button-container">
+                            <button 
+                                class="navbar-highlighted-button navbar-item logo">
+                                Log Out
+                            </button>
+                        </div>
                     </li>
                 </ul>
             </div>

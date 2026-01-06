@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/bookings.css">
     <!--<link rel="stylesheet" href="./css/about-page.css"> -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -21,10 +22,10 @@
 </head>
 
 <body style="background-color: black;">
-    <nav class="navbar navbar-expand-lg navbar-dark p-2 fixed-top">
+    <nav class="navbar navbar-expand-xl navbar-dark p-2 snap-start">
         <!-- lg = large breakpoint, navbar-dark will make all text light-->
-        <div class="container">
-            <a href="index.html" class="navbar-brand">
+        <div class="container-fluid w-100" id="navbar-container">
+            <a href="index.html" class="logo navbar-brand">
                 <img src="img/navbar-logo.png" id="nav-logo">
             </a>
             <!-- Hamburger Menu Button-->
@@ -33,11 +34,10 @@
 
                 </span>
             </button>
-
             <!-- Collapseable navbar Menu with custom hover under -->
             <div class="collapse navbar-collapse" id="navmenu">
                 <!-- Links to hamburger menu button-->
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto" id="navlist">
                     <li class="nav-item">
                         <a href="flights.html"
                             class="text-site-theme nav-underline nav-link hover-underline-animation nbMenuItem  navbar-item">
@@ -69,13 +69,14 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <button 
-                            class="nav-underline nav-link nbMenuItem navbar-item navbar-highlighted-button">
-                            Log Out
-                        </button>
+                        <div class="container text-site-theme nav-underline nav-link nbMenuItem navbar-item" id="nav-button-container">
+                            <button 
+                                class="navbar-highlighted-button navbar-item logo">
+                                Log Out
+                            </button>
+                        </div>
                     </li>
                 </ul>
-
             </div>
         </div>
     </nav>

@@ -20,28 +20,34 @@ const celebrity_pilots = [
 ];
 
 let date= new Date();
+let flightnumbers = [];
+let flightnum;
+let path;
 
 //int number of days in contained in the current month
 let daysInMonth = new Date(date.getFullYear(), date.getMonth()+1, 0).getDate();
 
 for (let i = 0; i < haunted_airport_names.length; i++){
-    setData(db, 'flights/'+haunted_airport_codes[i], haunted_airport_names[i], 'Full Name');
-
+    setData(db, 'flights/'+haunted_airport_codes[i], 'Full Name',haunted_airport_names[i]);
+    console.log(i);
     for (let day = 1; day <= daysInMonth; day++){
-        let flightnumbers = [];
+        flightnumbers = [];
+        
+        console.log('Adding flights for ' + haunted_airport_codes[i] + ' on ' + date.getMonth() + '/' + day + '/' + date.getFullYear());
         for (let j = 0; j < Math.random()*10; j++){
             
-            let flightnum = Math.floor(Math.random() * 900) + 100;
+            flightnum = Math.floor(Math.random() * 900) + 100;
             while (!flightnumbers.includes(flightnum)){
                 flightnum = Math.floor(Math.random() * 900) + 100;
             }
             flightnumbers.push(flightnum);
+            console.log('here')
             path='flights/'+haunted_airport_codes[i]+'/'+date.getFullYear()+'/'+date.getMonth() + '/'+ day+'/'+flightnum;
-            updateData(db, path, 'status', 'On Time');
-            updateData(db, path, 'flight to', haunted_airport_names.filter(item => item !== haunted_airport_codes[i])[Math.floor(Math.random()*haunted_airport_names.length)]);
-            updateData(db, path, 'departure', (Math.floor(Math.random() * 23) + 1));
-            updateData(db, path, 'pilot', celebrity_pilots[Math.floor(Math.random()*celebrity_pilots.length)]);
-            updateData(db, path, 'gate', Math.floor(Math.random() * 6));
+            setData(db, path, 'status', 'On Time');
+            setData(db, path, 'flight to', haunted_airport_names.filter(item => item !== haunted_airport_codes[i])[Math.floor(Math.random()*haunted_airport_names.length)]);
+            setData(db, path, 'departure', (Math.floor(Math.random() * 23) + 1));
+            setData(db, path, 'pilot', celebrity_pilots[Math.floor(Math.random()*celebrity_pilots.length)]);
+            setData(db, path, 'gate', Math.floor(Math.random() * 6));
             console.log('Added flight ' + flightnum + ' to ' + haunted_airport_codes[i] + ' on ' + date.getMonth() + '/' + day + '/' + date.getFullYear());
         }
     }

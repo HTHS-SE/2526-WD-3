@@ -3,6 +3,10 @@ body{
   background: #292524 !important;
 }
 
+.bottom-row-spacer {
+  padding-top: 50px;
+}
+
 .loyalty-body {
   background-color: #292524;
   color: #edc351;

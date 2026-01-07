@@ -26,13 +26,14 @@ function getUserName(){
   const keepLoggedIn = localStorage.getItem("keepLoggedIn");
 
   //grab user info
-
+  let currentUser = null;
   if (keepLoggedIn === "Yes"){
     currentUser = JSON.parse(localStorage.getItem("user"));
   }
   else{
     currentUser = JSON.parse(sessionStorage.getItem("user"));
   }
+  return currentUser;
 }
 
 function signOutUser(){

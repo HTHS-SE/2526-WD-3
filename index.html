@@ -20,10 +20,11 @@
         crossorigin="anonymous"></script>
     <link rel="icon" href="./img/navbar-logo-resized.png" type="image/x-icon"/>
     <title>Twilight Airline</title>
+    <script type="module" src="./js/main.js" defer></script>  <!-- Firebase requires type="module"-->
 </head>
 
 <body style="background-color: black;">
-    <nav class="navbar navbar-expand-lg navbar-dark p-2 snap-start">
+    <nav class="navbar navbar-expand-lg navbar-dark p-2 snap-start" id = "navbar-div">
         <!-- lg = large breakpoint, navbar-dark will make all text light-->
         <div class="container-fluid w-100" id="navbar-container">
             <a href="index.html" class="logo navbar-brand">
@@ -60,8 +61,8 @@
                     <li class="nav-item">
                         <div class="container text-site-theme nav-underline nav-link nbMenuItem navbar-item" id="nav-button-container">
                             <button 
-                                class="navbar-highlighted-button navbar-item logo">
-                                Log Out
+                                class="navbar-highlighted-button navbar-item logo" id = "loginButton">
+                                Log In
                             </button>
                         </div>
                     </li>

@@ -110,18 +110,44 @@
         </div>
     </div>
     <p class="text-site-theme text-center">Due to an Unusually Low Amount of Customers Being Able to Join Us For a Returning Trip, Twilight Airlines Only Operates One Way Flights</p>
-    <div id="flight-results" class="d-flex flex-wrap justify-content-center">
-        <!-- Flight results will be added here dynamically-->
-        <div class="p-3 mb-1 bg-white rounded d-md-flex justify-content-md-center" style="width:95vw;margin:1.5rem">
-            <h3>Flight to Marilyn Monroe</h3>
-            <div class="m-3 p-2">
-                <p>Departure: 2024-10-31 14:30</p>
-                <p>Arrival: 2024-10-31 16:00</p>
-                <p>Price: $199.99</p> 
+    <div id="flight-results" class="container py-4">
+    <div class="card mb-4 shadow-sm border-0 overflow-hidden" style="max-width: 1000px; margin: auto;">
+        <div class="row g-0 align-items-center">
+            
+            <div class="col-md-4 p-4">
+                <h5 class="card-title fw-bold text-primary mb-3">
+                    <i class="bi bi-airplane-engines-fill me-2"></i>Flight to Newark
+                </h5>
+                <div class="small text-muted">
+                    <p class="mb-2">
+                        <i class="bi bi-takeoff me-2"></i><strong>Dep:</strong> 2024-10-31 14:30
+                    </p>
+                    <p class="mb-2">
+                        <i class="bi bi-landing me-2"></i><strong>Arr:</strong> 2024-10-31 16:00
+                    </p>
+                    <p class="mb-0">
+                        <i class="bi bi-person-badge me-2"></i><strong>Pilot:</strong> John Lennon
+                    </p>
+                </div>
             </div>
-            <img src="./img/jetstream-41.png" alt="Jetstream 41" class="ms-auto">
-            <button type="button" class="animated-button">Book Now</button>
+
+            <div class="col-md-4 text-center p-3">
+                <img src="./img/jetstream-41.png" alt="Jetstream 41" class="img-fluid rounded" style="max-height: 120px; object-fit: contain;">
+                <div class="mt-2 small text-uppercase text-tracking-widest text-secondary">Jetstream 41</div>
+            </div>
+
+            <div class="col-md-4 border-start bg-light p-4 text-center">
+                <div class="mb-3">
+                    <span class="display-6 fw-bold text-dark">$199.99</span>
+                    <p class="text-success small mb-0"><i class="bi bi-gem me-1"></i> Luxury Guaranteed!</p>
+                </div>
+                <button type="button" class="btn btn-primary btn-lg w-100 rounded-pill shadow-sm">
+                    Book Now
+                </button>
+            </div>
+
         </div>
     </div>
+</div>
 </body>
 </html>

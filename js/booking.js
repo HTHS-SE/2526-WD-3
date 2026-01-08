@@ -11,6 +11,19 @@ async function populateAirportOptions(selectObjectId){
     }
 }
 
+let date = new Date();
+
 window.onload = function(){
     populateAirportOptions('departure-airport-select');
+    document.getElementById('start-date').min=date.toISOString().split('T')[0]; //sets the minimum start date to the current date
+
+    this.document.getElementById('get-flights-btn').onclick = function getflights(){
+        let startdate = new Date(document.getElementById('start-date').value);
+        let finishdate = new Date(document.getElementById('end-date').value);
+        let airportDocument = document.getElementById('departure-airport-select').value;
+        let airportCode = haunted_airport_codes[haunted_airport_names.indexOf(airportDocument)];
+        console.log(`flights/${airportCode}/${startdate.getFullYear()}/${(startdate.getMonth()+1).toString().padStart(2, '0')}/${startdate.getDate()}`)
+        console.log(getData(db,`flights/${airportCode}/${startdate.getFullYear()}/${(startdate.getMonth()+1).toString().padStart(2, '0')}/${startdate.getDate()}`));
+
+    }
 }

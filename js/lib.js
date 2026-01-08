@@ -79,29 +79,23 @@ async function updateData(db, path,datapoint_name,data){
 
 // ----------------------Get a datum from FRD (single data point)---------------
 
-function getData(uid, year, month, day){
-
-  const yearDom = document.getElementById("yearVal");
-  const monthDom = document.getElementById("monthVal");
-  const dayDom = document.getElementById("dayVal");
-  const tempDom = document.getElementById("tempVal");
-
-
-  get(child(ref(db), 'users/' + uid + '/data/'+year+"/"+month))
-  .then((snapshot) => {
-    if (!snapshot.exists()) {
-      alert("No data found for " + month + "/" + year);
-      return;
+function getData(db,path){
+  //I updated this function to use what was on the docs as my version wasn't working
+  // https://firebase.google.com/docs/database/web/read-and-write?hl=en&authuser=0#web section "Read data once with an observer"
+  let dbRef = ref(db);
+  get(child(dbRef, path)).then((snapshot) => {
+    if (snapshot.exists()) {
+      console.log(snapshot.val());
+      return snapshot.val();
+    } else {
+      console.log("No data available");
+      return null;
     }
-    yearVal.textContent = year;
-    monthVal.textContent = month;
-    dayVal.textContent = day;
-    tempVal.textContent = snapshot.val()[day];
-    console.log(JSON.stringify(snapshot.val()));
-  })
-  .catch((error) => {
-    alert("Data retrieval failed: " + error.message);
+  }).catch((error) => {
+    console.error(error);
+    return null;
   });
+
 }
 
 export {app, firebaseConfig, auth, db, getUserName, signOutUser, setData, updateData, getData};

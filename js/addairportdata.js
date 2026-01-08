@@ -12,9 +12,10 @@ const celebrity_pilots = [
   "Marilyn Monroe",
   "John Lennon",
   "Pete Davidson",
-  "Pete Davidson (Shaq)",
+  "Shaq",
   "Gordon Ramsay",
-  "Lizzo"
+  "Lizzo",
+  "Trisha Paytas"
 ];
 
 let date= new Date();
@@ -49,6 +50,7 @@ for (let i = 0; i < haunted_airport_names.length; i++){
             updateData(db, path, 'pilot', celebrity_pilots[Math.floor(Math.random()*celebrity_pilots.length)]);
             updateData(db, path, 'gate', Math.floor(Math.random() * 6))+1;
             updateData(db, path, 'avalable_space', Math.floor(Math.random() * 40))+10;
+            updateData(db, path, 'price', Math.round(Math.random() * 40000),3)+999;
         }
     }
 }

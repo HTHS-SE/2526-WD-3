@@ -54,8 +54,6 @@ function signOutUser(){
 
 // ------------------------Set (insert) data into FRD ------------------------
 function setData(db, path,datapoint_name,data){
-  alert('being called');
-  return;
   //must use brackets around variable name to use it as a key
   set(ref(db, path), {
     [datapoint_name]: data
@@ -72,10 +70,10 @@ async function updateData(db, path,datapoint_name,data){
     [datapoint_name]: data
   })
   .then(() => {
-    alert("Data set successful!");
+    //alert("Data set successful!");
     })
   .catch((error) => {
-    alert("Data set failed: " + error.message);
+    //alert("Data set failed: " + error.message);
   });
 }
 

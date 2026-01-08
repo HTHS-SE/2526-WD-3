@@ -19,8 +19,7 @@
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
     <title>Twilight Airline - About Us</title>
-    <script type="module" src="./js/addairportdata.js"></script> 
-    <script type="module" src="./js/booking.js" defer></script> <!-- Firebase requires type="module"-->
+    <script type="module" src="./js/booking.js" defer></script>
 </head>
 
 <body style="background-color: black;">
@@ -84,5 +83,31 @@
             </div>
         </div>
     </nav>
+    <div class="booking-info">
+        <div id="get-info" class="p-3 mb-1 bg-white rounded d-flex justify-content-center">
+            <form>
+                <i class="bi bi-geo-alt-fill"></i>
+                <select name="departure-airport" id="departure-airport-select d-md-inline" class="m-2" style="height:6vh">
+                    <option value="" disabled selected>Select Departure Airport</option>
+                    <!-- Options will dynamically be added in js-->
+                </select>
+
+                <div class="inline-block m-3 d-md-inline">
+                    <label for="start-date">Start Range</label>
+                    <input type="date" id="start-date" name="start-date" class="m-2" style="height:6vh"></input>
+                </div>
+
+                <div class="inline-block m-3 d-lg-inline">
+                    <label for="start-date">End Range</label>
+                    <input type="date" id="end-date" name="end-date" class="m-2" style="height:6vh"></input>
+                </div>
+
+                <button type="button" id="get-flights-btn" class="animated-button">Get Flights</button>
+                
+                <!-- Css for button provided with an MIT License at https://uiverse.io/andrew-demchenk0/hard-stingray-16-->
+            </form>
+        </div>
+    </div>
+    <p class="text-site-theme text-center">Due to an Unusually Low Amount of Customers Being Able to Join Us For a Returning Trip, Twilight Airlines Only Operates One Way Flights</p>
 </body>
 </html>

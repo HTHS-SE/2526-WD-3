@@ -64,14 +64,15 @@ function returnflightpath(airportCode,date){
 function returnbookingfunction(deets){
     return function openPopup(){
         document.getElementById('booking-popup').style.display='block';
+        
     }
 }
 
 window.onload = function(){
     document.getElementById('close-popup-button').onclick=function(){
         document.getElementById('booking-popup').style.display='none';
-        console.log('clicked X button');
     };
+
     populateAirportOptions('departure-airport-select');
     document.getElementById('start-date').min=dateObjToString(date); //sets the minimum start date to the current date
 

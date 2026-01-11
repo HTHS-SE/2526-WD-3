@@ -169,6 +169,23 @@ html, body {
     left:92vw;
 }
 
+.xButton:hover { 
+    transform: scale(1.1); 
+}
+
+.quote-block {
+    border-left: 3px solid #d4af37; /* Gold Verticle Line Next to Each Quote */
+    padding-left: 15px;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.award-row {
+    background: linear-gradient(135deg, #d4af37, #f9f295);
+    color: white;
+}
+
+
 /*mobile css*/
 @media (max-width: 992px) {
 

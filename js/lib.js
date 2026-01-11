@@ -80,23 +80,19 @@ async function updateData(db, path,datapoint_name,data){
 
 // ----------------------Get a datum from FRD (single data point)---------------
 
-function getData(db,path){
+async function getData(db,path){
   //I updated this function to use what was on the docs as my version wasn't working
   // https://firebase.google.com/docs/database/web/read-and-write?hl=en&authuser=0#web section "Read data once with an observer"
   let dbRef = ref(db);
-  get(child(dbRef, path)).then((snapshot) => {
-    if (snapshot.exists()) {
-      console.log(snapshot.val());
-      return snapshot.val();
-    } else {
-      console.log("No data available");
-      return null;
-    }
-  }).catch((error) => {
-    console.error(error);
-    return null;
-  });
 
+  //removed .then as it was then just continuing without waiting for the data to be fetched, returing the code after it or just nothing which was wrong 
+  const snapshot = await get(child(dbRef, path));
+  if (snapshot.exists()) {
+    return snapshot.val();
+  } else {
+    console.log("No data available");
+    return null;
+  }
 }
 
 export {app, firebaseConfig, auth, db, getUserName, signOutUser, setData, updateData, getData};

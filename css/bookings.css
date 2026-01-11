@@ -3,7 +3,7 @@
     margin-right:1rem;
 }
 
-#get-flights-btn{
+.animated-button{
   width: 120px;
   height: 40px;
   border-radius: 5px;
@@ -16,13 +16,15 @@
   cursor: pointer;
 }
 
-#get-flights-btn:active {
-  box-shadow: 0px 0px var(--site-theme-color);
+
+
+.animated-button:active {
+  box-shadow: 0px 0px var(--site-theme-color) !important;
   transform: translate(3px, 3px);
 }
 
-#get-flights-btn:hover {
-  box-shadow: 4px 4px #e8b62d;
+.animated-button:hover {
+  box-shadow: 4px 4px #ebb72a;
 }
 
 @media (max-width: 1200px) {

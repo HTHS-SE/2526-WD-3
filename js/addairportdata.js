@@ -44,7 +44,7 @@ for (let i = 0; i < haunted_airport_names.length; i++){
             console.log('here')
             path='flights/'+haunted_airport_codes[i]+'/'+date.getFullYear()+'/'+date.getMonth()+1 + '/'+ day+'/'+flightnum;
             updateData(db, path, 'status', 'On Time');
-            updateData(db, path, 'fligh-to',flying_to );
+            updateData(db, path, 'flight-to',flying_to );
             updateData(db, path, 'landing_at',haunted_airport_codes[haunted_airport_names.indexOf(flying_to)] );
             updateData(db, path, 'departure', (Math.floor(Math.random() * 23) + 1));
             updateData(db, path, 'pilot', celebrity_pilots[Math.floor(Math.random()*celebrity_pilots.length)]);

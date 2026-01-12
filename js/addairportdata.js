@@ -11,38 +11,46 @@ const celebrity_pilots = [
   "Lionel Messi",
   "Marilyn Monroe",
   "John Lennon",
-  "Paul McCartney",
-  "Ian McKellen",
-  "Patrick Stewart",
-  "Chrissy Teigen",
-  "David Beckham",
-  "Victoria Beckham"
+  "Pete Davidson",
+  "Shaq",
+  "Gordon Ramsay",
+  "Lizzo",
+  "Trisha Paytas"
 ];
 
 let date= new Date();
+let flightnumbers = [];
+let flightnum;
+let path;
+let flying_to;
 
 //int number of days in contained in the current month
 let daysInMonth = new Date(date.getFullYear(), date.getMonth()+1, 0).getDate();
 
 for (let i = 0; i < haunted_airport_names.length; i++){
-    setData(db, 'flights/'+haunted_airport_codes[i], haunted_airport_names[i], 'Full Name');
-
+    setData(db, 'flights/'+haunted_airport_codes[i], 'Full Name',haunted_airport_names[i]);
     for (let day = 1; day <= daysInMonth; day++){
-        let flightnumbers = [];
+        flightnumbers = [];
+        
         for (let j = 0; j < Math.random()*10; j++){
-            
-            let flightnum = Math.floor(Math.random() * 900) + 100;
-            while (!flightnumbers.includes(flightnum)){
+         
+            flightnum = Math.floor(Math.random() * 900) + 100;
+            while (flightnumbers.includes(flightnum)){ // I removed the not before this as it was setting it to constantly false, which is an infinite loop as flightnumbers starts empty, and also would cause them to all be dupes
                 flightnum = Math.floor(Math.random() * 900) + 100;
             }
             flightnumbers.push(flightnum);
-            path='flights/'+haunted_airport_codes[i]+'/'+date.getFullYear()+'/'+date.getMonth() + '/'+ day+'/'+flightnum;
+
+            flying_to=haunted_airport_names.filter(item => item !== haunted_airport_codes[i])[Math.floor(Math.random()*haunted_airport_names.length)];
+            console.log('here')
+            path='flights/'+haunted_airport_codes[i]+'/'+date.getFullYear()+'/'+date.getMonth()+1 + '/'+ day+'/'+flightnum;
             updateData(db, path, 'status', 'On Time');
-            updateData(db, path, 'flight to', haunted_airport_names.filter(item => item !== haunted_airport_codes[i])[Math.floor(Math.random()*haunted_airport_names.length)]);
+            updateData(db, path, 'flight-to',flying_to );
+            updateData(db, path, 'landing_at',haunted_airport_codes[haunted_airport_names.indexOf(flying_to)] );
             updateData(db, path, 'departure', (Math.floor(Math.random() * 23) + 1));
             updateData(db, path, 'pilot', celebrity_pilots[Math.floor(Math.random()*celebrity_pilots.length)]);
-            updateData(db, path, 'gate', Math.floor(Math.random() * 6));
-            console.log('Added flight ' + flightnum + ' to ' + haunted_airport_codes[i] + ' on ' + date.getMonth() + '/' + day + '/' + date.getFullYear());
+            updateData(db, path, 'gate', Math.floor(Math.random() * 6))+1;
+            updateData(db, path, 'avalable_space', Math.floor(Math.random() * 40))+10;
+            updateData(db, path, 'price', Math.round(Math.random() * 40000),3)+999;
         }
     }
 }

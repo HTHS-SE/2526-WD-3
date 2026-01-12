@@ -18,12 +18,99 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
-    <script type="module" src="./js/main.js" defer></script>  <!-- Firebase requires type="module"-->
     <title>Twilight Airline - About Us</title>
+    <script type="module" src="./js/booking.js" defer></script>
 </head>
 
 <body style="background-color: black;">
-    <nav class="navbar navbar-expand-lg navbar-dark p-2 snap-start" id = "navbar-div">
+    <div id="booking-popup" style="display:none">
+        <div class="overlaybg"></div>
+        <div class="overlay d-flex flex-column" style="overflow-y: scroll;overflow-x:hidden;">
+            <div class="closebtn xButton" id="close-popup-button" title="Close Popup">
+                <h2><b>
+                    <i class="bi bi-x-lg" style="color:red"></i>
+                </b></h2>
+            </div>
+            <h1 class="text-center mt-3"><b>Book Flight Now!</b></h1>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <h3 class="text-warning">Our Luxury Guarantee</h3>
+                        <p class="lead" style="font-size: 1.1rem; line-height: 1.6;">
+                            Your experience is the top priority here at Twilight. We hope this experience is the most <b>impactful</b> trip of your lifetime. We do this through a variety of ways including hiring extremely qualified celebrity pilots, and using every inch of the plane to ensure a luxurious experience.
+                        </p>
+                        <hr style="border-color: #444;">
+                    </div>
+
+                    <div class="col-12 mt-3">
+                        <span class="d-flex justify-content-center align-items-center">
+                            <h3 class="text-center mb-4">Industry Quotes From A Demonstration Flight</h3>
+                            <i class="bi bi-arrow-down-circle pb-3 ms-4 rotateOnClick" onclick="if (this.style.transform === 'rotate(180deg)'){this.style.transform='';this.style.marginBottom = '0'}else{this.style.transform='rotate(180deg)';this.style.marginBottom = '2.8rem'}" data-bs-toggle="collapse" data-bs-target="#quote-container" aria-expanded="false" aria-controls="quote-container" type="button"></i>
+                        </span>
+
+                        <div id='quote-container'>
+                            <div class="quote-block">
+                                <h5>"How in the world are they still in business?"</h5>
+                                <p class="text-end text-muted">- Wall Street Investor (1995-2025)</p>
+                            </div>
+
+                            <div class="quote-block">
+                                <h5>"Safety instructions? I was too busy choosing between the three types of caviar."</h5>
+                                <p class="text-end text-muted">- Celebrity Pilot (1967-2025)</p>
+                            </div>
+
+                            <div class="quote-block">
+                                <h5>"It was so luxurious, I didn't even notice the plane hit the ground."</h5>
+                                <p class="text-end text-muted">- Aviation Annually (1987-2025)</p>
+                            </div>
+
+                            <div class="quote-block">
+                                <h5>"The most exclusive flight in the world. Most guests only fly it once."</h5>
+                                <p class="text-end text-muted">- Luxury Travel Critic (1983-2025)</p>
+                            </div>
+
+                            <div class="quote-block">
+                                <h5>"These planes are always brand new!"</h5>
+                                <p class="text-end text-muted">- Sriyan Yarlagadda (CMO)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="award-row row">
+                            <i class="bi bi-trophy-fill me-2 col"></i> 
+                            <div class="col" style="color:black;"><b>OFFICIAL WINNER: "Best Airline to Have a Conversation with the Pilot Mid-Air"</b></div>
+                            <p class="text-end text-muted col">- Air Central Journalist (1983-2025)</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-6 mb-5">
+                            <h3 class="text-warning mt-4">Flight Details</h3>
+                            <p class="lead" style="font-size: 1.1rem; line-height: 1.6;">
+                                <b>Departure Airport:</b> <span id="popup-departure-airport"></span><br>
+                                <b>Arrival Airport:</b> <span id="popup-arrival-airport"></span><br>
+                                <b>Departure Time:</b> <span id="popup-departure-time"></span><br>
+                                <b>Pilot:</b> <span id="popup-pilot-name"></span><br>
+                                <b>Space:</b> <span id="popup-avalable-space"></span><br>
+                                <b>Price:</b> $<span id="popup-flight-price"></span>
+                            </p>
+                        </div>
+                        <div class="col-6 mb-5">
+                            <h3 class="text-warning mt-4">Ready to Book?</h3>
+                            <p class="lead" style="font-size: 1.1rem; line-height: 1.6;">
+                                Click the button below to proceed to payment and finalize your booking. We look forward to having you on board for an unforgettable experience!
+                            </p>
+                            <div class="d-flex justify-content-center">
+                                <button type="button" class="animated-button" id="confirm-booking-button">Book Flight</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-xl navbar-dark p-2 snap-start" id = "navbar-div">
         <!-- lg = large breakpoint, navbar-dark will make all text light-->
         <div class="container-fluid w-100" id="navbar-container">
             <a href="index.html" class="logo navbar-brand">
@@ -65,9 +152,69 @@
                             </button>
                         </div>
                     </li>
+
+
                 </ul>
             </div>
         </div>
     </nav>
+    <div class="booking-info">
+        <div id="get-info" class="p-3 mb-1 bg-white rounded d-flex justify-content-center">
+            <form>
+                <i class="bi bi-geo-alt-fill"></i>
+                <select name="departure-airport" id="departure-airport-select" class="m-2 d-md-inline" style="height:6vh">
+                    <option value="" disabled selected>Select Departure Airport</option>
+                    <!-- Options will dynamically be added in js-->
+                </select>
+
+                <div class="inline-block m-3 d-md-inline">
+                    <label for="start-date">Start Range</label>
+                    <input type="date" onchange="document.getElementById('end-date').min=document.getElementById('start-date').value" id="start-date" name="start-date" class="m-2" style="height:6vh"></input>
+                </div>
+
+                <div class="inline-block m-3 d-lg-inline">
+                    <label for="start-date">End Range</label>
+                    <input type="date" id="end-date" name="end-date" class="m-2" style="height:6vh"></input>
+                </div>
+
+                <button type="button" id="get-flights-btn" class="animated-button">Get Flights</button>
+                
+                <!-- Css for button provided with an MIT License at https://uiverse.io/andrew-demchenk0/hard-stingray-16-->
+            </form>
+        </div>
+    </div>
+    <p class="text-site-theme text-center">Due to an Unusually Low Amount of Customers Being Able to Join Us For a Returning Trip, Twilight Airlines Only Operates One Way Flights</p>
+    <div id="flight-results" class="d-flex flex-wrap justify-content-center">
+        <!-- Flight results will be added here dynamically. Below is an example result card
+        <div class="p-3 mb-1 bg-white rounded d-md-flex justify-content-md-center" style="width:95vw;margin:1.5rem">
+            
+            <div class="col-md-4 p-4">
+                <h4 class="card-title fw-bold text-primary mb-3">
+                    <i class="bi bi-airplane-fill me-2"></i>
+                    Flight to Newark
+                </h4>
+                <div class="small text-muted">
+                    <p class="mb-2">
+                        <i class="bi bi-calendar-fill m-2"></i><strong>Dep:</strong> 2024-10-31 14:30
+                    </p>
+                    <p class="mb-2">
+                        <i class="bi bi-calendar-fill m-2"></i><strong>Arr:</strong> 2024-10-31 16:00
+                    </p>
+                    <p class="mb-0">
+                        <i class="bi bi-person-badge m-2"></i><strong>Pilot:</strong> John Lennon
+                    </p>
+                </div>
+            </div>
+
+            <img src="./img/jetstream-41.png" alt="Jetstream 41" class="ms-auto">
+            <div class="vr"></div>
+            <div class="m-3 p-2">
+                <h3><b>$199.99</b></h3> 
+                <p>Luxury Guaranteed!</p>
+                <br> 
+                <button type="button" class="animated-button">Book Now</button>
+            </div>
+        </div>-->
+    </div>
 </body>
 </html>

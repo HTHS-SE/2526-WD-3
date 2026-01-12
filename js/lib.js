@@ -54,7 +54,7 @@ function signOutUser(){
 
 
 // ------------------------Set (insert) data into FRD ------------------------
-function setData(db, path,data,datapoint_name){
+function setData(db, path,datapoint_name,data){
   //must use brackets around variable name to use it as a key
   set(ref(db, path), {
     [datapoint_name]: data
@@ -66,43 +66,33 @@ function setData(db, path,data,datapoint_name){
   });
 }
 // -------------------------Update data in database --------------------------
-async function updateData(db, path,data,datapoint_name){
-  //must use brackets around variable name to use it as a key
+async function updateData(db, path,datapoint_name,data){
   update(ref(db, path), {
     [datapoint_name]: data
-  }).then(() => {
-    alert("Data set successful!");
+  })
+  .then(() => {
+    //alert("Data set successful!");
     })
   .catch((error) => {
-    alert("Data set failed: " + error.message);
+    //alert("Data set failed: " + error.message);
   });
 }
 
 // ----------------------Get a datum from FRD (single data point)---------------
 
-function getData(uid, year, month, day){
+async function getData(db,path){
+  //I updated this function to use what was on the docs as my version wasn't working
+  // https://firebase.google.com/docs/database/web/read-and-write?hl=en&authuser=0#web section "Read data once with an observer"
+  let dbRef = ref(db);
 
-  const yearDom = document.getElementById("yearVal");
-  const monthDom = document.getElementById("monthVal");
-  const dayDom = document.getElementById("dayVal");
-  const tempDom = document.getElementById("tempVal");
-
-
-  get(child(ref(db), 'users/' + uid + '/data/'+year+"/"+month))
-  .then((snapshot) => {
-    if (!snapshot.exists()) {
-      alert("No data found for " + month + "/" + year);
-      return;
-    }
-    yearVal.textContent = year;
-    monthVal.textContent = month;
-    dayVal.textContent = day;
-    tempVal.textContent = snapshot.val()[day];
-    console.log(JSON.stringify(snapshot.val()));
-  })
-  .catch((error) => {
-    alert("Data retrieval failed: " + error.message);
-  });
+  //removed .then as it was then just continuing without waiting for the data to be fetched, returing the code after it or just nothing which was wrong 
+  const snapshot = await get(child(dbRef, path));
+  if (snapshot.exists()) {
+    return snapshot.val();
+  } else {
+    console.log("No data available");
+    return null;
+  }
 }
 
 export {app, firebaseConfig, auth, db, getUserName, signOutUser, setData, updateData, getData};

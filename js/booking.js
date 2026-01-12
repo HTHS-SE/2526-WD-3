@@ -61,7 +61,7 @@ function returnflightpath(airportCode,date){
 }
 
 //returns a function that opens popup booking a flight with the given details
-function returnbookingfunction(deets){
+function returnbookingfunction(deets,path){
     return function openPopup(){
         document.getElementById('booking-popup').style.display='block';
         document.getElementById('popup-departure-airport').innerHTML=document.getElementById('start-date').value;
@@ -70,6 +70,14 @@ function returnbookingfunction(deets){
         document.getElementById('popup-pilot-name').innerHTML=deets['pilot'];
         document.getElementById('popup-avalable-space').innerHTML=deets['avalable_space'];
         document.getElementById('popup-flight-price').innerHTML=deets['price'];
+
+        document.getElementById('confirm-booking-button').addEventListener('click', function(){
+            updateData(db, path, 'avalable_space', parseInt(deets['avalable_space'],10)-1);
+            alert('Printing to: users/'+getUserName().uid+'/bookings');
+            updateData(db, 'users/'+getUserName().uid+'/bookings', path,true);
+            alert('Booking Confirmed! Thank you for choosing Twilight Airlines!');
+            document.getElementById('booking-popup').style.display='none';
+        });
     }
 }
 
@@ -101,7 +109,7 @@ window.onload = function(){
                 document.getElementById('flight-results').appendChild(newResultElement);
 
                 console.log(flightsoftheday[flight]);
-                document.getElementById('book-now-button-'+resultId).addEventListener('click', returnbookingfunction(flightsoftheday[flight]));
+                document.getElementById('book-now-button-'+resultId).addEventListener('click', returnbookingfunction(flightsoftheday[flight],returnflightpath(airportCode,d)+'/'+flight));
 
                 
             }

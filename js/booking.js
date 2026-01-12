@@ -64,11 +64,11 @@ function returnflightpath(airportCode,date){
 function returnbookingfunction(deets){
     return function openPopup(){
         document.getElementById('booking-popup').style.display='block';
-        document.getElementById('popup-departure-airport').innerHTML=deets['departure-airport'];
-        document.getElementById('popup-arrival-airport').innerHTML=deets['arrival-airport'];
-        document.getElementById('popup-departure-time').innerHTML=deets['departure-time'];
+        document.getElementById('popup-departure-airport').innerHTML=document.getElementById('start-date').value;
+        document.getElementById('popup-arrival-airport').innerHTML=deets['flight-to'];
+        document.getElementById('popup-departure-time').innerHTML=String(deets['departure']) + ':00';
         document.getElementById('popup-pilot-name').innerHTML=deets['pilot'];
-        document.getElementById('popup-aircraft-type').innerHTML=deets['aircraft-type'];
+        document.getElementById('popup-avalable-space').innerHTML=deets['avalable_space'];
         document.getElementById('popup-flight-price').innerHTML=deets['price'];
     }
 }

@@ -25,7 +25,7 @@
 <body style="background-color: black;">
     <div id="booking-popup">
         <div class="overlaybg"></div>
-        <div class="overlay d-flex flex-column">
+        <div class="overlay d-flex flex-column" style="overflow-y: scroll;overflow-x:hidden;">
             <div class="closebtn xButton" id="close-popup-button" title="Close Popup">
                 <h2><b>
                     <i class="bi bi-x-lg" style="color:red"></i>
@@ -33,59 +33,82 @@
             </div>
             <h1 class="text-center mt-3"><b>Book Flight Now!</b></h1>
             <div class="container-fluid">
-            <div class="row">
-                <div class="col-12">
-                    <h3 class="text-warning">Our Luxury Guarantee</h3>
-                    <p class="lead" style="font-size: 1.1rem; line-height: 1.6;">
-                        Your experience is the top priority here at Twilight. We hope this experience is the most <b>impactful</b> trip of your lifetime. We do this through a variety of ways including hiring extremely qualified celebrity pilots, and using every inch of the plane to ensure a luxurious experience.
-                    </p>
-                    <hr style="border-color: #444;">
-                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <h3 class="text-warning">Our Luxury Guarantee</h3>
+                        <p class="lead" style="font-size: 1.1rem; line-height: 1.6;">
+                            Your experience is the top priority here at Twilight. We hope this experience is the most <b>impactful</b> trip of your lifetime. We do this through a variety of ways including hiring extremely qualified celebrity pilots, and using every inch of the plane to ensure a luxurious experience.
+                        </p>
+                        <hr style="border-color: #444;">
+                    </div>
 
-                <div class="col-12 mt-3">
-                    <span class="d-flex justify-content-center align-items-center">
-                        <h3 class="text-center mb-4">Industry Quotes From A Demonstration Flight</h3>
-                        <i class="bi bi-arrow-down-circle pb-3 ms-4 rotateOnClick" onclick="if (this.style.transform === 'rotate(180deg)'){this.style.transform='';this.style.marginBottom = '0'}else{this.style.transform='rotate(180deg)';this.style.marginBottom = '3rem'}" data-bs-toggle="collapse" data-bs-target="#quote-container" aria-expanded="false" aria-controls="quote-container" type="button"></i>
-                    </span>
+                    <div class="col-12 mt-3">
+                        <span class="d-flex justify-content-center align-items-center">
+                            <h3 class="text-center mb-4">Industry Quotes From A Demonstration Flight</h3>
+                            <i class="bi bi-arrow-down-circle pb-3 ms-4 rotateOnClick" onclick="if (this.style.transform === 'rotate(180deg)'){this.style.transform='';this.style.marginBottom = '0'}else{this.style.transform='rotate(180deg)';this.style.marginBottom = '2.8rem'}" data-bs-toggle="collapse" data-bs-target="#quote-container" aria-expanded="false" aria-controls="quote-container" type="button"></i>
+                        </span>
 
-                    <div id='quote-container'>
-                        <div class="quote-block">
-                            <h5>"How in the world are they still in business?"</h5>
-                            <p class="text-end text-muted">- Wall Street Investor (1995-2025)</p>
-                        </div>
+                        <div id='quote-container'>
+                            <div class="quote-block">
+                                <h5>"How in the world are they still in business?"</h5>
+                                <p class="text-end text-muted">- Wall Street Investor (1995-2025)</p>
+                            </div>
 
-                        <div class="quote-block">
-                            <h5>"Safety instructions? I was too busy choosing between the three types of caviar."</h5>
-                            <p class="text-end text-muted">- Celebrity Pilot (1967-2025)</p>
-                        </div>
+                            <div class="quote-block">
+                                <h5>"Safety instructions? I was too busy choosing between the three types of caviar."</h5>
+                                <p class="text-end text-muted">- Celebrity Pilot (1967-2025)</p>
+                            </div>
 
-                        <div class="quote-block">
-                            <h5>"It was so luxurious, I didn't even notice the plane hit the ground."</h5>
-                            <p class="text-end text-muted">- Aviation Annually (1987-2025)</p>
-                        </div>
+                            <div class="quote-block">
+                                <h5>"It was so luxurious, I didn't even notice the plane hit the ground."</h5>
+                                <p class="text-end text-muted">- Aviation Annually (1987-2025)</p>
+                            </div>
 
-                        <div class="quote-block">
-                            <h5>"The most exclusive flight in the world. Most guests only fly it once."</h5>
-                            <p class="text-end text-muted">- Luxury Travel Critic (1983-2025)</p>
-                        </div>
+                            <div class="quote-block">
+                                <h5>"The most exclusive flight in the world. Most guests only fly it once."</h5>
+                                <p class="text-end text-muted">- Luxury Travel Critic (1983-2025)</p>
+                            </div>
 
-                        <div class="quote-block">
-                            <h5>"These planes are always brand new!"</h5>
-                            <p class="text-end text-muted">- Sriyan Yarlagadda (CMO)</p>
+                            <div class="quote-block">
+                                <h5>"These planes are always brand new!"</h5>
+                                <p class="text-end text-muted">- Sriyan Yarlagadda (CMO)</p>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="col-12">
-                    <div class="award-row row">
-                        <i class="bi bi-trophy-fill me-2 col"></i> 
-                        <div class="col" style="color:black;"><b>OFFICIAL WINNER: "Best Airline to Have a Conversation with the Pilot Mid-Air"</b></div>
-                        <p class="text-end text-muted col">- Air Central Journalist (1983-2025)</p>
+                    <div class="col-12">
+                        <div class="award-row row">
+                            <i class="bi bi-trophy-fill me-2 col"></i> 
+                            <div class="col" style="color:black;"><b>OFFICIAL WINNER: "Best Airline to Have a Conversation with the Pilot Mid-Air"</b></div>
+                            <p class="text-end text-muted col">- Air Central Journalist (1983-2025)</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-6 mb-5">
+                            <h3 class="text-warning mt-4">Flight Details</h3>
+                            <p class="lead" style="font-size: 1.1rem; line-height: 1.6;">
+                                <b>Departure Airport:</b> <span id="popup-departure-airport"></span><br>
+                                <b>Arrival Airport:</b> <span id="popup-arrival-airport"></span><br>
+                                <b>Departure Time:</b> <span id="popup-departure-time"></span><br>
+                                <b>Pilot:</b> <span id="popup-pilot-name"></span><br>
+                                <b>Aircraft:</b> <span id="popup-aircraft-type"></span><br>
+                                <b>Price:</b> $<span id="popup-flight-price"></span>
+                            </p>
+                        </div>
+                        <div class="col-6 mb-5">
+                            <h3 class="text-warning mt-4">Ready to Book?</h3>
+                            <p class="lead" style="font-size: 1.1rem; line-height: 1.6;">
+                                Click the button below to proceed to payment and finalize your booking. We look forward to having you on board for an unforgettable experience!
+                            </p>
+                            <div class="d-flex justify-content-center">
+                                <button type="button" class="animated-button" id="proceed-to-payment-btn">Book Flight</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
     <nav class="navbar navbar-expand-xl navbar-dark p-2 snap-start" id = "navbar-div">
         <!-- lg = large breakpoint, navbar-dark will make all text light-->

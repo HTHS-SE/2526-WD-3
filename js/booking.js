@@ -64,7 +64,12 @@ function returnflightpath(airportCode,date){
 function returnbookingfunction(deets){
     return function openPopup(){
         document.getElementById('booking-popup').style.display='block';
-        
+        document.getElementById('popup-departure-airport').innerHTML=deets['departure-airport'];
+        document.getElementById('popup-arrival-airport').innerHTML=deets['arrival-airport'];
+        document.getElementById('popup-departure-time').innerHTML=deets['departure-time'];
+        document.getElementById('popup-pilot-name').innerHTML=deets['pilot'];
+        document.getElementById('popup-aircraft-type').innerHTML=deets['aircraft-type'];
+        document.getElementById('popup-flight-price').innerHTML=deets['price'];
     }
 }
 
@@ -95,7 +100,8 @@ window.onload = function(){
                 newResultElement.id= resultId; //the id of the result element
                 document.getElementById('flight-results').appendChild(newResultElement);
 
-                document.getElementById('book-now-button-'+resultId).addEventListener('click', function(e){})
+                console.log(flightsoftheday[flight]);
+                document.getElementById('book-now-button-'+resultId).addEventListener('click', returnbookingfunction(flightsoftheday[flight]));
 
                 
             }

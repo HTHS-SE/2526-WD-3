@@ -3,8 +3,18 @@ body{
   background: #292524 !important;
 }
 
+html{
+    background-color:var(--bg-co);
+    scroll-snap-type: y mandatory; /* Enable vertical scroll snapping */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
 .bottom-row-spacer {
   padding-top: 50px;
+}
+
+.top-row-spacer {
+  padding-top: 20px;
 }
 
 .loyalty-body {
@@ -19,8 +29,9 @@ body{
 }
 
 .loyalty-text {
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: #edc351;
+  text-align: center;
 }
 
 /* Set width for images*/

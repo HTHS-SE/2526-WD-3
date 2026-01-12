@@ -23,99 +23,131 @@
 </head>
 
 <body>
-    <div>
-        <!--Navbar-->
-        <nav class="navbar navbar-expand-lg navbar-dark p-2 snap-start">
-        <!-- lg = large breakpoint, navbar-dark will make all text light-->
-        <div class="container-fluid w-100" id="navbar-container">
-            <a href="index.html" class="logo navbar-brand">
-                <img src="img/navbar-logo.png" id="nav-logo">
-            </a>
-            <!-- Hamburger Menu Button-->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
-                <span class="navbar-toggler-icon">
+    <section class="snap-start"> <!-- Navbar + Main Body for better feeling snap scrolling -->
+        <div>
+            <!--Navbar-->
+            <nav class="navbar navbar-expand-lg navbar-dark p-2 snap-start">
+                <!-- lg = large breakpoint, navbar-dark will make all text light-->
+                <div class="container-fluid w-100" id="navbar-container">
+                    <a href="index.html" class="logo navbar-brand">
+                        <img src="img/navbar-logo.png" id="nav-logo">
+                    </a>
+                    <!-- Hamburger Menu Button-->
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                        <span class="navbar-toggler-icon">
 
-                </span>
-            </button>
-            <!-- Collapseable navbar Menu with custom hover under -->
-            <div class="collapse navbar-collapse" id="navmenu">
-                <!-- Links to hamburger menu button-->
-                <ul class="navbar-nav ms-auto" id="navlist">
-                    <li class="nav-item">
-                        <a href="fleet.html"
-                            class="text-site-theme nav-underline nav-link hover-underline-animation nbMenuItem  navbar-item">
-                            Our Fleet
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="loyalty.html"
-                            class="text-site-theme nav-underline nav-link hover-underline-animation nbMenuItem  navbar-item">
-                            Loyalty Program
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="about.html"
-                            class="text-site-theme nav-underline nav-link hover-underline-animation nbMenuItem  navbar-item">
-                            About Us
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <div class="container text-site-theme nav-underline nav-link nbMenuItem navbar-item" id="nav-button-container">
-                            <button 
-                                class="navbar-highlighted-button navbar-item logo">
-                                Log Out
-                            </button>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-        <!--Main Body-->
-        <section class="py-5 loyalty-body">
-            <div class="container">
-                <!-- Title Section -->
-                <div class="text-center mb-5">
-                    <h1 class="display-4 fw-bold loyalty-title">OUR LOYALTY<br>PROGRAM</h1>
+                        </span>
+                    </button>
+                    <!-- Collapseable navbar Menu with custom hover under -->
+                    <div class="collapse navbar-collapse" id="navmenu">
+                        <!-- Links to hamburger menu button-->
+                        <ul class="navbar-nav ms-auto" id="navlist">
+                            <li class="nav-item">
+                                <a href="fleet.html"
+                                    class="text-site-theme nav-underline nav-link hover-underline-animation nbMenuItem  navbar-item">
+                                    Our Fleet
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="loyalty.html"
+                                    class="text-site-theme nav-underline nav-link hover-underline-animation nbMenuItem  navbar-item">
+                                    Loyalty Program
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="about.html"
+                                    class="text-site-theme nav-underline nav-link hover-underline-animation nbMenuItem  navbar-item">
+                                    About Us
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <div class="container text-site-theme nav-underline nav-link nbMenuItem navbar-item"
+                                    id="nav-button-container">
+                                    <button class="navbar-highlighted-button navbar-item logo">
+                                        Log Out
+                                    </button>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
+            </nav>
+            <!--Main Body-->
+            <section class="py-5 loyalty-body">
+                <div class="container">
+                    <!-- Title Section -->
+                    <div class="text-center mb-5">
+                        <h1 class="display-4 fw-bold loyalty-title">OUR LOYALTY<br>PROGRAM</h1>
+                    </div>
+
+                    <!-- Top Row -->
+                    <div class="row align-items-center mb-5 top-row-spacer">
+                        <div class="col-md-6">
+                            <p class="lead overview-font loyalty-text">
+                                Our official Twilight Airlines Loyalty Card makes every journey rewarding. Members earn
+                                miles on every purchase,
+                                with bonus miles awarded for onboard purchases and luxury partner brands. Cardmembers
+                                enjoy
+                                priority boarding,
+                                premium lounge access, free wifi, as well as annual travel credits that make every
+                                journey
+                                just
+                                that much more special. It's designed for those travelers who value frequent premium
+                                flight
+                                experiences.
+                            </p>
+                        </div>
+                        <div class="col-md-6 text-center">
+                            <img src="img/loyalty-card.png" alt="Loyalty Card"
+                                class="img-fluid loyalty-image rightrotate" style="max-height:200px" ;>
+                        </div>
+                    </div>
+                    <hr> <!-- Separator between rows -->
+                    <!-- Bottom Row -->
+                    <div class="row align-items-center bottom-row-spacer">
+                        <div class="col-md-6 text-center">
+                            <img src="img/loyalty-airplane.png" alt="Airplane"
+                                class="img-fluid loyalty-image leftrotate" style="max-height:200px" ;>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="lead overview-font loyalty-text">
+                                Twilight Airlines makes flying feel calm, comfortable, and premium. Every one of our
+                                premium
+                                liveries offer
+                                space and relaxation, with great food, soft lighting, and friendly service that always
+                                puts
+                                you first.
+                                Whether you’re traveling for work or vacation, you’ll enjoy a nice, smooth, and peaceful
+                                flight that feels
+                                more like a private jet than a commercial flight.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+    </section>
+    <section class="snap-start"> <!-- Sign up/ log in section + footer for better feeling snap scrolling -->
+        <!--Main Body-->
+        <section class="py-5 loyalty-body snap-start">
+            <div class="container">
 
                 <!-- Top Row -->
-                <div class="row align-items-center mb-5">
+                <div class="row align-items-center mb-5 top-row-spacer">
                     <div class="col-md-6">
-                        <p class="loyalty-text">
-                            Our official Twilight Airlines Loyalty Card makes every journey rewarding. Members earn
-                            miles on every purchase,
-                            with bonus miles awarded for onboard purchases and luxury partner brands. Cardmembers enjoy
-                            priority boarding,
-                            premium lounge access, free wifi, as well as annual travel credits that make every journey
-                            just
-                            that much more special. It's designed for those travelers who value frequent premium flight
-                            experiences.
+                        <p class="lead overview-font loyalty-text">
+                            Sign Up
                         </p>
                     </div>
-                    <div class="col-md-6 text-center">
-                        <img src="img/loyalty-card.png" alt="Loyalty Card" class="img-fluid loyalty-image rightrotate"
-                            style="max-height:200px" ;>
+                    <div class="col-md-6">
+                        <p class="lead overview-font loyalty-text">
+                            Log In
+                        </p>
                     </div>
                 </div>
-                <hr> <!-- Separator between rows -->
                 <!-- Bottom Row -->
                 <div class="row align-items-center bottom-row-spacer">
-                    <div class="col-md-6 text-center">
-                        <img src="img/loyalty-airplane.png" alt="Airplane" class="img-fluid loyalty-image leftrotate"
-                            style="max-height:200px" ;>
-                    </div>
-                    <div class="col-md-6">
-                        <p class="loyalty-text">
-                            Twilight Airlines makes flying feel calm, comfortable, and premium. Every one of our premium
-                            liveries offer
-                            space and relaxation, with great food, soft lighting, and friendly service that always puts
-                            you first.
-                            Whether you’re traveling for work or vacation, you’ll enjoy a nice, smooth, and peaceful
-                            flight that feels
-                            more like a private jet than a commercial flight.
-                        </p>
+                    <div class="text-center mb-5">
+                        <h2 class="fw-bold loyalty-title">Sign Up or Log In to see how this would work for you!</h2>
                     </div>
                 </div>
             </div>
@@ -146,12 +178,13 @@
                 </div>
             </div>
         </footer>
-        <!-- Sticky Up arrow on the bottom right corner-->
-        <div class="d-sticky fixed-bottom float-end sticky-up-button leftabitmobile-md">
-            <a href="#" class="up-btn ms-2">
-                <i class="bi bi-arrow-up-circle-fill h2"></i>
-            </a>
-        </div>
+    </section>
+    <!-- Sticky Up arrow on the bottom right corner-->
+    <div class="d-sticky fixed-bottom float-end sticky-up-button leftabitmobile-md">
+        <a href="#" class="up-btn ms-2">
+            <i class="bi bi-arrow-up-circle-fill h2"></i>
+        </a>
+    </div>
     </div>
 </body>
 

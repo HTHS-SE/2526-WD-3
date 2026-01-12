@@ -73,7 +73,6 @@ function returnbookingfunction(deets,path){
 
         document.getElementById('confirm-booking-button').addEventListener('click', function(){
             updateData(db, path, 'avalable_space', parseInt(deets['avalable_space'],10)-1);
-            alert('Printing to: users/'+getUserName().uid+'/bookings');
             updateData(db, 'users/'+getUserName().uid+'/bookings', path,true);
             alert('Booking Confirmed! Thank you for choosing Twilight Airlines!');
             document.getElementById('booking-popup').style.display='none';

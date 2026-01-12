@@ -19,6 +19,7 @@
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
     <link rel="icon" href="./img/navbar-logo-resized.png" type="image/x-icon" />
+    <script type="module" src="./js/main.js" defer></script> <!-- Firebase requires type="module"-->
     <title>Twilight Airlines - Loyalty Program</title>
 </head>
 
@@ -26,7 +27,7 @@
     <section class="snap-start"> <!-- Navbar + Main Body for better feeling snap scrolling -->
         <div>
             <!--Navbar-->
-            <nav class="navbar navbar-expand-lg navbar-dark p-2 snap-start">
+            <nav class="navbar navbar-expand-lg navbar-dark p-2 snap-start" id="navbar-div">
                 <!-- lg = large breakpoint, navbar-dark will make all text light-->
                 <div class="container-fluid w-100" id="navbar-container">
                     <a href="index.html" class="logo navbar-brand">
@@ -63,8 +64,8 @@
                             <li class="nav-item">
                                 <div class="container text-site-theme nav-underline nav-link nbMenuItem navbar-item"
                                     id="nav-button-container">
-                                    <button class="navbar-highlighted-button navbar-item logo">
-                                        Log Out
+                                    <button class="navbar-highlighted-button navbar-item logo" id="loginButton">
+                                        Log In
                                     </button>
                                 </div>
                             </li>
@@ -72,6 +73,8 @@
                     </div>
                 </div>
             </nav>
+
+
             <!--Main Body-->
             <section class="py-5 loyalty-body">
                 <div class="container">
@@ -79,113 +82,129 @@
                     <div class="text-center mb-5">
                         <h1 class="display-4 fw-bold loyalty-title">OUR LOYALTY<br>PROGRAM</h1>
                     </div>
+                    </nav>
+                    <!--Main Body-->
+                    <section class="py-5 loyalty-body">
+                        <div class="container">
+                            <!-- Title Section -->
+                            <div class="text-center mb-5">
+                                <h1 class="display-4 fw-bold loyalty-title">OUR LOYALTY<br>PROGRAM</h1>
+                            </div>
 
-                    <!-- Top Row -->
-                    <div class="row align-items-center mb-5 top-row-spacer">
-                        <div class="col-md-6">
-                            <p class="lead overview-font loyalty-text">
-                                Our official Twilight Airlines Loyalty Card makes every journey rewarding. Members earn
-                                miles on every purchase,
-                                with bonus miles awarded for onboard purchases and luxury partner brands. Cardmembers
-                                enjoy
-                                priority boarding,
-                                premium lounge access, free wifi, as well as annual travel credits that make every
-                                journey
-                                just
-                                that much more special. It's designed for those travelers who value frequent premium
-                                flight
-                                experiences.
-                            </p>
+                            <!-- Top Row -->
+                            <div class="row align-items-center mb-5 top-row-spacer">
+                                <div class="col-md-6">
+                                    <p class="lead overview-font loyalty-text">
+                                        Our official Twilight Airlines Loyalty Card makes every journey rewarding.
+                                        Members earn
+                                        miles on every purchase,
+                                        with bonus miles awarded for onboard purchases and luxury partner brands.
+                                        Cardmembers
+                                        enjoy
+                                        priority boarding,
+                                        premium lounge access, free wifi, as well as annual travel credits that make
+                                        every
+                                        journey
+                                        just
+                                        that much more special. It's designed for those travelers who value frequent
+                                        premium
+                                        flight
+                                        experiences.
+                                    </p>
+                                </div>
+                                <div class="col-md-6 text-center">
+                                    <img src="img/loyalty-card.png" alt="Loyalty Card"
+                                        class="img-fluid loyalty-image rightrotate" style="max-height:200px" ;>
+                                </div>
+                            </div>
+                            <hr> <!-- Separator between rows -->
+                            <!-- Bottom Row -->
+                            <div class="row align-items-center bottom-row-spacer">
+                                <div class="col-md-6 text-center">
+                                    <img src="img/loyalty-airplane.png" alt="Airplane"
+                                        class="img-fluid loyalty-image leftrotate" style="max-height:200px" ;>
+                                </div>
+                                <div class="col-md-6">
+                                    <p class="lead overview-font loyalty-text">
+                                        Twilight Airlines makes flying feel calm, comfortable, and premium. Every one of
+                                        our
+                                        premium
+                                        liveries offer
+                                        space and relaxation, with great food, soft lighting, and friendly service that
+                                        always
+                                        puts
+                                        you first.
+                                        Whether you’re traveling for work or vacation, you’ll enjoy a nice, smooth, and
+                                        peaceful
+                                        flight that feels
+                                        more like a private jet than a commercial flight.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-md-6 text-center">
-                            <img src="img/loyalty-card.png" alt="Loyalty Card"
-                                class="img-fluid loyalty-image rightrotate" style="max-height:200px" ;>
-                        </div>
-                    </div>
-                    <hr> <!-- Separator between rows -->
-                    <!-- Bottom Row -->
-                    <div class="row align-items-center bottom-row-spacer">
-                        <div class="col-md-6 text-center">
-                            <img src="img/loyalty-airplane.png" alt="Airplane"
-                                class="img-fluid loyalty-image leftrotate" style="max-height:200px" ;>
-                        </div>
-                        <div class="col-md-6">
-                            <p class="lead overview-font loyalty-text">
-                                Twilight Airlines makes flying feel calm, comfortable, and premium. Every one of our
-                                premium
-                                liveries offer
-                                space and relaxation, with great food, soft lighting, and friendly service that always
-                                puts
-                                you first.
-                                Whether you’re traveling for work or vacation, you’ll enjoy a nice, smooth, and peaceful
-                                flight that feels
-                                more like a private jet than a commercial flight.
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                    </section>
             </section>
-    </section>
-    <section class="snap-start"> <!-- Sign up/ log in section + footer for better feeling snap scrolling -->
-        <!--Main Body-->
-        <section class="py-5 loyalty-body snap-start">
-            <div class="container">
+            <section class="snap-start"> <!-- Sign up/ log in section + footer for better feeling snap scrolling -->
+                <!--Main Body-->
+                <section class="py-5 loyalty-body snap-start">
+                    <div class="container">
 
-                <!-- Top Row -->
-                <div class="row align-items-center mb-5 top-row-spacer">
-                    <div class="col-md-6">
-                        <p class="lead overview-font loyalty-text">
-                            Sign Up
-                        </p>
+                        <!-- Top Row -->
+                        <div class="row align-items-center mb-5 top-row-spacer">
+                            <div class="col-md-6">
+                                <p class="lead overview-font loyalty-text">
+                                    Sign Up
+                                </p>
+                            </div>
+                            <div class="col-md-6">
+                                <p class="lead overview-font loyalty-text">
+                                    Log In
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Bottom Row -->
+                        <div class="row align-items-center bottom-row-spacer">
+                            <div class="text-center mb-5">
+                                <h2 class="fw-bold loyalty-title">Sign Up or Log In to see how this would work for you!
+                                </h2>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-md-6">
-                        <p class="lead overview-font loyalty-text">
-                            Log In
-                        </p>
-                    </div>
-                </div>
-                <!-- Bottom Row -->
-                <div class="row align-items-center bottom-row-spacer">
-                    <div class="text-center mb-5">
-                        <h2 class="fw-bold loyalty-title">Sign Up or Log In to see how this would work for you!</h2>
-                    </div>
-                </div>
-            </div>
-        </section>
+                </section>
 
-        <!--Footer-->
-        <footer class="p-4 footer footer-details">
-            <div class="container">
-                <div class="row align-items-center">
-                    <!-- Left Part -->
-                    <div class="col-md-4 text-start">
-                        <p class="fw-bold mb-0">© 2025 TWILIGHT AIR</p>
+                <!--Footer-->
+                <footer class="p-4 footer footer-details">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <!-- Left Part -->
+                            <div class="col-md-4 text-start">
+                                <p class="fw-bold mb-0">© 2025 TWILIGHT AIR</p>
+                            </div>
+                            <!-- Center Part -->
+                            <div class="col-md-4 text-center">
+                                <p class="mb-1">@twilightwings</p>
+                                <a><i class="bi bi-instagram mx-2"></i></a>
+                                <a><i class="bi bi-twitter-x mx-2"></i></a>
+                                <a><i class="bi bi-snapchat mx-2"></i></a>
+                                <a><i class="bi bi-facebook mx-2"></i></a>
+                            </div>
+                            <!-- Right Part -->
+                            <div class="col-md-4 text-end d-flex justify-content-end align-items-center">
+                                <p class="mb-0 small me-2">
+                                    Disclaimer: This isn't a real airline, just a website made for a school project.
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                    <!-- Center Part -->
-                    <div class="col-md-4 text-center">
-                        <p class="mb-1">@twilightwings</p>
-                        <a><i class="bi bi-instagram mx-2"></i></a>
-                        <a><i class="bi bi-twitter-x mx-2"></i></a>
-                        <a><i class="bi bi-snapchat mx-2"></i></a>
-                        <a><i class="bi bi-facebook mx-2"></i></a>
-                    </div>
-                    <!-- Right Part -->
-                    <div class="col-md-4 text-end d-flex justify-content-end align-items-center">
-                        <p class="mb-0 small me-2">
-                            Disclaimer: This isn't a real airline, just a website made for a school project.
-                        </p>
-                    </div>
-                </div>
+                </footer>
+            </section>
+            <!-- Sticky Up arrow on the bottom right corner-->
+            <div class="d-sticky fixed-bottom float-end sticky-up-button leftabitmobile-md">
+                <a href="#" class="up-btn ms-2">
+                    <i class="bi bi-arrow-up-circle-fill h2"></i>
+                </a>
             </div>
-        </footer>
-    </section>
-    <!-- Sticky Up arrow on the bottom right corner-->
-    <div class="d-sticky fixed-bottom float-end sticky-up-button leftabitmobile-md">
-        <a href="#" class="up-btn ms-2">
-            <i class="bi bi-arrow-up-circle-fill h2"></i>
-        </a>
-    </div>
-    </div>
+        </div>
 </body>
 
 </html>

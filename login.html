@@ -20,14 +20,16 @@
             crossorigin="anonymous"></script>
 
     <script type="module" src="./js/login.js" defer></script>  <!-- Firebase requires type="module"-->
+    <script type="module" src="./js/main.js" defer></script>  <!-- Firebase requires type="module"-->
+
 </head>
 
 <body>
-   
-    <nav class="navbar navbar-expand-lg navbar-dark p-2 fixed-top">
+   <!-- Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark p-2 snap-start" id = "navbar-div">
         <!-- lg = large breakpoint, navbar-dark will make all text light-->
-        <div class="container">
-            <a href="index.html" class="navbar-brand">
+        <div class="container-fluid w-100" id="navbar-container">
+            <a href="index.html" class="logo navbar-brand">
                 <img src="img/navbar-logo.png" id="nav-logo">
             </a>
             <!-- Hamburger Menu Button-->
@@ -36,23 +38,10 @@
 
                 </span>
             </button>
-
             <!-- Collapseable navbar Menu with custom hover under -->
             <div class="collapse navbar-collapse" id="navmenu">
                 <!-- Links to hamburger menu button-->
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a href="flights.html"
-                            class="text-site-theme nav-underline nav-link hover-underline-animation nbMenuItem  navbar-item">
-                            My Flights
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="booking.html"
-                            class="text-site-theme nav-underline nav-link hover-underline-animation nbMenuItem  navbar-item">
-                            Booking
-                        </a>
-                    </li>
+                <ul class="navbar-nav ms-auto" id="navlist">
                     <li class="nav-item">
                         <a href="fleet.html"
                             class="text-site-theme nav-underline nav-link hover-underline-animation nbMenuItem  navbar-item">
@@ -72,13 +61,14 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <button 
-                            class="nav-underline nav-link nbMenuItem navbar-item navbar-highlighted-button">
-                            Log Out
-                        </button>
+                        <div class="container text-site-theme nav-underline nav-link nbMenuItem navbar-item" id="nav-button-container">
+                            <button 
+                                class="navbar-highlighted-button navbar-item logo" id = "loginButton">
+                                Log In
+                            </button>
+                        </div>
                     </li>
                 </ul>
-
             </div>
         </div>
     </nav>

@@ -166,11 +166,7 @@ html, body {
 
 .xButton{
     position:relative;
-    left:92vw;
-}
-
-.xButton:hover { 
-    transform: scale(1.1); 
+    left:91vw;
 }
 
 .quote-block {
@@ -191,7 +187,7 @@ html, body {
 
     .xButton{
         position:relative;
-        left:89vw;
+        left:88vw;
     }
 
     .footer .row > div {

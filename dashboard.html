@@ -20,48 +20,59 @@
     <link rel="icon" href="./img/navbar-logo-resized.png" type="image/x-icon" />
     <title>Twilight Airlines - Loyalty Program</title>
     <!-- Reference Dashboard JS File -->
+     <script type="module" src="./js/main.js" defer></script>  <!-- Firebase requires type="module"-->
     <script type="module" src="./js/dashboard.js"></script>
 </head>
 
 <body>
     <div>
         <!--Navbar-->
-        <nav class="navbar navbar-expand-lg navbar-dark p-2">
-            <!-- lg = large breakpoint, navbar-dark will make all text light-->
-            <div class="container">
-                <a href="index.html" class="logo navbar-brand">
-                    <img src="img/navbar-logo.png" id="nav-logo">
-                </a>
-                <!-- Hamburger Menu Button-->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <!-- Collapseable navbar Menu with custom hover under -->
-                <div class="collapse navbar-collapse" id="navmenu">
-                    <!-- Links to hamburger menu button-->
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a href="fleet.html"
-                                class="text-site-theme nav-underline nav-link hover-underline-animation nbMenuItem  navbar-item">
-                                Our Fleet
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="loyalty.html"
-                                class="text-site-theme nav-underline nav-link hover-underline-animation nbMenuItem  navbar-item">
-                                Loyalty Program
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="about.html"
-                                class="text-site-theme nav-underline nav-link hover-underline-animation nbMenuItem  navbar-item">
-                                About Us
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+        <nav class="navbar navbar-expand-lg navbar-dark p-2 snap-start" id = "navbar-div">
+        <!-- lg = large breakpoint, navbar-dark will make all text light-->
+        <div class="container-fluid w-100" id="navbar-container">
+            <a href="index.html" class="logo navbar-brand">
+                <img src="img/navbar-logo.png" id="nav-logo">
+            </a>
+            <!-- Hamburger Menu Button-->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                <span class="navbar-toggler-icon">
+
+                </span>
+            </button>
+            <!-- Collapseable navbar Menu with custom hover under -->
+            <div class="collapse navbar-collapse" id="navmenu">
+                <!-- Links to hamburger menu button-->
+                <ul class="navbar-nav ms-auto" id="navlist">
+                    <li class="nav-item">
+                        <a href="fleet.html"
+                            class="text-site-theme nav-underline nav-link hover-underline-animation nbMenuItem  navbar-item">
+                            Our Fleet
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="loyalty.html"
+                            class="text-site-theme nav-underline nav-link hover-underline-animation nbMenuItem  navbar-item">
+                            Loyalty Program
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html"
+                            class="text-site-theme nav-underline nav-link hover-underline-animation nbMenuItem  navbar-item">
+                            About Us
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <div class="container text-site-theme nav-underline nav-link nbMenuItem navbar-item" id="nav-button-container">
+                            <button 
+                                class="navbar-highlighted-button navbar-item logo" id = "loginButton">
+                                Log In
+                            </button>
+                        </div>
+                    </li>
+                </ul>
             </div>
-        </nav>
+        </div>
+    </nav>
         <!--Main Body-->
         <section class="py-5 dashboard-body">
             <div class="container">

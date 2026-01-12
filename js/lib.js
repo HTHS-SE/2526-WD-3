@@ -45,7 +45,7 @@ function signOutUser(){
   signOut(auth)
   .then((auth)=>{
     alert("Sign-out successful!");
-    window.location = "signIn.html"; //redirect to sign-in page
+    window.location = "login.html"; //redirect to sign-in page
   })
   .catch((error)=>{
     alert("Error signing out: " + error.message);

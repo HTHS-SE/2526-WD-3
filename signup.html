@@ -16,9 +16,57 @@
             integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" 
             crossorigin="anonymous"></script>
     <script type="module" src="./js/signup.js" defer></script>  <!-- Firebase requires type="module"-->
+    <script type="module" src="./js/main.js" defer></script>  <!-- Firebase requires type="module"-->
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-lg navbar-dark p-2 snap-start" id = "navbar-div">
+        <!-- lg = large breakpoint, navbar-dark will make all text light-->
+        <div class="container-fluid w-100" id="navbar-container">
+            <a href="index.html" class="logo navbar-brand">
+                <img src="img/navbar-logo.png" id="nav-logo">
+            </a>
+            <!-- Hamburger Menu Button-->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                <span class="navbar-toggler-icon">
+
+                </span>
+            </button>
+            <!-- Collapseable navbar Menu with custom hover under -->
+            <div class="collapse navbar-collapse" id="navmenu">
+                <!-- Links to hamburger menu button-->
+                <ul class="navbar-nav ms-auto" id="navlist">
+                    <li class="nav-item">
+                        <a href="fleet.html"
+                            class="text-site-theme nav-underline nav-link hover-underline-animation nbMenuItem  navbar-item">
+                            Our Fleet
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="loyalty.html"
+                            class="text-site-theme nav-underline nav-link hover-underline-animation nbMenuItem  navbar-item">
+                            Loyalty Program
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html"
+                            class="text-site-theme nav-underline nav-link hover-underline-animation nbMenuItem  navbar-item">
+                            About Us
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <div class="container text-site-theme nav-underline nav-link nbMenuItem navbar-item" id="nav-button-container">
+                            <button 
+                                class="navbar-highlighted-button navbar-item logo" id = "loginButton">
+                                Log In
+                            </button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
     <div class="container">
         <br><h2 class="text-center">Account Registration</h2><br>
     </div>

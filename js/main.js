@@ -1,29 +1,68 @@
-import {app, firebaseConfig,auth,db,getUserName} from './lib.js';
-
+import {app, firebaseConfig,auth,db,getUserName, signOutUser} from './lib.js';
 // Add onclick property to login button
-const loginButton = document.getElementById("loginButton");
-loginButton.onlick = function(){
-  window.location="login.html";
-}
 
 // Check if user is currently logged in to update HTML accordingly
-let user = getUserName();
-if (user === null){
-  
+function updateNavbar(){
+  let user = getUserName();
+  console.log(user);
+  if (user === null){
+    const navbar = document.getElementById("navbar-div");
+    navbar.classList.add("navbar-expand-lg");
+    navbar.classList.remove("navbar-expand-xl");
+    const flightsLink = document.getElementById("flightsLink")
+    const bookingLink = document.getElementById("bookingLink")
+    if (flightsLink){
+      flightsLink.remove()
+    }
+    if (bookingLink){
+      bookingLink.remove()
+    }
+    const loginButton = document.getElementById("loginButton");
+    loginButton.innerHTML = "Log In";
+    loginButton.onclick = function(){
+      window.location= "login.html";
+    }
+  }
+  else {
+    const navbar = document.getElementById("navbar-div");
+    navbar.classList.remove("navbar-expand-lg");
+    navbar.classList.add("navbar-expand-xl");
+    const navlist = document.getElementById("navlist");
+
+    const flights = document.createElement("li");
+    flights.id = "flightsLink";
+    flights.classList="nav-item";
+    const flightsLink = document.createElement("a");
+    flightsLink.href = "flights.html";
+    flightsLink.classList= "text-site-theme nav-underline nav-link hover-underline-animation nbMenuItem navbar-item";
+    flightsLink.innerHTML= "My Flights";
+    flights.appendChild(flightsLink);
+
+    const buttonListElement = document.getElementById("loginButton").parentElement.parentElement
+    navlist.insertBefore(flights, buttonListElement);
+
+    const booking = document.createElement("li");
+    booking.id = "bookingLink";
+    booking.classList="nav-item";
+    const bookingLink = document.createElement("a");
+    bookingLink.href = "booking.html";
+    bookingLink.classList= "text-site-theme nav-underline nav-link hover-underline-animation nbMenuItem navbar-item";
+    bookingLink.innerHTML= "Booking";
+    booking.appendChild(bookingLink);
+
+    navlist.insertBefore(booking, buttonListElement);
+
+
+    const loginButton = document.getElementById("loginButton");
+    loginButton.innerHTML = "Log Out";
+    loginButton.onclick = function(){
+      signOutUser();
+      updateNavbar();
+    }
+  }
 }
-else {
-  const navbar = document.getElementById("navbar-div");
-  navbar.classList.remove("navbar-expand-lg");
-  navbar.classList.add("navbar-expand-xl");
-  const navlist = document.getElementById("navlist");
 
-  const flights = document.createElement("li");
-  flights.classList="nav-item";
-  const flightsLink = document.createElement("a");
-  flightsLink.href = "flights.html";
-  flightsLink.classList= "text-site-theme nav-underline nav-link hover-underline-animation nbMenuItem navbar-item";
-  flightsLink.innerHTML= "My Flights";
-  flights.appendChild(flightsLink);
-  navlist.appendChild(flights);
-
+window.onload = function(){
+  updateNavbar();
+  console.log("page loaded");
 }

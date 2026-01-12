@@ -121,6 +121,10 @@ html, body {
     color: var(--site-theme-color) !important;
 }
 
+.text-site-theme-dark{
+    color: #a1790d !important;
+}
+
 .text-white{
     color: white !important;
 }

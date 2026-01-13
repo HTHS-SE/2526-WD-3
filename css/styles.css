@@ -87,11 +87,21 @@ html, body {
 
 }
 
+.signup-container{
+    min-width:50vw;
+}
+
+@media (max-width: 992px) {
+    .signup-container{
+        min-width:90vw;
+    }
+}
+
 .navbar-item{
     font-size: 26px !important;
     font-family: "Hanken Grotesk";
     font-weight: bold !important;
-    background-color: #292524;
+    background-color: #000000;
 }
 
 .navbar-highlighted-button{

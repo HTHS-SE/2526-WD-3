@@ -136,13 +136,14 @@ function returnbookingfunction(deets,path){
         document.getElementById('popup-pilot-name').innerHTML=deets['pilot'];
         document.getElementById('popup-avalable-space').innerHTML=deets['avalable_space'];
         document.getElementById('popup-flight-price').innerHTML=deets['price'];
-
-        document.getElementById('confirm-booking-button').addEventListener('click', function(){
-            updateData(db, path, 'avalable_space', parseInt(deets['avalable_space'],10)-1);
-            updateData(db, 'users/'+getUserName().uid+'/bookings', encodeURIComponent(path),new Date().toISOString());
-            alert('Booking Confirmed! Thank you for choosing Twilight Airlines!');
-            document.getElementById('booking-popup').style.display='none';
-        },{ once: true });
+        if (deets['avalable_space']>0){
+            document.getElementById('confirm-booking-button').addEventListener('click', function(){
+                updateData(db, path, 'avalable_space', parseInt(deets['avalable_space'],10)-1);
+                updateData(db, 'users/'+getUserName().uid+'/bookings', encodeURIComponent(path),new Date().toISOString());
+                alert('Booking Confirmed! Thank you for choosing Twilight Airlines!');
+                document.getElementById('booking-popup').style.display='none';
+            },{ once: true });
+        }
     }
 }
 

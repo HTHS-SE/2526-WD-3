@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,25 +14,22 @@
     <script src="js/login.js" type="module" defer></script>
     <link rel="icon" href="./img/navbar-logo-resized.png" type="image/x-icon"/>
 
-     <!-- Bootstrap 5 CSS, Icons and custom CSS file links -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" 
-            integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" 
-            crossorigin="anonymous">
+    <!-- Bootstrap 5 CSS, Icons and custom CSS file links -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
     <!-- Bootstrap 5 and custom JS script tags-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" 
-            integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" 
-            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
 
-    <script type="module" src="./js/login.js" defer></script>  <!-- Firebase requires type="module"-->
-    <script type="module" src="./js/main.js" defer></script>  <!-- Firebase requires type="module"-->
-
+    <script type="module" src="./js/login.js" defer></script> <!-- Firebase requires type="module"-->
+    <script type="module" src="./js/main.js" defer></script> <!-- Firebase requires type="module"-->
 </head>
-
 <body>
-   <!-- Navbar-->
-    <nav class="navbar navbar-expand-lg navbar-dark p-2 snap-start" id = "navbar-div">
+    <!-- Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark p-2 snap-start" id="navbar-div">
         <!-- lg = large breakpoint, navbar-dark will make all text light-->
         <div class="container-fluid w-100" id="navbar-container">
             <a href="index.html" class="logo navbar-brand">
@@ -66,9 +64,9 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <div class="container text-site-theme nav-underline nav-link nbMenuItem navbar-item" id="nav-button-container">
-                            <button 
-                                class="navbar-highlighted-button navbar-item logo" id = "loginButton">
+                        <div class="container text-site-theme nav-underline nav-link nbMenuItem navbar-item"
+                            id="nav-button-container">
+                            <button class="navbar-highlighted-button navbar-item logo" id="loginButton">
                                 Log In
                             </button>
                         </div>
@@ -77,27 +75,32 @@
             </div>
         </div>
     </nav>
-
-    
-
     <!--Sign Up -->
-    <div class="container signup-container w-25 text-center mt-3 border-black p-4 rounded-3 shadow-lg" id="signUpContainer">
+    <div class="container signup-container w-25 text-center mt-3 border-black p-4 rounded-3 shadow-lg"
+        id="signUpContainer">
         <div class="container">
-            <br><h2 class="text-center">Sign In</h2><br>
+            <br>
+            <h2 class="text-center sign-in-title">Sign In</h2><br>
         </div>
-        <div class="signUpForm mb-5">     
+        <div class="signUpForm mb-5">
             <form>
                 <input type="email" placeholder="Email" id="loginEmail" class="form-control mb-3">
-                <input type="password" placeholder="password" id="loginPassword" class="form-control mb-3">
+                <input type="password" placeholder="Password" id="loginPassword" class="form-control mb-3">
                 <div class="form-check form-switch mb-3 text-start">
                     <input class="form-check-input" type="checkbox" role="switch" id="keepLoggedInSwitch">
-                    <label class="form-check-label" for="flexSwitchCheckDefault">Keep me signed in</label>
+                    <label class="form-check-label keepmesignedin-color" for="flexSwitchCheckDefault">Keep me signed
+                        in</label>
                 </div>
-                <button type = "button" id="signIn" name="signIn" class="btn btn-outline-primary mb-3 w-100">Sign In</button>
-                <a href="signup.html" class="badge bg-secondary py-1 w-100">Don't have an account?</a>
+                <button type="button" id="signIn" class="signin-button w-100 mb-3">
+                    Sign In
+                </button>
+                <p class="text-center mb-0">
+                    <a class="signup-link" href="signup.html">
+                        Don’t have an account?
+                    </a>
+                </p>
             </form>
         </div>
     </div>
-    
 </body>
 </html>

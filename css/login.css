@@ -1,0 +1,27 @@
+body{
+  background: #292524 !important;
+}
+
+.sign-in-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #edc351;
+    text-decoration: none;
+}
+
+.keepmesignedin-color {
+    color: #edc351;
+}
+
+.signin-button {
+    padding: 12px;
+    font-weight: 700;
+    border-radius: 15px;
+    background-color: #edc351;
+    border-color: #edc351;
+    transition: transform 0.1s ease;
+}
+
+.signin-button:hover {
+    transform: scale(0.995);
+}

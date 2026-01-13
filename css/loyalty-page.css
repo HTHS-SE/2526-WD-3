@@ -13,6 +13,10 @@ html{
   padding-top: 50px;
 }
 
+.increased-bottom-row-spacer {
+  padding-top: 75px;
+}
+
 .top-row-spacer {
   padding-top: 20px;
 }
@@ -20,6 +24,21 @@ html{
 .loyalty-body {
   background-color: #292524;
   color: #edc351;
+}
+
+.signin-login {
+    display: block;
+    padding: 12px 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #edc351;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+}
+
+.signin-login:hover {
+    color: #b79d57;
+    border-bottom: 2px solid #000;
 }
 
 /* Set font colors and size for text*/
@@ -41,8 +60,8 @@ html{
 
 /* Image hover animations*/
 .leftrotate:hover{
-  transform: rotate(-3deg);
+  transform: rotate(-1deg);
 }
 .rightrotate:hover{
-  transform: rotate(3deg);
+  transform: rotate(1deg);
 }

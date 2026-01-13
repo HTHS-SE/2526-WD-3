@@ -73,7 +73,7 @@
     <!--Sign Up -->
     <div class="container signup-container w-25 text-center mt-3 border-black p-4 rounded-3 shadow-lg" id="signUpContainer">
             <div class="container">
-                <br><h2 class="text-center">Account Registration</h2><br>
+                <br><h2 class="text-center sign-up-title">Account Registration</h2><br>
             </div>
 
         <div class="signUpForm mb-5">     
@@ -82,8 +82,14 @@
                 <input type="text" placeholder="Last Name" id="lastName" class="form-control mb-3 text-center">
                 <input type="email" placeholder="Email" id="userEmail" class="form-control mb-3 text-center">
                 <input type="password" placeholder="Password" id="userPass" class="form-control mb-3 text-center">
-                <button type = "button" id="submitData" name="submitData" class="btn btn-outline-primary mb-3 w-100">Register</button>
-                <a href="login.html" class="badge bg-secondary py-1 w-100">Already have an account?</a>
+                <button type="button" id="submitData" class="signup-button w-100 mb-3">
+                    Register
+                </button>
+                <p class="text-center mb-0">
+                    <a class="login-link" href="login.html">
+                        Already have an account?
+                    </a>
+                </p>
             </form>
         </div>
     </div>

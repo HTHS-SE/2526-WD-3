@@ -5,6 +5,7 @@ import {app, firebaseConfig,auth,db,getUserName, signOutUser} from './lib.js';
 function updateNavbar(){
   let user = getUserName();
   console.log(user);
+  
   if (user === null){
     const navbar = document.getElementById("navbar-div");
     navbar.classList.add("navbar-expand-lg");
@@ -24,6 +25,9 @@ function updateNavbar(){
     }
   }
   else {
+    if(window.location.href.includes('login') || window.location.href.includes('signup')){
+      window.location = "dashboard.html";
+    }
     const navbar = document.getElementById("navbar-div");
     navbar.classList.remove("navbar-expand-lg");
     navbar.classList.add("navbar-expand-xl");

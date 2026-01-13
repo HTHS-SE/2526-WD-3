@@ -1,4 +1,4 @@
-import {app, firebaseConfig,auth,db,getUserName, signOutUser} from './lib.js';
+import {getUserName, signOutUser} from './lib.js';
 // Add onclick property to login button
 
 // Check if user is currently logged in to update HTML accordingly

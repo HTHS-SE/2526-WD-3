@@ -18,7 +18,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
-    <link rel="icon" href="./img/navbar-logo-resized.png" type="image/x-icon" />
+    <link rel="icon" href="./img/navbar-logo-resized.png" type="image/x-icon"/>
     <script type="module" src="./js/main.js" defer></script> <!-- Firebase requires type="module"-->
     <title>Twilight Airlines - Loyalty Program</title>
 </head>
@@ -27,7 +27,7 @@
     <section class="snap-start"> <!-- Navbar + Main Body for better feeling snap scrolling -->
         <div>
             <!--Navbar-->
-            <nav class="navbar navbar-expand-lg navbar-dark p-2 snap-start" id="navbar-div">
+            <nav class="navbar navbar-expand-lg navbar-dark p-2" id="navbar-div">
                 <!-- lg = large breakpoint, navbar-dark will make all text light-->
                 <div class="container-fluid w-100" id="navbar-container">
                     <a href="index.html" class="logo navbar-brand">
@@ -86,11 +86,6 @@
                     <!--Main Body-->
                     <section class="py-5 loyalty-body">
                         <div class="container">
-                            <!-- Title Section -->
-                            <div class="text-center mb-5">
-                                <h1 class="display-4 fw-bold loyalty-title">OUR LOYALTY<br>PROGRAM</h1>
-                            </div>
-
                             <!-- Top Row -->
                             <div class="row align-items-center mb-5 top-row-spacer">
                                 <div class="col-md-6">
@@ -146,27 +141,25 @@
             </section>
             <section class="snap-start"> <!-- Sign up/ log in section + footer for better feeling snap scrolling -->
                 <!--Main Body-->
-                <section class="py-5 loyalty-body snap-start">
+                <section class="py-5 loyalty-body">
                     <div class="container">
-
-                        <!-- Top Row -->
-                        <div class="row align-items-center mb-5 top-row-spacer">
-                            <div class="col-md-6">
-                                <p class="lead overview-font loyalty-text">
-                                    Sign Up
-                                </p>
-                            </div>
-                            <div class="col-md-6">
-                                <p class="lead overview-font loyalty-text">
-                                    Log In
-                                </p>
-                            </div>
+                        <div class="text-center mb-4">
+                            <img src="img/lilplane.png" alt="lilplane" style="max-height:225px;">
                         </div>
-                        <!-- Bottom Row -->
-                        <div class="row align-items-center bottom-row-spacer">
+                        <!-- Top Row -->
+                        <div class="">
                             <div class="text-center mb-5">
                                 <h2 class="fw-bold loyalty-title">Sign Up or Log In to see how this would work for you!
                                 </h2>
+                            </div>
+                        </div>
+                        <!-- Bottom Row -->
+                        <div class="row justify-content-center mb-4 increased-bottom-row-spacer">
+                            <div class="col-md-4 text-center">
+                                <a href="signup.html" class="signin-login">Sign Up</a>
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <a href="login.html" class="signin-login">Log In</a>
                             </div>
                         </div>
                     </div>

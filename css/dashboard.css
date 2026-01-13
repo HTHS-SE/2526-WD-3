@@ -33,6 +33,33 @@ body{
   letter-spacing: 1px;
 }
 
+/* Set styles for buttons on dashboard page*/
+.dashboard-button {
+    position: static;
+  background-color: #edc351;
+  color: black;
+  font-size: 2.5vh;
+  border: 4px solid black;
+  border-radius: 50px;
+  padding: 10px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.dashboard-button:hover {
+  color: #edc351;
+  background-color: black;
+  border-color: #edc351;
+  padding: 20px;
+  margin-bottom: 60px;
+}
+#dashboard-button-list li{
+  position: static;
+  margin-bottom: 40px;
+  margin-top: 40px;
+}
+
+
 /* Set width for images*/
 .dashboard-image {
   max-width: 20px;

@@ -1,0 +1,9 @@
+.signup-container{
+    min-width:50vw;
+}
+
+@media (max-width: 992px) {
+    .signup-container{
+        min-width:90vw;
+    }
+}

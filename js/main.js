@@ -4,7 +4,6 @@ import {getUserName, signOutUser} from './lib.js';
 // Check if user is currently logged in to update HTML accordingly
 function updateNavbar(){
   let user = getUserName();
-  console.log(user);
   
   if (user === null){
     const navbar = document.getElementById("navbar-div");
@@ -70,3 +69,5 @@ window.onload = function(){
   updateNavbar();
   console.log("page loaded");
 }
+
+export {updateNavbar};

@@ -1,4 +1,5 @@
 import {app, firebaseConfig,auth,db,getUserName,signOutUser,setData,updateData,getData} from './lib.js';
+import {updateNavbar} from './main.js';
 
 //defining airports
 let haunted_airport_names = ['Denver International','Daniel K. Inouye','Savvanah-Hilton Head','O\'Hare','Old Kai Tak'];

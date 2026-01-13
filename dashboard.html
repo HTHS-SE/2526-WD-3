@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flight Dashboard</title>
     <link rel="stylesheet" href="./css/styles.css">
-    <link rel="stylesheet" href="./css/loyalty-page.css">
+    <link rel="stylesheet" href="./css/dashboard.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
@@ -77,10 +77,44 @@
         <section class="py-5 dashboard-body">
             <div class="container">
                 <!-- Title -->
-                <div class="text-center mb-5">
-                    <h1 class="display-4 fw-bold loyalty-title">User Dashboard</h1>
+                <div class="mb-5">
+                    <h1 class=" text-center dashboard-title">Welcome, !</h1>
+                    <h2 class="text-center dashboard-subheader" id="welcome">This is your personal dashboard</h2>
+                    <p class="dashboard-text">
+                        <strong>Important notices:</strong>
+                        <ul>
+                            <li class="dashboard-text">You have _ upcoming flights</li>
+                            <li class="dashboard-text">Last login: __</li>
+                            <li class="dashboard-text">Your Twilight Airlines Loyalty Card is currently inactive</li>
+                        </ul>
+                    </p>
+                    <p class="dashboard-text"><strong>Quick Actions:</strong>
+                    <ul>
+                        <li>
+                            <button>Book a flight</button>
+                            <button>View booked flights</button>
+                        </li>
+                    </ul>
+                    </p>
                 </div>
-                <h2 class="dashboard-title" id="welcome">Hi!</h2>
+                <hr>
+                <!--Your flights section-->
+                <div class="text-center mb-5">
+                    <h2 class="text-center dashboard-subheader">Your booked flights</h2>
+                </div>
+                <hr>
+                <div class="text-center mb-5">
+                    <h2 class="text-center dashboard-subheader">Past flights</h2>
+                </div>
+                <hr>
+                <div class="text-center mb-5">
+                    <h2 class="text-center dashboard-subheader">Loyalty summary</h2>
+                </div>
+                <hr>
+                <div class="text-center mb-5">
+                    <h2 class="text-center dashboard-subheader">Account information</h2>
+                </div>
+                <hr>
             </div>
         </section>
 

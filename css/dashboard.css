@@ -8,15 +8,29 @@ body{
   color: #edc351;
 }
 
-/* Set font colors and size for text*/
-.dashborad-title {
+/* Set font colors and size for title*/
+.dashboard-title {
+  font-family: "Hanken Grotesk";
+  font-weight: bold;
+  font-size: 10vh;
   color: #edc351;
   letter-spacing: 2px;
 }
 
-.dashboard-text {
-  font-size: 1rem;
+/* Set font colors and size for subheader*/
+.dashboard-subheader {
+  font-family: "Hanken Grotesk";
+  font-weight: bold;
+  font-size: 6vh;
   color: #edc351;
+  letter-spacing: 1px;
+}
+
+/* Set font colors and size for text*/
+.dashboard-text {
+  color: #edc351;
+  font-size: 2.5vh;
+  letter-spacing: 1px;
 }
 
 /* Set width for images*/

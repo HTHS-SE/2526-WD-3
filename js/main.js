@@ -33,9 +33,9 @@ function updateNavbar(){
     flights.id = "flightsLink";
     flights.classList="nav-item";
     const flightsLink = document.createElement("a");
-    flightsLink.href = "flights.html";
+    flightsLink.href = "dashboard.html";
     flightsLink.classList= "text-site-theme nav-underline nav-link hover-underline-animation nbMenuItem navbar-item";
-    flightsLink.innerHTML= "My Flights";
+    flightsLink.innerHTML= "Dashboard";
     flights.appendChild(flightsLink);
 
     const buttonListElement = document.getElementById("loginButton").parentElement.parentElement

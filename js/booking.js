@@ -1,4 +1,5 @@
 import {app, firebaseConfig,auth,db,getUserName,signOutUser,setData,updateData,getData} from './lib.js';
+import {updateNavbar} from './main.js';
 
 //defining airports
 let haunted_airport_names = ['Denver International','Daniel K. Inouye','Savvanah-Hilton Head','O\'Hare','Old Kai Tak'];
@@ -81,6 +82,7 @@ function returnbookingfunction(deets,path){
 }
 
 window.onload = function(){
+    updateNavbar();
     document.getElementById('close-popup-button').onclick=function(){
         document.getElementById('booking-popup').style.display='none';
     };

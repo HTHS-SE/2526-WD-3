@@ -1,4 +1,4 @@
-import {app, firebaseConfig,auth,db,getUserName,signOutUser,setData,updateData,getData} from './lib.js';
+import {db,getUserName,signOutUser,updateData,getData} from './lib.js';
 import {updateNavbar} from './main.js';
 
 //defining airports

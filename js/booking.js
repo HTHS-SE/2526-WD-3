@@ -26,7 +26,7 @@ function generateFlightCard(flightData,date,baseId){
     <div class="p-3 mb-1 bg-white rounded d-md-flex justify-content-md-center" style="width:95vw;margin:1.5rem">
             
             <div class="col-md-4 p-4">
-                <h4 class="card-title fw-bold text-primary mb-3">
+                <h4 role="button" class="card-title fw-bold text-primary mb-3" id="flight-destination-${baseId}">
                     <i class="bi bi-airplane-fill me-2"></i>
                     Flight to ${flightData['flight-to']} 
                 </h4>
@@ -56,6 +56,71 @@ function generateFlightCard(flightData,date,baseId){
     `;
 }
 
+//pasted in from main.js so as to ensure window.onload works correctly
+function updateNavbar(){
+  let user = getUserName();
+  console.log(user);
+  
+  if (user === null){
+    const navbar = document.getElementById("navbar-div");
+    navbar.classList.add("navbar-expand-lg");
+    navbar.classList.remove("navbar-expand-xl");
+    const flightsLink = document.getElementById("flightsLink")
+    const bookingLink = document.getElementById("bookingLink")
+    if (flightsLink){
+      flightsLink.remove()
+    }
+    if (bookingLink){
+      bookingLink.remove()
+    }
+    const loginButton = document.getElementById("loginButton");
+    loginButton.innerHTML = "Log In";
+    loginButton.onclick = function(){
+      window.location= "login.html";
+    }
+  }
+  else {
+    if(window.location.href.includes('login') || window.location.href.includes('signup')){
+      window.location = "dashboard.html";
+    }
+    const navbar = document.getElementById("navbar-div");
+    navbar.classList.remove("navbar-expand-lg");
+    navbar.classList.add("navbar-expand-xl");
+    const navlist = document.getElementById("navlist");
+
+    const flights = document.createElement("li");
+    flights.id = "flightsLink";
+    flights.classList="nav-item";
+    const flightsLink = document.createElement("a");
+    flightsLink.href = "flights.html";
+    flightsLink.classList= "text-site-theme nav-underline nav-link hover-underline-animation nbMenuItem navbar-item";
+    flightsLink.innerHTML= "My Flights";
+    flights.appendChild(flightsLink);
+
+    const buttonListElement = document.getElementById("loginButton").parentElement.parentElement
+    navlist.insertBefore(flights, buttonListElement);
+
+    const booking = document.createElement("li");
+    booking.id = "bookingLink";
+    booking.classList="nav-item";
+    const bookingLink = document.createElement("a");
+    bookingLink.href = "booking.html";
+    bookingLink.classList= "text-site-theme nav-underline nav-link hover-underline-animation nbMenuItem navbar-item";
+    bookingLink.innerHTML= "Booking";
+    booking.appendChild(bookingLink);
+
+    navlist.insertBefore(booking, buttonListElement);
+
+
+    const loginButton = document.getElementById("loginButton");
+    loginButton.innerHTML = "Log Out";
+    loginButton.onclick = function(){
+      signOutUser();
+      updateNavbar();
+    }
+  }
+}
+
 function returnflightpath(airportCode,date){
    return `flights/${airportCode}/${date.getFullYear()}/${(date.getMonth()+1).toString().padStart(2, '0')}/${date.getDate()}`
 }
@@ -73,14 +138,15 @@ function returnbookingfunction(deets,path){
 
         document.getElementById('confirm-booking-button').addEventListener('click', function(){
             updateData(db, path, 'avalable_space', parseInt(deets['avalable_space'],10)-1);
-            updateData(db, 'users/'+getUserName().uid+'/bookings', path,true);
+            updateData(db, 'users/'+getUserName().uid+'/bookings', encodeURIComponent(path),new Date().toISOString());
             alert('Booking Confirmed! Thank you for choosing Twilight Airlines!');
             document.getElementById('booking-popup').style.display='none';
-        });
+        },{ once: true });
     }
 }
 
 window.onload = function(){
+    updateNavbar();
     document.getElementById('close-popup-button').onclick=function(){
         document.getElementById('booking-popup').style.display='none';
     };
@@ -107,9 +173,8 @@ window.onload = function(){
                 newResultElement.id= resultId; //the id of the result element
                 document.getElementById('flight-results').appendChild(newResultElement);
 
-                console.log(flightsoftheday[flight]);
                 document.getElementById('book-now-button-'+resultId).addEventListener('click', returnbookingfunction(flightsoftheday[flight],returnflightpath(airportCode,d)+'/'+flight));
-
+                document.getElementById('flight-destination-'+resultId).onclick = returnbookingfunction(flightsoftheday[flight],returnflightpath(airportCode,d)+'/'+flight);
                 
             }
         }

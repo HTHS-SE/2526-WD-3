@@ -33,32 +33,53 @@ body{
   letter-spacing: 1px;
 }
 
+p.dashboard-text {
+  text-align: center;
+  font-size: 40px;
+}
+
+#dashboard-button-list{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  list-style: none;
+  padding:0px;
+  margin:14px;
+  gap:16px;
+}
+
 /* Set styles for buttons on dashboard page*/
 .dashboard-button {
-    position: static;
-  background-color: #edc351;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  gap: 10px;
+  padding: 14px 18px;
+  width:100%;
+    background: linear-gradient(
+    135deg,
+    #edc351,
+    #8f7330
+  );
   color: black;
-  font-size: 2.5vh;
-  border: 4px solid black;
-  border-radius: 50px;
-  padding: 10px;
-  margin-top: 40px;
-  margin-bottom: 40px;
+  border: 2px solid black;
+  border-radius: 100px;
+  font-size: 30px;
+  font-weight: 600;
+  text-decoration: none;
+
 }
 
 .dashboard-button:hover {
   color: #edc351;
-  background-color: black;
+  background: linear-gradient(
+    135deg,
+    #2a231c,
+    #1a1714
+  );
   border-color: #edc351;
-  padding: 20px;
-  margin-bottom: 60px;
+  transform: translateX(4px);
+  box-shadow: 0 5px 5px black;
 }
-#dashboard-button-list li{
-  position: static;
-  margin-bottom: 40px;
-  margin-top: 40px;
-}
-
 
 /* Set width for images*/
 .dashboard-image {
@@ -71,4 +92,20 @@ body{
 }
 .rightrotate:hover{
   transform: rotate(3deg);
+}
+
+.notice-container {
+  background: linear-gradient(
+    135deg,
+    #2a231c,
+    #1a1714
+  );
+  border: 1px solid #8f7330;
+  border-radius: 20px;
+  padding-left: 50px;
+  padding: 24px 28px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  max-width: 80%;
+  box-shadow: 5px 5px 5px 5px #000000;
 }

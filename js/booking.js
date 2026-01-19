@@ -58,7 +58,7 @@ function generateFlightCard(flightData,date,baseId){
 }
 
 //pasted in from main.js so as to ensure window.onload works correctly
-function updateNavbar(){
+/**function updateNavbar(){
   let user = getUserName();
   console.log(user);
   
@@ -121,7 +121,7 @@ function updateNavbar(){
     }
   }
 }
-
+**/
 function returnflightpath(airportCode,date){
    return `flights/${airportCode}/${date.getFullYear()}/${(date.getMonth()+1).toString().padStart(2, '0')}/${date.getDate()}`
 }

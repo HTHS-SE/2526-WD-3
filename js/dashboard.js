@@ -95,7 +95,7 @@ window.onload= function(){
     `
     accountInformation.innerHTML=
     `
-    <div class="account-card">
+    <div class="account-card mx-auto">
         <p>Name: ${userFirstName} ${userLastName}</p>
         <p>Email: ${userEmail}</p>
         <p>User ID: ${userID}</p>

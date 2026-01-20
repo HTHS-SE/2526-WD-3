@@ -37,7 +37,7 @@ window.onload= function(){
     let lastLogin = user.lastLogin;
     let userID = user.uid; // Get user name and uid
 
-    getData(db, `users/${userID}/bookings`)
+    let doneawait = getData(db, `users/${userID}/bookings`)
     .then(  async (bookings) => {            
         for (let path in bookings) {
             let bookingTime = bookings[path]; // The value of each key in the dict is the flight time
@@ -89,7 +89,19 @@ window.onload= function(){
                     numFlights = numFlights + 1;
                 }
             }
-        }          
+            
+        }  
+        
+    // Set notices card. Must be done after for loop to get number of upcoming flights.
+    //this was done outside async then which cause numFlights to always be 0 as it was not awaited properly
+    importantNotices.innerHTML = 
+    `
+        <li class="dashboard-text">You have ${String(numFlights)} upcoming flights</li>
+        <li class="dashboard-text">Last login: ${new Date(lastLogin).toLocaleDateString()}</li>
+        <li class="dashboard-text">Your Twilight Airlines Loyalty Card is currently inactive</li>
+    `;
+
+    //END OF THEN BLOCK
     }).catch((error) =>{
         console.log(error); //error fetching bookings
 
@@ -101,15 +113,7 @@ window.onload= function(){
     
     
     welcomeMessage.innerHTML=`Welcome, ${userFirstName}`; // Get HTML elements to manipulate using getElementByID
-    
-    // Set notices card
-    importantNotices.innerHTML= 
-        `
-        <li class="dashboard-text">You have ${numFlights} upcoming flights</li>
-        <li class="dashboard-text">Last login: ${new Date(lastLogin).toLocaleDateString()}</li>
-        <li class="dashboard-text">Your Twilight Airlines Loyalty Card is currently inactive</li>
-        `;
-    
+        
     // Set account information card
     accountInformation.innerHTML =
     `
@@ -117,9 +121,8 @@ window.onload= function(){
         <p>Name: ${userFirstName} ${userLastName}</p>
         <p>Email: ${userEmail}</p>
         <p>User ID: ${userID}</p>
-        <p>Last Login: ${dateString}</p>
+        <p>Last Login: ${new Date(lastLogin).toLocaleDateString()}</p>
     </div>
     `
-
 
 }

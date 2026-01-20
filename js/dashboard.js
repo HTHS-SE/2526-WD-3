@@ -37,7 +37,7 @@ window.onload= function(){
     let lastLogin = user.lastLogin;
     let userID = user.uid; // Get user name and uid
 
-    let doneawait = getData(db, `users/${userID}/bookings`)
+    getData(db, `users/${userID}/bookings`)
     .then(  async (bookings) => {            
         for (let path in bookings) {
             let bookingTime = bookings[path]; // The value of each key in the dict is the flight time
@@ -92,14 +92,9 @@ window.onload= function(){
             
         }  
         
-    // Set notices card. Must be done after for loop to get number of upcoming flights.
-    //this was done outside async then which cause numFlights to always be 0 as it was not awaited properly
-    importantNotices.innerHTML = 
-    `
-        <li class="dashboard-text">You have ${String(numFlights)} upcoming flights</li>
-        <li class="dashboard-text">Last login: ${new Date(lastLogin).toLocaleDateString()}</li>
-        <li class="dashboard-text">Your Twilight Airlines Loyalty Card is currently inactive</li>
-    `;
+    // Set notices card number. Must be done after for loop to get number of upcoming flights.
+    // this was done outside async .then which cause numFlights to always be 0 as it was not awaited properly
+    numUpcomingFlights.textContent = `You have ${String(numFlights)} upcoming flights`;
 
     //END OF THEN BLOCK
     }).catch((error) =>{
@@ -111,6 +106,13 @@ window.onload= function(){
         accountInformation.innerHTML = "<p>There is no account information to show for tihs account</p>"; // Set default values for each section
     })
     
+    // Set notices card. Must be done after for loop to get number of upcoming flights.
+    importantNotices.innerHTML = 
+    `
+        <li class="dashboard-text" id="numUpcomingFlights">You have ${String(numFlights)} upcoming flights</li>
+        <li class="dashboard-text">Last login: ${new Date(lastLogin).toLocaleDateString()}</li>
+        <li class="dashboard-text">Your Twilight Airlines Loyalty Card is currently inactive</li>
+    `;
     
     welcomeMessage.innerHTML=`Welcome, ${userFirstName}`; // Get HTML elements to manipulate using getElementByID
         

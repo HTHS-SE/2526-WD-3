@@ -177,6 +177,7 @@ p.dashboard-text {
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
   width: 350px;
 }
+
 :root{
   --site-theme-color: #edc351;
 }

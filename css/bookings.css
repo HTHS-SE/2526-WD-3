@@ -16,8 +16,8 @@ footer {
 
 #get-info {
     margin-top: 1%;
-    border: 2px solid #edc351;
-    color: #edc351;
+    border: 2px solid var(--site-theme-color);
+    color: var(--site-theme-color);
 }
 
 .low-amount-alert {
@@ -35,8 +35,8 @@ footer {
   width: 120px;
   height: 40px;
   border-radius: 15px;
-  border: 2px solid #edc351;
-  background-color: #edc351;
+  border: 2px solid var(--site-theme-color);
+  background-color: var(--site-theme-color);
   font-size: 17px;
   font-weight: 600;
   /*color: white;*/

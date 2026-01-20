@@ -239,8 +239,9 @@
                 </div>
 
                 <div class="inline-block m-3 d-lg-inline">
-                    <label for="start-date">End Range:</label>
-                    <input type="date" id="end-date" name="end-date" class="m-2" style="height:6vh"></input>
+                    <label for="end-date">End Range:</label>
+                    <input type="date" id="end-date" name="end-date" class="m-2" style="height:6vh"
+                    onchange="document.getElementById('start-date').max=document.getElementById('end-date').value"></input>
                 </div>
 
                 <button type="button" id="get-flights-btn" class="animated-button">Get Flights</button>

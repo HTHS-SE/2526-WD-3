@@ -114,6 +114,7 @@ window.onload = function(){
 
     populateAirportOptions('departure-airport-select'); //populate airport options dropdown
     document.getElementById('start-date').min=dateObjToString(date); //sets the minimum start date to the current date
+    document.getElementById('end-date').min=dateObjToString(date); //sets the minimum start date to the current date
 
     //Sooooooooooo like this isn't complicated at all but whatever I'll comment it out for u ur welcome :|
     this.document.getElementById('get-flights-btn').onclick = async function getflights(){

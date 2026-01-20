@@ -28,6 +28,15 @@
   font-size: 0.75rem;
 }
 
+.footer-logo-animation {
+    display: inline-block;
+    transition: transform 0.1s ease, opacity 0.1s ease;
+}
+
+.footer-logo-animation:hover {
+    transform: scale(1.2);
+}
+
 /* Hover animations */
 .hoveranimated:hover{
     transform:translateY(-1rem);

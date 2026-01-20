@@ -1,9 +1,15 @@
+/*
+Author: Ethan Wellner
+File: signup.js
+This file allows users to register for a new account using Firebase Authentication and Realtime Database.
+It adds a function to the "Register" button that collects user input, validates it, and creates a new user account.
+*/
+
 import { getAuth, createUserWithEmailAndPassword } 
   from 'https://www.gstatic.com/firebasejs/12.7.0/firebase-auth.js';
 
 import {ref, set}
   from 'https://www.gstatic.com/firebasejs/12.7.0/firebase-database.js';
-
 
 import {app, firebaseConfig,auth,db} from './lib.js'; //import db stuff from js
 

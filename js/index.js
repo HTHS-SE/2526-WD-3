@@ -1,3 +1,9 @@
+/*
+Author: Ethan Wellner
+File: index.js
+This simply initializes the dynamic map on the index page.
+*/
+
 //Code Atribution: LeafletJS Quick Start Guide https://leafletjs.com/examples/quick-start/
 
 var map = L.map('map').setView([51.505, -0.09], 2);

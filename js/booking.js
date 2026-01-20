@@ -1,3 +1,13 @@
+/*
+Author: Ethan Wellner
+File: booking.js
+Description: This file contains the code to handle flight booking functionality.
+
+It allows users to search for available flights based on the date and the airport they are departing from.
+It also dynamically generates flight cards for each available flight and provides a booking popup for users to confirm their bookings.
+Finally, there is a function that generates a function to handle the the booking process for when the user decides to actually dare a flight.
+*/
+
 import {db,getUserName,signOutUser,updateData,getData} from './lib.js';
 import {updateNavbar} from './main.js';
 

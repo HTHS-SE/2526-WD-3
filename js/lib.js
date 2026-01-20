@@ -1,3 +1,10 @@
+/*
+Author: Ethan Wellner
+File: lib.js
+This contains all the javascript code to initialize and interact with Firebase live db.
+It exports all those functions and gets called on in other js files to increase modularity.
+*/
+
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js";
   
 import { getAuth,signOut } from 'https://www.gstatic.com/firebasejs/12.7.0/firebase-auth.js';
@@ -95,4 +102,14 @@ async function getData(db,path){
   }
 }
 
-export {app, firebaseConfig, auth, db, getUserName, signOutUser, setData, updateData, getData};
+async function removeData(db, path) {
+  remove(ref(db, path))
+    .then(() => {
+      //alert('Data removed.')
+    })
+    .catch((error) => {
+      //alert('error:' + error)
+    })
+}
+
+export {app, firebaseConfig, auth, db, getUserName, signOutUser, setData, updateData, getData,deleteData};

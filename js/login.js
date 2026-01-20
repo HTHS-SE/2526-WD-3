@@ -39,6 +39,7 @@ document.getElementById("signIn").onclick  = function signInUser() {
                             } else {
                                 console.log("User does not exist in database.");
                             }
+
                         }).catch((error) => {
                             alert('Error getting user data');
                             console.error("Error getting user data: ", error);
@@ -62,11 +63,11 @@ function logIn(user){
     let keeploggedIn = document.getElementById("keepLoggedInSwitch").ariaChecked;
     if (!keeploggedIn){
         sessionStorage.setItem("user", JSON.stringify(user));
-        window.location = "dashboard.html"; 
+        window.location = "dashboard.html"; //move user over to dashboard page (duhhh)
     }
     else{
         localStorage.setItem("user", JSON.stringify(user));
-        localStorage.setItem("keepLoggedIn", "Yes");
-        window.location = "dashboard.html";
+        localStorage.setItem("keepLoggedIn", "Yes"); // not me bothering to comment this line of code 😭
+        window.location = "dashboard.html"; //move user over to dashboard page (duhhh)
     }
 }

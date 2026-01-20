@@ -1,10 +1,13 @@
 import {db,getUserName,signOutUser,updateData,getData} from './lib.js';
 import {updateNavbar} from './main.js';
 
-//defining airports
+//defining airports that u CAN attempt to book flights to/from. For legal reasons, we cannot call these destinations.
 let haunted_airport_names = ['Denver International','Daniel K. Inouye','Savvanah-Hilton Head','O\'Hare','Old Kai Tak'];
 
 let haunted_airport_codes = ['DEN','HNL','SAV','ORD','HKG'];
+
+//block var for the date
+let date = new Date();
 
 
 // Populate the airport options in a select dropdown within an element string which passed in as the param
@@ -15,13 +18,12 @@ async function populateAirportOptions(selectObjectId){
     }
 }
 
-let date = new Date();
-
+// I've been doing this too much so i made a function for it
 function dateObjToString(dateobj){ 
     return dateobj.toISOString().split('T')[0];
 }
 
-// This function creates the html for a card of flight data
+// This function creates the html for a card of flight data. Basically.
 function generateFlightCard(flightData,date,baseId){    
     return `
     <div class="p-3 mb-1 bg-white rounded d-md-flex justify-content-md-center" style="width:95vw;margin:1.5rem">
@@ -57,85 +59,24 @@ function generateFlightCard(flightData,date,baseId){
     `;
 }
 
-//pasted in from main.js so as to ensure window.onload works correctly
-/**function updateNavbar(){
-  let user = getUserName();
-  console.log(user);
-  
-  if (user === null){
-    const navbar = document.getElementById("navbar-div");
-    navbar.classList.add("navbar-expand-lg");
-    navbar.classList.remove("navbar-expand-xl");
-    const flightsLink = document.getElementById("flightsLink")
-    const bookingLink = document.getElementById("bookingLink")
-    if (flightsLink){
-      flightsLink.remove()
-    }
-    if (bookingLink){
-      bookingLink.remove()
-    }
-    const loginButton = document.getElementById("loginButton");
-    loginButton.innerHTML = "Log In";
-    loginButton.onclick = function(){
-      window.location= "login.html";
-    }
-  }
-  else {
-    if(window.location.href.includes('login') || window.location.href.includes('signup')){
-      window.location = "dashboard.html";
-    }
-    const navbar = document.getElementById("navbar-div");
-    navbar.classList.remove("navbar-expand-lg");
-    navbar.classList.add("navbar-expand-xl");
-    const navlist = document.getElementById("navlist");
-
-    const flights = document.createElement("li");
-    flights.id = "flightsLink";
-    flights.classList="nav-item";
-    const flightsLink = document.createElement("a");
-    flightsLink.href = "flights.html";
-    flightsLink.classList= "text-site-theme nav-underline nav-link hover-underline-animation nbMenuItem navbar-item";
-    flightsLink.innerHTML= "My Flights";
-    flights.appendChild(flightsLink);
-
-    const buttonListElement = document.getElementById("loginButton").parentElement.parentElement
-    navlist.insertBefore(flights, buttonListElement);
-
-    const booking = document.createElement("li");
-    booking.id = "bookingLink";
-    booking.classList="nav-item";
-    const bookingLink = document.createElement("a");
-    bookingLink.href = "booking.html";
-    bookingLink.classList= "text-site-theme nav-underline nav-link hover-underline-animation nbMenuItem navbar-item";
-    bookingLink.innerHTML= "Booking";
-    booking.appendChild(bookingLink);
-
-    navlist.insertBefore(booking, buttonListElement);
-
-
-    const loginButton = document.getElementById("loginButton");
-    loginButton.innerHTML = "Log Out";
-    loginButton.onclick = function(){
-      signOutUser();
-      updateNavbar();
-    }
-  }
-}
-**/
+// returns the path to the flights for a given airport code and date. I've been doing the same thing too many times so I made it a function.
 function returnflightpath(airportCode,date){
    return `flights/${airportCode}/${date.getFullYear()}/${(date.getMonth()+1).toString().padStart(2, '0')}/${date.getDate()}`
 }
 
-//returns a function that opens popup booking a flight with the given details
+//returns a function that opens popup booking a flight with the given details, as I add an event listener to a the button and the text, so I need to return a function rather than execute it directly.
 function returnbookingfunction(deets,path){
     return function openPopup(){
-        document.getElementById('booking-popup').style.display='block';
-        document.getElementById('popup-departure-airport').innerHTML=document.getElementById('start-date').value;
-        document.getElementById('popup-arrival-airport').innerHTML=deets['flight-to'];
-        document.getElementById('popup-departure-time').innerHTML=String(deets['departure']) + ':00';
+        //Don't mind the messy code. It's inspired by our planes after doing any one of the things that are described on the terms and services.
+        document.getElementById('booking-popup').style.display='block'; // show the popup.
+        document.getElementById('popup-departure-airport').innerHTML=document.getElementById('start-date').value; //departure date is same as selected date
+        document.getElementById('popup-arrival-airport').innerHTML=deets['flight-to']; 
+        document.getElementById('popup-departure-time').innerHTML= String(deets['departure']) + ':00';
         document.getElementById('popup-pilot-name').innerHTML=deets['pilot'];
         document.getElementById('popup-avalable-space').innerHTML=deets['avalable_space'];
         document.getElementById('popup-flight-price').innerHTML=deets['price'];
+        
+        // set up event listener for confirm booking button
         if (deets['avalable_space']>0){
             document.getElementById('confirm-booking-button').addEventListener('click', function(){
                 updateData(db, path, 'avalable_space', parseInt(deets['avalable_space'],10)-1);
@@ -143,6 +84,12 @@ function returnbookingfunction(deets,path){
                 alert('Booking Confirmed! Thank you for choosing Twilight Airlines!');
                 document.getElementById('booking-popup').style.display='none';
             },{ once: true });
+        }
+        // if no available space, disable the button and change text
+        else{
+            const confirmButton = document.getElementById('confirm-booking-button');
+            confirmButton.disabled = true;
+            confirmButton.innerHTML = "No Seats Available. Lucky You!";
         }
     }
 }

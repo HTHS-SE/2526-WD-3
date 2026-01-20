@@ -2,7 +2,7 @@ import {getUserName, signOutUser} from './lib.js';
 // Add onclick property to login button
 
 // Check if user is currently logged in to update HTML accordingly
-// Sriyan coded this.
+// Sriyan coded this. 
 function updateNavbar(){
   let user = getUserName();
   

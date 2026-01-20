@@ -1,5 +1,12 @@
 body{
-  background: #292524 !important;
+    background: #292524 !important;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    margin-top: auto;
 }
 
 .sign-in-title {

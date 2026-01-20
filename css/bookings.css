@@ -1,68 +1,60 @@
+body{
+    background: #292524 !important;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    margin-top: auto;
+}
+
 .booking-info{
     margin-left: 1rem;
     margin-right:1rem;
 }
 
+#get-info {
+    margin-top: 1%;
+    border: 2px solid #edc351;
+    color: #edc351;
+}
+
+.low-amount-alert {
+    margin: 1.5rem auto 2rem;
+    padding: 0.75rem 1rem;
+    border-radius: 10px;
+    background: rgba(237, 195, 81, 0.12);
+    border: 1px solid #6f5b26;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    max-width: 900px;
+}
+
 .animated-button{
   width: 120px;
   height: 40px;
-  border-radius: 5px;
-  border: 2px solid var(--site-theme-color);
-  background-color: black;
-  box-shadow: 4px 4px var(--site-theme-color);
+  border-radius: 15px;
+  border: 2px solid #edc351;
+  background-color: #edc351;
   font-size: 17px;
   font-weight: 600;
-  color: white;
+  /*color: white;*/
   cursor: pointer;
+  transition: transform 0.1s ease;
 }
 
-
-
 .animated-button:active {
-  box-shadow: 0px 0px var(--site-theme-color) !important;
-  transform: translate(3px, 3px);
+  color: #404040;
 }
 
 .animated-button:hover {
-  box-shadow: 4px 4px #ebb72a;
+  transform: scale(0.95);
 }
 
-@media (max-width: 1200px) {
-    .footer .row > div {
-        text-align: center !important;
-        margin-top: 0.75rem;
-    }
-    .footer .col-md-4.text-end.d-flex {
-        justify-content: center !important;
-        flex-direction: column;
-    }
-    #hamburger-icon{
-        color: #edc351 !important;
-        border-width: 5px;
-        border-color: #edc351;
-    }
-
-    #navlist{
-        border: 4px solid #edc351 ;
-        border-radius: 7.5px;
-    }
-    .nav-item{
-        background-color: black;
-    }
-    .navbar-item, #nav-button-container{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    #navbar-container{
-        width: 100%;
-        padding-bottom: 10px;
-        background-color: black;
-    }
-
-
-    .leftabitmobile-md{
-        transform: translateX(-1rem);
+@media (max-width: 900px) {
+    .low-amount-alert {
+        margin-left: 1rem;
+        margin-right: 1rem;
     }
 }

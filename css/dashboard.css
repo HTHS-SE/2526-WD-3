@@ -77,8 +77,8 @@ p.dashboard-text {
     #1a1714
   );
   border-color: #edc351;
-  transform: translateX(4px);
-  box-shadow: 0 5px 5px black;
+  box-shadow: 3px 3px 3px 3px #000000;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 /* Set width for images*/
@@ -107,5 +107,40 @@ p.dashboard-text {
   margin-top: 50px;
   margin-bottom: 50px;
   max-width: 80%;
-  box-shadow: 5px 5px 5px 5px #000000;
+
+  box-shadow: 3px 3px 3px 3px #000000;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.notice-container:hover {
+  transform: translateX(4px);
+  box-shadow: 0 5px 5px 5px 5px black;
+}
+
+.flight-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  background-color: #1a1714;        
+  border: 1px solid #2a231c;    
+  border-radius: 20px;
+  padding: 24px 28px;
+  margin-bottom: 30px;
+
+
+
+  box-shadow: 3px 3px 3px 3px #000000;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.flight-card:hover {
+  transform: translateX(4px);
+  box-shadow: 0 5px 5px 5px 5px black;
+}
+
+.flight-route {
+  font-size: 30px;
+  font-weight: 600;
+  color: #edc351;
 }

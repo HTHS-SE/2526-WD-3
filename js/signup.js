@@ -38,7 +38,8 @@ document.getElementById("submitData").onclick  = function registerUser(){
         uid: user.uid, //save the userID for home.js reference
         firstName: firstName,
         lastName: lastName,
-        email: email
+        email: email,
+        "active-loyalty-member": false
       })
       .then(() => {
         // Data saved successfully!

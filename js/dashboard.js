@@ -2,24 +2,28 @@ import {app, firebaseConfig, auth, db, getUserName, signOutUser, setData, update
 import {updateNavbar} from './main.js';
 window.onload= function(){
     updateNavbar();
-    let user = getUserName();
-    let userFirstName = user.firstName;
-    let userID = user.uid; // Get user name and uid
     const welcomeMessage = document.getElementById('welcome');
+    const importantNotices = document.getElementById('important-notices-container');
     const bookedFlights = document.getElementById('bookedFlights');
     const pastFlights = document.getElementById('pastFlights'); 
-    welcomeMessage.innerHTML=`Welcome, ${userFirstName}`; // Get HTML elements to manipulate using getElementByID
+    const loyaltyGraph = document.getElementById('loyalty-graph-container'); 
+    const accountInformation = document.getElementById('accountInformation'); 
+
+    bookedFlights.innerHTML = "";
+    pastFlights.innerHTML = "";
+    loyaltyGraph.innerHTML = "";
+    accountInformation.innerHTML = ""; // Set default values for each section
+    let numFlights = 0;
+
+    let user = getUserName();
+    let userFirstName = user.firstName;
+    let userLastName = user.lastName;
+    let userEmail = user.email;
+    let lastLogin = user.lastLogin;
+    let userID = user.uid; // Get user name and uid
 
     getData(db, `users/${userID}/bookings`)
-        .then(  async (bookings) => {
-            bookedFlights.innerHTML = ""
-            pastFlights.innerHTML = ""
-            if (!bookings) {
-                bookedFlights.innerHTML = "<p>There are no flights currently</p>";
-                pastFlights.innerHTML = "<p>There are no flights currently</p>";
-            return; // Wipe content of elements and set them to defailt text if there are no booked flights
-            }
-            
+        .then(  async (bookings) => {            
             for (let path in bookings) {
                 let bookingTime = bookings[path]; // The value of each key in the dict is the flight time
                 let decodedPath = decodeURIComponent(path); // The key itself is a path which has to be decoded using decodeURIComponent() function
@@ -65,12 +69,40 @@ window.onload= function(){
                         pastFlights.appendChild(flightCard);
                     } else {
                         bookedFlights.appendChild(flightCard);
+                        numFlights = numFlights + 1;
                     }
                 }
             }          
         }).catch((error) =>{
             console.log(error);
+            bookedFlights.innerHTML = "<p>There are no booked flights currently</p>"
+            pastFlights.innerHTML = "<p>There are no  pastflights currently</p>"
+            loyaltyGraph.innerHTML = "<p>There is no loyalty data to show for this account</p>"
+            accountInformation.innerHTML = "<p>There is no account information to show for tihs account</p>" // Set default values for each section
         })
+    
+    
+    let loginDate = new Date(lastLogin);
+    const dateString = loginDate.toLocaleDateString();
+    console.log(dateString);
+
+    welcomeMessage.innerHTML=`Welcome, ${userFirstName}`; // Get HTML elements to manipulate using getElementByID
+    importantNotices.innerHTML=
+    `
+    <li class="dashboard-text">You have ${numFlights} upcoming flights</li>
+    <li class="dashboard-text">Last login: ${dateString}</li>
+    <li class="dashboard-text">Your Twilight Airlines Loyalty Card is currently inactive</li>
+    `
+    accountInformation.innerHTML=
+    `
+    <div class="account-card">
+        <p>Name: ${userFirstName} ${userLastName}</p>
+        <p>Email: ${userEmail}</p>
+        <p>User ID: ${userID}</p>
+        <p>Last Login: ${dateString}</p>
+    </div>
+    `
+    console.log("<div class=account-card");
 
 
 }

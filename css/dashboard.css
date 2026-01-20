@@ -167,3 +167,13 @@ p.dashboard-text {
   transform: translateX(4px);
   box-shadow: 0 5px 5px 5px 5px black;
 }
+
+.account-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #000000;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  width: 350px;
+}

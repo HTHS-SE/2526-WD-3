@@ -5,7 +5,7 @@ import {ref, set}
   from 'https://www.gstatic.com/firebasejs/12.7.0/firebase-database.js';
 
 
-import {app, firebaseConfig,auth,db} from './lib.js';
+import {app, firebaseConfig,auth,db} from './lib.js'; //import db stuff from js
 
 // ---------------- Register New User --------------------------------//
 document.getElementById("submitData").onclick  = function registerUser(){

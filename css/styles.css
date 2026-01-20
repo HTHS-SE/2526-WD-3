@@ -13,11 +13,11 @@
 }
 
 .footer-details {
-    color: #edc351;
+    color: var(--site-theme-color);
 }
 
 .footer-details a i {
-    color: #edc351;
+    color: var(--site-theme-color);
 }
 
 .footer-details p {
@@ -114,9 +114,9 @@ html, body {
 }
 
 .navbar-highlighted-button{
-    background-color: #edc351 ;
+    background-color: var(--site-theme-color) ;
     color:#292524 ;
-    border: 4px solid #edc351 ;
+    border: 4px solid var(--site-theme-color) ;
     border-radius: 20px;
 }
 
@@ -222,13 +222,13 @@ html, body {
         flex-direction: column;
     }
     #hamburger-icon{
-        color: #edc351 !important;
+        color: var(--site-theme-color) !important;
         border-width: 5px;
-        border-color: #edc351;
+        border-color: var(--site-theme-color);
     }
 
     #navlist{
-        border: 4px solid #edc351 ;
+        border: 4px solid var(--site-theme-color) ;
         border-radius: 7.5px;
     }
     .nav-item{

@@ -5,7 +5,7 @@ body{
 
 .dashboard-body {
   background-color: #292524;
-  color: #edc351;
+  color: var(--site-theme-color);
 }
 
 /* Set font colors and size for title*/
@@ -13,7 +13,7 @@ body{
   font-family: "Hanken Grotesk";
   font-weight: bold;
   font-size: 10vh;
-  color: #edc351;
+  color: var(--site-theme-color);
   letter-spacing: 2px;
 }
 
@@ -22,13 +22,13 @@ body{
   font-family: "Hanken Grotesk";
   font-weight: bold;
   font-size: 6vh;
-  color: #edc351;
+  color: var(--site-theme-color);
   letter-spacing: 1px;
 }
 
 /* Set font colors and size for text*/
 .dashboard-text {
-  color: #edc351;
+  color: var(--site-theme-color);
   font-size: 2.5vh;
   letter-spacing: 1px;
 }
@@ -57,7 +57,7 @@ p.dashboard-text {
   width:100%;
     background: linear-gradient(
     135deg,
-    #edc351,
+    var(--site-theme-color),
     #8f7330
   );
   color: black;
@@ -70,13 +70,13 @@ p.dashboard-text {
 }
 
 .dashboard-button:hover {
-  color: #edc351;
+  color: var(--site-theme-color);
   background: linear-gradient(
     135deg,
     #2a231c,
     #1a1714
   );
-  border-color: #edc351;
+  border-color: var(--site-theme-color);
   box-shadow: 3px 3px 3px 3px #000000;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -142,7 +142,7 @@ p.dashboard-text {
 .flight-route {
   font-size: 30px;
   font-weight: 600;
-  color: #edc351;
+  color: var(--site-theme-color);
 }
 
 .flight-data {
@@ -156,7 +156,7 @@ p.dashboard-text {
   min-width: 70%;
   max-width: 400px;
   margin: 20px auto;
-  color: #edc351;
+  color: var(--site-theme-color);
   font-size: 30px;
   text-align: center;
     box-shadow: 3px 3px 3px 3px #000000;
@@ -176,4 +176,11 @@ p.dashboard-text {
   border-radius: 12px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
   width: 350px;
+}
+:root{
+  --site-theme-color: #edc351;
+}
+
+hr {
+  border: 1px solid var(--site-theme-color);
 }

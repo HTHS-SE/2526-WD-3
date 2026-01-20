@@ -144,3 +144,26 @@ p.dashboard-text {
   font-weight: 600;
   color: #edc351;
 }
+
+.flight-data {
+    background: linear-gradient(
+    135deg,
+    #2a231c,
+    #1a1714
+  );
+  border-radius: 20px;
+  padding: 24px 28px;
+  min-width: 70%;
+  max-width: 400px;
+  margin: 20px auto;
+  color: #edc351;
+  font-size: 30px;
+  text-align: center;
+    box-shadow: 3px 3px 3px 3px #000000;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.flight-data:hover {
+  transform: translateX(4px);
+  box-shadow: 0 5px 5px 5px 5px black;
+}

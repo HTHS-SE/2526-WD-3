@@ -4,17 +4,20 @@ window.onload= function(){
     updateNavbar();
     let user = getUserName();
     let userFirstName = user.firstName;
-    let userID = user.uid;
+    let userID = user.uid; // Get user name and uid
     const welcomeMessage = document.getElementById('welcome');
     const bookedFlights = document.getElementById('bookedFlights');
-    welcomeMessage.innerHTML=`Welcome, ${userFirstName}`;
+    const pastFlights = document.getElementById('pastFlights'); 
+    welcomeMessage.innerHTML=`Welcome, ${userFirstName}`; // Get HTML elements to manipulate using getElementByID
 
     getData(db, `users/${userID}/bookings`)
         .then(  async (bookings) => {
             bookedFlights.innerHTML = ""
+            pastFlights.innerHTML = ""
             if (!bookings) {
                 bookedFlights.innerHTML = "<p>There are no flights currently</p>";
-            return;
+                pastFlights.innerHTML = "<p>There are no flights currently</p>";
+            return; // Wipe content of elements and set them to defailt text if there are no booked flights
             }
             
             for (let path in bookings) {
@@ -28,8 +31,13 @@ window.onload= function(){
                                      decodedPath.split("/")[4] + "/" +
                                      decodedPath.split("/")[2]; // Get the flight date from the path by splitting it using the "/" character and concatenating the third, fourth, and fifth values
                     let flightNumber = decodedPath.split("/")[5]; // Get the flight number from the path by splitting it using the "/" character and getting the sixth value
-                    let arrivalAirport = flightData.landing_at; // Get the destination airport code using flightData
-                    console.log(flightData);
+                    let arrivalAirport = flightData.landing_at;
+                    let gate = flightData.gate; 
+                    let pilot = flightData.pilot; 
+                    let price = flightData.price; 
+                    
+                    // Get the destination airport code, gate, pilot, price using flightData
+                
                     const flightCard = document.createElement("div");
                     flightCard.className = "flight-card";
                     flightCard.innerHTML = `
@@ -41,10 +49,23 @@ window.onload= function(){
                         <div class="flight-data">
                             <div>Flight ${flightNumber}</div>
                             <div>Date: ${flightDate}</div>
-                            <div>Booked on ${new Date(bookingTime).toLocaleDateString()} </div>
+                            <div>Gate: ${gate}</div>
+                            <div>Pilot: ${pilot}</div>
+                            <div>Price: ${price}</div>
+                            <div>Booked on: ${new Date(bookingTime).toLocaleDateString()} </div>
                         </div>
-                    `;
-                    bookedFlights.appendChild(flightCard);
+                    `; // Create flight card element with inner html to visualize the data retrieved
+
+                    let [month, day, year] = flightDate.split("/").map(Number); // Get month, day, and year of flight as numbers
+                    let flightTime = new Date(year, month - 1, day);    // Create date object using year month and day
+                    let currentTime = new Date();  
+                    currentTime.setHours(0, 0, 0, 0);     // Create date object for current time
+
+                    if (flightTime < currentTime){
+                        pastFlights.appendChild(flightCard);
+                    } else {
+                        bookedFlights.appendChild(flightCard);
+                    }
                 }
             }          
         }).catch((error) =>{

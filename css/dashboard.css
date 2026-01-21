@@ -235,15 +235,30 @@ p.dashboard-text {
 
 
 .account-card {
-  display: flex;
-  flex-direction: column;
-  background-color: #000000;
-  padding: 30px 40px;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-  width: 350px;
+    max-width: 400px;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
 }
 
+.account-card p {
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+}
+
+.account-card input {
+    width: 100%;
+    padding: 0.5rem 0.5rem;
+    font-size: 1rem;
+    border-radius: 10px;
+    border: 4px solid var(--site-theme-color);
+}
+
+.account-card button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 10px;
+    border: 4px solid var(--site-theme-color);
+}
 :root{
   --site-theme-color: #edc351;
 }

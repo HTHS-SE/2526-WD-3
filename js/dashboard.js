@@ -140,8 +140,8 @@ window.onload= function(){
                     bookedFlights.appendChild(flightCard);  // If the flight is after today, add it to upcoming flights section and set onclick function for cancel button
                     const cancelButton = document.getElementById(`cancel-button-${flightNumber}`);
                     cancelButton.onclick = function (){ // Function to cancel flight
-                        let path = "users/" + userID + "bookings/" + flightNumber;
-                        removeData(db, path);
+                        let fullPath = "users/" + userID + "/bookings/" + path;
+                        removeData(db, fullPath);
                         alert("Flight removed");
                         window.location.reload()
                     }
@@ -157,16 +157,6 @@ window.onload= function(){
                 <li class="dashboard-text">You have ${bookedFlights.childElementCount} upcoming flights</li>
                 <li class="dashboard-text">Last login: ${dateString}</li>
                 <li class="dashboard-text">Your Twilight Airlines Loyalty Card is currently inactive</li>
-                `
-                // Set important notice section below the header
-                accountInformation.innerHTML=
-                `
-                <div class="account-card mx-auto">
-                    <p>Name: ${userFirstName} ${userLastName}</p>
-                    <p>Email: ${userEmail}</p>
-                    <p>User ID: ${userID}</p>
-                    <p>Last Login: ${dateString}</p>
-                </div>
                 `
             }
         }  
@@ -200,10 +190,31 @@ window.onload= function(){
     accountInformation.innerHTML =
     `
     <div class="account-card mx-auto">
-        <p>Name: ${userFirstName} ${userLastName}</p>
-        <p>Email: ${userEmail}</p>
-        <p>User ID: ${userID}</p>
-        <p>Last Login: ${new Date(lastLogin).toLocaleDateString()}</p>
+        <p><strong>Name:</strong> ${userFirstName} ${userLastName}</p>
+        <p><strong>Email:</strong> ${userEmail}</p>
+        <p><strong>User ID:</strong> ${userID}</p>
+        <p><strong>Last Login:</strong> ${new Date(lastLogin).toLocaleDateString()}</p>
+        <hr>
+        <p><input 
+            type="text" 
+            placeholder="Change First Name"
+            id="updateFirstName">
+        </p>
+        <p><input 
+            type="text" 
+            placeholder="Change Last Name"
+            id="updateLastName"
+            >
+        </p>
+        <p><input 
+            type="email" 
+            placeholder="Change Email"
+            id="updateEmail"
+            >
+        </p>
+        <p>
+            <button id="updateAccountInfo">Save Changes</button>
+        </p>
     </div>
     `
 

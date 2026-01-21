@@ -11,7 +11,6 @@
     <title>Document</title>
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="./css/bookings.css">
-    <!--<link rel="stylesheet" href="./css/about-page.css"> -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
@@ -225,6 +224,7 @@
         <div id="get-info" class="p-3 mb-1 rounded d-flex justify-content-center">
             <form>
                 <i class="bi bi-geo-alt-fill"></i>
+                <label for="departure-airport">Departure Airport:</label>
                 <select name="departure-airport" id="departure-airport-select" class="m-2 d-md-inline"
                     style="height:6vh">
                     <option value="" disabled selected>Select Departure Airport</option>
@@ -239,8 +239,9 @@
                 </div>
 
                 <div class="inline-block m-3 d-lg-inline">
-                    <label for="start-date">End Range:</label>
-                    <input type="date" id="end-date" name="end-date" class="m-2" style="height:6vh"></input>
+                    <label for="end-date">End Range:</label>
+                    <input type="date" id="end-date" name="end-date" class="m-2" style="height:6vh"
+                    onchange="document.getElementById('start-date').max=document.getElementById('end-date').value"></input>
                 </div>
 
                 <button type="button" id="get-flights-btn" class="animated-button">Get Flights</button>

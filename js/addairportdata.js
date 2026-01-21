@@ -1,3 +1,13 @@
+/*
+Author: Ethan Wellner
+File: addairportdata.js
+Description: This file populates the Firebase Realtime Database with sample data for haunted airports,
+including flight details such as status, destination, pilot, gate, available space, and price.
+We are using this data for testing and demonstration purposes.
+
+Also, all the airports are famous for being haunted!
+*/
+
 import {app, firebaseConfig,auth,db,getUserName,signOutUser,setData,updateData,getData} from './lib.js';
 
 // ---------------- Keep User Logged In ----------------------------------//

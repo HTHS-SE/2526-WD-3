@@ -1,3 +1,10 @@
+/*
+Author: Ethan Wellner
+File: login.js
+Description: This file contains the code to handle user login functionality using Firebase Authentication and Realtime Database.
+It'll wait for the user to click the "Sign In" button, then attempt to sign them in with the provided email and password.
+*/
+
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } 
   from 'https://www.gstatic.com/firebasejs/12.7.0/firebase-auth.js';
 

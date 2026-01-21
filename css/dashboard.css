@@ -283,3 +283,10 @@ hr {
     /*height: auto !important; This caused the graph to violently shake. -Ethan */
     display: block;
 }
+
+/* Allow buttons to work in mobile*/
+@media (max-width: 900px) {
+  #dashboard-button-list {
+    display:block !important;
+  }
+}

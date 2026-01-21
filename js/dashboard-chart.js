@@ -141,7 +141,7 @@ async function createFlightChart() {
             plugins: {                  // Display options for title and legend
                 title: {
                     display: true,
-                    text: 'Standard Flight Booking Prices',
+                    text: 'Booking Prices Over Time',
                     font: {
                         size: 24,
                     },

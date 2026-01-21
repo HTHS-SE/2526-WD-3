@@ -1,5 +1,5 @@
 /*
-Author: Sriyan Yarlagadda (neatened a bit by Ethan)
+Author: Sriyan Yarlagadda (neatened and debugged a bit by Ethan)
 File: dashboard.js
 Description: This is the javascript file for the dashboard page. 
 It fetches user data from local variables, and fetches flights from the db.
@@ -22,7 +22,7 @@ window.onload= function(){
     // Set default values for each section
     bookedFlights.innerHTML = "";
     pastFlights.innerHTML = "";
-    loyaltyGraph.innerHTML = "";
+    //loyaltyGraph.innerHTML = ""; // !! I commented because it causes errors with the chart !!
     accountInformation.innerHTML = ""; 
     let numFlights = 0;
 
@@ -36,9 +36,34 @@ window.onload= function(){
     let lastLogin = user.lastLogin;
     let userID = user.uid; // Get user fire name, last name, email, last login, and uid
 
+    getData(db, `users/${userID}/accountInfo/active-loyalty-member`)
+    .then((isActive) => {
+        const loyaltyStatus = document.getElementById("loyalty-status");
+
+        if (!loyaltyStatus) {
+            return;
+        }
+
+        if (isActive === true) {
+            loyaltyStatus.textContent = "Active";
+        } else {
+            loyaltyStatus.textContent = "Not Active";
+        }
+    })
+    .catch((error) => {
+        console.log(error);
+
+        const loyaltyStatus = document.getElementById("loyalty-status");
+        if (loyaltyStatus) {
+            loyaltyStatus.textContent = "Not Active";
+        }
+    });
+
+
     getData(db, `users/${userID}/bookings`)
     .then(  async (bookings) => {            
         for (let path in bookings) {
+            let urlEncodedPath = path; // The key itself is a path which has to be encoded using encodeURIComponent() function
             let bookingTime = bookings[path]; // The value of each key in the dict is the flight time
             let decodedPath = decodeURIComponent(path); // The key itself is a path which has to be decoded using decodeURIComponent() function
 
@@ -140,8 +165,9 @@ window.onload= function(){
                     bookedFlights.appendChild(flightCard);  // If the flight is after today, add it to upcoming flights section and set onclick function for cancel button
                     const cancelButton = document.getElementById(`cancel-button-${flightNumber}`);
                     cancelButton.onclick = function (){ // Function to cancel flight
-                        let fullPath = "users/" + userID + "/bookings/" + path;
-                        removeData(db, fullPath);
+                        let rmpath = "users/" + userID + "/bookings/" + urlEncodedPath;
+                        console.log("Removing flight at path: " + rmpath);
+                        removeData(db, rmpath);
                         alert("Flight removed");
                         window.location.reload()
                     }

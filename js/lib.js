@@ -112,4 +112,4 @@ async function removeData(db, path) {
     })
 }
 
-export {app, firebaseConfig, auth, db, getUserName, signOutUser, setData, updateData, getData,deleteData};
+export {app, firebaseConfig, auth, db, getUserName, signOutUser, setData, updateData, getData, removeData};

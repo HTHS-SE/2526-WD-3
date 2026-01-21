@@ -6,7 +6,6 @@ It fetches user data from local variables, and fetches flights from the db,
 and create a graph to show the price of all flights booked by the user using chart.js 
 */
 
-
 import {app, firebaseConfig, auth, db, getUserName, signOutUser, setData, updateData, getData} from './lib.js';
 import {updateNavbar} from './main.js';
 
@@ -94,8 +93,8 @@ async function createFlightChart() {
                 {
                     label:    `Price`,   
                     data:     data.yPrices,    // Reference to array of y-values
-                    backgroundColor:  '#60a5fa',    // Color for data area
-                    borderColor:      '#60a5fa',      // Color for line
+                    backgroundColor:  '#292524',    // Color for data area
+                    borderColor:      '#edc351',      // Color for line
                     borderWidth:      2,   // Line width
                     fill: false,           // Fill area under line
                 }
@@ -111,16 +110,16 @@ async function createFlightChart() {
                         size: 20,
                         weight: 'bold'
                         },
-                        color: '#60a5fa'
+                        color: '#edc351'
                     },
                     ticks: {
                         font: {
                         size: 12
                         },
-                        color: 'rgb(0, 0, 0)'
+                        color: 'rgba(237, 195, 81, 0.5)'
                     },
                     grid: {
-                        color: 'rgb(0, 0, 0)'
+                        color: 'rgba(237, 195, 81, 0.3)'
                     }
                 },
                 y: {
@@ -131,7 +130,7 @@ async function createFlightChart() {
                         size: 20,
                         weight: 'bold'
                         },
-                        color: '#60a5fa'
+                        color: '#edc351'
                     },
                     ticks: {
                         font: {
@@ -140,10 +139,10 @@ async function createFlightChart() {
                         callback: function(value) {
                             return '$' + value; // $ in front for y axis
                         },
-                        color: 'rgb(0, 0, 0)'
+                        color: 'rgba(237, 195, 81, 0.5)'
                     },
                     grid: {
-                        color: 'rgb(0, 0, 0)'
+                        color: 'rgba(237, 195, 81, 0.3)'
                     }
                 }
             },
@@ -154,7 +153,7 @@ async function createFlightChart() {
                     font: {
                         size: 24,
                     },
-                    color: '#60a5fa',
+                    color: '#edc351',
                     padding: {
                         top: 10,
                         bottom: 30
@@ -168,7 +167,7 @@ async function createFlightChart() {
                             size: 14,
                             family: 'Arial, sans-serif'
                         },
-                        color: '#60a5fa' 
+                        color: '#edc351' 
                     }
                 }
             }

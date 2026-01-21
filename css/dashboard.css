@@ -283,7 +283,6 @@ hr {
   max-width: 900px;
   margin: 40px auto;
   padding: 1.75rem;
-  background-color: #ffffff;
   border-radius: 8px;
   border-color: #edc351;
   border: 2px solid #edc351;
@@ -292,6 +291,5 @@ hr {
 #flight-chart {
     width: 100% !important;
     height: auto !important;
-    background-color: white;
     display: block;
 }

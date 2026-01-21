@@ -1,4 +1,11 @@
+:root{
+  --site-theme-color: #edc351;
+}
+/*Variable for main site theme color*/
+
 /* Set background colors for page and main section*/
+
+
 body{
   background: #292524 !important;
 }
@@ -117,6 +124,8 @@ p.dashboard-text {
   box-shadow: 0 5px 5px 5px 5px black;
 }
 
+/* Set styles for the notices at the top*/
+
 .flight-card {
   display: flex;
   flex-direction: column;
@@ -127,9 +136,6 @@ p.dashboard-text {
   border-radius: 20px;
   padding: 24px 28px;
   margin-bottom: 30px;
-
-
-
   box-shadow: 3px 3px 3px 3px #000000;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -144,6 +150,8 @@ p.dashboard-text {
   font-weight: 600;
   color: var(--site-theme-color);
 }
+
+/* Set styles for the flight cards showing booked flights and past flights*/
 
 .flight-data {
     background: linear-gradient(
@@ -174,6 +182,7 @@ p.dashboard-text {
 }
 
 
+/* Set styles for the images and text in the booked flight cards */
 .booked-flight-image {
   max-width: 100%;
   border-radius: 10px;
@@ -210,6 +219,8 @@ p.dashboard-text {
     color: #60a5fa;
     transform: translateX(4px);
 }
+
+/* Set styles for the cancel button on each card*/
 .cancel-button {
   display: inline-block;
   border: none;
@@ -233,7 +244,7 @@ p.dashboard-text {
   box-shadow: 0 5px 5px 5px 5px black;
 }
 
-
+/* Set styles for the account information card at the bottom*/
 .account-card {
     max-width: 400px;
     padding: 1.5rem;
@@ -259,14 +270,11 @@ p.dashboard-text {
     border-radius: 10px;
     border: 4px solid var(--site-theme-color);
 }
-:root{
-  --site-theme-color: #edc351;
-}
 
 hr {
   border: 1px solid var(--site-theme-color);
 }
-
+/* Set styles for the loyalty section of the page*/
 .loyalty-stat-title{
   font-size: 1.5rem;
   font-weight: 500;

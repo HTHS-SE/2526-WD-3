@@ -1,3 +1,4 @@
+/* Set style for body and footer*/
 body{
     background: #292524 !important;
     min-height: 100%;
@@ -9,6 +10,7 @@ footer {
     margin-top: auto;
 }
 
+/* Set styles for the page title*/
 .sign-in-title {
     font-size: 2rem;
     font-weight: 600;
@@ -20,6 +22,7 @@ footer {
     color: #edc351;
 }
 
+/* Set styles for the sign in button*/
 .signin-button {
     padding: 12px;
     font-weight: 700;

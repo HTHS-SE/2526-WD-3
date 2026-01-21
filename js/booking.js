@@ -106,17 +106,17 @@ function returnbookingfunction(deets,path){
 }
 
 window.onload = function(){
-    updateNavbar(); // thanks for switching this to an import Sriyan :)
+    updateNavbar(); // Run updateNavbar function which was imported
 
     document.getElementById('close-popup-button').onclick=function(){
-        document.getElementById('booking-popup').style.display='none'; //turn off the booking popup by default. Should prob just be hardcoded into html but who cares lol.
+        document.getElementById('booking-popup').style.display='none'; // Turn off the booking popup by default.
     };
 
-    populateAirportOptions('departure-airport-select'); //populate airport options dropdown
-    document.getElementById('start-date').min=dateObjToString(date); //sets the minimum start date to the current date
-    document.getElementById('end-date').min=dateObjToString(date); //sets the minimum start date to the current date
+    populateAirportOptions('departure-airport-select'); // populate airport options dropdown
+    document.getElementById('start-date').min=dateObjToString(date); // sets the minimum start date to the current date
+    document.getElementById('end-date').min=dateObjToString(date); // sets the minimum start date to the current date
 
-    //Sooooooooooo like this isn't complicated at all but whatever I'll comment it out for u ur welcome :|
+    //Complicated query process to get the flights, the comments should make it easier to understand
     this.document.getElementById('get-flights-btn').onclick = async function getflights(){
 
         let startdate = new Date(document.getElementById('start-date').value);
@@ -124,10 +124,10 @@ window.onload = function(){
         let airportDocument = document.getElementById('departure-airport-select').value;
         let airportCode = haunted_airport_codes[haunted_airport_names.indexOf(airportDocument)];
 
-        //reset the flight results div
+        // Reset the flight results div
         document.getElementById('flight-results').innerHTML="";
 
-        // so we're gonna loop through each date from start to finish and then loop for each of the flights for those dates and create cards for them.
+        // This loop will loop through each date from start to finish and then loop for each of the flights for those dates and create cards for them.
         for (let d = startdate; d <= finishdate; d.setDate(d.getDate() + 1)) {
             let flightsoftheday = await getData(db, returnflightpath(airportCode,d));
             //console.log(flightsoftheday);

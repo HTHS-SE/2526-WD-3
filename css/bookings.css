@@ -8,6 +8,7 @@ body{
 footer {
     margin-top: auto;
 }
+/* Body and footer base styles*/
 
 .booking-info{
     margin-left: 1rem;
@@ -19,6 +20,7 @@ footer {
     border: 2px solid var(--site-theme-color);
     color: var(--site-theme-color);
 }
+/* Info headers styling*/
 
 .low-amount-alert {
     margin: 1.5rem auto 2rem;
@@ -30,7 +32,7 @@ footer {
     line-height: 1.5;
     max-width: 900px;
 }
-
+/* Styles for the alert at the top*/
 .animated-button{
   width: 120px;
   height: 40px;
@@ -51,6 +53,8 @@ footer {
 .animated-button:hover {
   transform: scale(0.95);
 }
+
+/* Styles for the animated buttons*/
 
 @media (max-width: 900px) {
     .low-amount-alert {

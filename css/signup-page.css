@@ -1,3 +1,5 @@
+/* Set style for body and footer*/
+
 body{
     background: #292524 !important;
     min-height: 100%;
@@ -9,13 +11,14 @@ footer {
     margin-top: auto;
 }
 
+/* Style title*/
 .sign-up-title {
     font-size: 2rem;
     font-weight: 600;
     color: #edc351;
     text-decoration: none;
 }
-
+/* Set styles for button and button when hovereed*/
 .signup-button {
     padding: 12px;
     font-weight: 700;

@@ -27,7 +27,7 @@ const celebrity_pilots = [
   "Lizzo",
   "Trisha Paytas"
 ];
-
+// Define list of pilots, as well as variables to be used
 let date= new Date();
 let flightnumbers = [];
 let flightnum;
@@ -38,12 +38,13 @@ let flying_to;
 let daysInMonth = new Date(date.getFullYear(), date.getMonth()+1, 0).getDate();
 
 for (let i = 0; i < haunted_airport_names.length; i++){
+    // Loop through each departure airport
     setData(db, 'flights/'+haunted_airport_codes[i], 'Full Name',haunted_airport_names[i]);
     for (let day = 1; day <= daysInMonth; day++){
         flightnumbers = [];
         
         for (let j = 0; j < Math.random()*10; j++){
-         
+            // Randomly add flights
             flightnum = Math.floor(Math.random() * 900) + 100;
             while (flightnumbers.includes(flightnum)){ // I removed the not before this as it was setting it to constantly false, which is an infinite loop as flightnumbers starts empty, and also would cause them to all be dupes
                 flightnum = Math.floor(Math.random() * 900) + 100;

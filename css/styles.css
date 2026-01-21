@@ -1,3 +1,4 @@
+/* Styling for every webpages*/
 /* Site color themes */
 .bg-site-theme{
     background-color: var(--site-theme-color) !important;
@@ -105,7 +106,7 @@ html, body {
         min-width:90vw;
     }
 }
-
+/* Navbar styling*/
 .navbar-item{
     font-size: 26px !important;
     font-family: "Hanken Grotesk";
@@ -152,7 +153,7 @@ html, body {
     --site-theme-color: #edc351;
     --site-dark:black;
 }
-
+/* Snap scrolling*/
 .snap-start{
     scroll-snap-align: start;
 }

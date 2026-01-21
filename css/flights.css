@@ -1,4 +1,5 @@
 @media (max-width: 1200px) {
+    /* Media query to fix CSS on different sized screens*/
     .footer .row > div {
         text-align: center !important;
         margin-top: 0.75rem;

@@ -17,12 +17,14 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js"></script>
     <link rel="icon" href="./img/navbar-logo-resized.png" type="image/x-icon" />
 
     <title>Twilight Airlines - Loyalty Program</title>
     <!-- Reference Dashboard JS File -->
     <script type="module" src="./js/main.js" defer></script> <!-- Firebase requires type="module"-->
     <script type="module" src="./js/dashboard.js"></script>
+    <script type="module" src="./js/dashboard-chart.js"></script>
 </head>
 
 <body>
@@ -137,9 +139,27 @@
                 </div>
                 <hr>
                 <div class="text-center mb-5" id="s3">
-                    <h2 class="text-center dashboard-subheader">Loyalty summary</h2>
-                    <div class="container" id="loyalty-graph-container">
-
+                    <h2 class="dashboard-subheader mb-4">Loyalty summary</h2>
+                    <div class="container mb-4" id="loyalty-graph-container">
+                        <canvas id="flight-chart"></canvas>
+                    </div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <!-- Amount Saved -->
+                            <div class="col-6 col-lg-3">
+                                <div class="loyalty-stats-card text-center">
+                                    <h4 class="loyalty-stat-title">Amount Saved</h4>
+                                    <p class="loyalty-stat-value" id="amount-saved">$0</p>
+                                </div>
+                            </div>
+                            <!-- Loyalty Status -->
+                            <div class="col-6 col-lg-3">
+                                <div class="loyalty-stats-card text-center">
+                                    <h4 class="loyalty-stat-title">Loyalty Status</h4>
+                                    <p class="loyalty-stat-status" id="loyalty-status">Not Active</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <hr>

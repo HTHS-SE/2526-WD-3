@@ -1,5 +1,6 @@
 import {app, firebaseConfig, auth, db, getUserName, signOutUser, setData, updateData, getData} from './lib.js';
 import {updateNavbar} from './main.js';
+
 window.onload= function(){
     updateNavbar();
     const welcomeMessage = document.getElementById('welcome');
@@ -11,7 +12,7 @@ window.onload= function(){
 
     bookedFlights.innerHTML = "";
     pastFlights.innerHTML = "";
-    loyaltyGraph.innerHTML = "";
+    //loyaltyGraph.innerHTML = ""; // !! I commented because it causes errors with the chart !!
     accountInformation.innerHTML = ""; // Set default values for each section
     let numFlights = 0;
 
@@ -21,6 +22,25 @@ window.onload= function(){
     let userEmail = user.email;
     let lastLogin = user.lastLogin;
     let userID = user.uid; // Get user name and uid
+
+    getData(db, `users/${userID}/accountInfo/active-loyalty-member`)
+    .then((isActive) => {
+        const loyaltyStatus = document.getElementById("loyalty-status");
+        if (!loyaltyStatus) {
+            return;
+        } if (isActive === true) {
+            loyaltyStatus.textContent = "Active";
+        } else {
+            loyaltyStatus.textContent = "Not Active";
+        }
+    })
+    .catch((error) => {
+        console.log(error);
+        const loyaltyStatus = document.getElementById("loyalty-status");
+        if (loyaltyStatus) loyaltyStatus.textContent = "Not Active";
+    });
+
+
 
     getData(db, `users/${userID}/bookings`)
         .then(  async (bookings) => {            

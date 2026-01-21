@@ -190,8 +190,8 @@ window.onload= function(){
         // Set notices card number. Must be done after for loop to get number of upcoming flights.
         // this was done outside async .then which cause numFlights to always be 0 as it was not awaited properly
         // DO NOT COMMENT OUT. It must be edit here after we get the info. Read above.
-        const numUpcomingFlights=document.getElementById("numUpcomingFlights");
-        numUpcomingFlights.textContent = `You have ${String(numFlights)} upcoming flights`;
+        // const numUpcomingFlights=document.getElementById("numUpcomingFlights");
+        // numUpcomingFlights.textContent = `You have ${String(numFlights)} upcoming flights`;
 
         //END OF THEN BLOCK
     })
@@ -246,8 +246,8 @@ window.onload= function(){
     </div>
     `
 
-    const updateData = document.getElementById("updateAccountInfo");
-    updateData.onclick = function (){ // Checks each value, makes sure it is valid, then updates in database
+    const updateDataButton = document.getElementById("updateAccountInfo");
+    updateDataButton.onclick = function (){ // Checks each value, makes sure it is valid, then updates in database
         console.log("")
         let firstName = document.getElementById("updateFirstName").value.trim(); 
         let lastName = document.getElementById("updateLastName").value.trim(); 
@@ -278,10 +278,12 @@ window.onload= function(){
         } else if (
             // Email should be at least 5 characters, can have letters and numbers, and must have the @ symbol
             email.length < 5 ||
-            !/^[A-Za-z0-9]+@[A-Za-z0-9]+$/.test(email)
+            !/^[A-Za-z0-9]+@[A-Za-z0-9]+\.[A-Za-z0-9]+$/.test(email)
         ) {
             alert("Invalid email address");
             return false;
         }
+        alert("Changed account info");  
+        window.location.reload();
     }
 }

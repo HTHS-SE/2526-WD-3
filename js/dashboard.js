@@ -1,5 +1,5 @@
 /*
-Author: Sriyan Yarlagadda (neatened a bit by Ethan)
+Author: Sriyan Yarlagadda (neatened and debugged a bit by Ethan)
 File: dashboard.js
 Description: This is the javascript file for the dashboard page. 
 It fetches user data from local variables, and fetches flights from the db.
@@ -39,6 +39,7 @@ window.onload= function(){
     getData(db, `users/${userID}/bookings`)
     .then(  async (bookings) => {            
         for (let path in bookings) {
+            let urlEncodedPath = path; // The key itself is a path which has to be encoded using encodeURIComponent() function
             let bookingTime = bookings[path]; // The value of each key in the dict is the flight time
             let decodedPath = decodeURIComponent(path); // The key itself is a path which has to be decoded using decodeURIComponent() function
 
@@ -140,8 +141,9 @@ window.onload= function(){
                     bookedFlights.appendChild(flightCard);  // If the flight is after today, add it to upcoming flights section and set onclick function for cancel button
                     const cancelButton = document.getElementById(`cancel-button-${flightNumber}`);
                     cancelButton.onclick = function (){ // Function to cancel flight
-                        let path = "users/" + userID + "bookings/" + flightNumber;
-                        removeData(db, path);
+                        let rmpath = "users/" + userID + "/bookings/" + urlEncodedPath;
+                        console.log("Removing flight at path: " + rmpath);
+                        removeData(db, rmpath);
                         alert("Flight removed");
                         window.location.reload()
                     }

@@ -71,33 +71,83 @@ window.onload= function(){
             // make sure flightData exists
             if (flightData){
                 let departureAirport = decodedPath.split("/")[1]; // Get the departure airport from the path by splitting it using the "/" character and getting the second value
-
+                
                 let flightDate = decodedPath.split("/")[3] + "/" + 
                                  decodedPath.split("/")[4] + "/" +
                                  decodedPath.split("/")[2]; // Get the flight date from the path by splitting it using the "/" character and concatenating the third, fourth, and fifth values
                 
                 let flightNumber = decodedPath.split("/")[5]; // Get the flight number from the path by splitting it using the "/" character and getting the sixth value
                 
+                let arrivalAirport = flightData["flight-to"];
+                let gate = flightData.gate; 
+                let pilot = flightData.pilot; 
+                let price = flightData.price; 
+                let time = flightData.departure;
                 // Get the destination airport code, gate, pilot, price using flightData
             
                 const flightCard = document.createElement("div");
-                flightCard.className = "flight-card";
+                flightCard.className = "flight-card"; // Create flight card element
+                    flightCard.innerHTML = 
+                    `
+                        <div class="card bg-dark text-light shadow-lg rounded-4 p-4">
+                            <div class="row align-items-center">
+                                <div class="col-md-4 text-center text-md-start mb-4 mb-md-0">
+                                    <div style="text-align: center;">
+                                        <h4 class="booked-flight-header">
+                                            <i class="bi bi-airplane-fill me-2"></i>
+                                            Flight to ${flightData['flight-to']}
+                                        </h4>
+                                    </div>
+                                    <div class="booked-flight-text">
+                                        <p class="mb-2">
+                                            <i class="bi bi-geo-alt-fill"></i>
+                                            <strong>Dep Airport:</strong> ${departureAirport}
+                                        </p>
+                                        <p class="mb-2">
+                                            <i class="bi bi-alarm-fill me-2"></i>
+                                            <strong>Dep Time:</strong> ${time}:00
+                                        </p>
+                                        <p class="mb-2">
+                                            <i class="bi bi-calendar-fill me-2"></i>
+                                            <strong>Date:</strong> ${flightDate}
+                                        </p>
+                                        <p class="mb-2">
+                                            <i class="bi bi-door-closed-fill"></i>
+                                            <strong>Gate:</strong> ${gate}
+                                        </p>
+                                        <p class="mb-0">
+                                            <i class="bi bi-person-badge me-2"></i>
+                                            <strong>Pilot:</strong> ${pilot}
+                                        </p>
+                                    </div>
+                                </div>
 
-                flightCard.innerHTML = `
-                    <div class="flight-route">
-                        <strong>${departureAirport}</strong>   
-                        <i class="bi bi-arrow-right-square-fill"></i>   
-                        <strong>${flightData.landing_at}</strong>
-                    </div>
-                    <div class="flight-data">
-                        <div>Flight ${flightNumber}</div>
-                        <div>Date: ${flightDate}</div>
-                        <div>Gate: ${flightData.gate}</div>
-                        <div>Pilot: ${flightData.pilot}</div>
-                        <div>Price: ${flightData.price}</div>
-                        <div>Booked on: ${new Date(bookingTime).toLocaleDateString()} </div>
-                    </div>
-                `; // Create flight card element with inner html to visualize the data retrieved
+                                <div class="col-md-4 text-center mb-4 mb-md-0">
+                                    <img 
+                                        src="./img/${flightData['landing_at']}.jpg"
+                                        alt="Arrival Airport"
+                                        class="booked-flight-image"
+                                        style="max-height: 200px; object-fit: cover;">
+                                </div>
+
+                                <div class="col-md-4 text-center">
+                                    <h2 class="booked-flight-text">
+                                        $${Math.round(parseInt(flightData['price'], 10) / 100) * 100}
+                                    </h2>
+                                    <p class="booked-flight-text">Luxury Guaranteed!</p>
+
+                                    <button 
+                                        type="button"
+                                        id="cancel-button-${flightNumber}"
+                                        class="cancel-button">
+                                        Cancel Flight
+                                    </button>
+                                </div>
+
+                            </div>
+                        </div>
+                `; 
+                // Create flight card element with inner html to visualize the data retrieved
 
                 //Now that the card has been generated, we need to decide whether to put it in the past flights or booked flights section.
 
@@ -106,18 +156,49 @@ window.onload= function(){
                 
                 //Placement based on whether flight date is past or future
                 if (flightTime < new Date()){
-                    pastFlights.appendChild(flightCard);
+                    pastFlights.appendChild(flightCard); 
+                    const cancelButton = document.getElementById(`cancel-button-${flightNumber}`);
+                    cancelButton.innerHTML = "Hope you enjoyed!";
+                    // If the flight was before today, add to past flights section and set text for cancel button
                 } else {
-                    bookedFlights.appendChild(flightCard);
-                    numFlights = numFlights + 1;
+                    bookedFlights.appendChild(flightCard);  // If the flight is after today, add it to upcoming flights section and set onclick function for cancel button
+                    const cancelButton = document.getElementById(`cancel-button-${flightNumber}`);
+                    cancelButton.onclick = function (){ // Function to cancel flight
+                        let path = "users/" + userID + "bookings/" + flightNumber;
+                        removeData(db, path);
+                        alert("Flight removed");
+                        window.location.reload()
+                    }
                 }
-            }
+                
             
+                let loginDate = new Date(lastLogin);
+                const dateString = loginDate.toLocaleDateString();
+                console.log(dateString); // Get last login date as a readable string
+                welcomeMessage.innerHTML=`Welcome, ${userFirstName}`; // Set welcome message at the top
+                importantNotices.innerHTML=
+                `
+                <li class="dashboard-text">You have ${bookedFlights.childElementCount} upcoming flights</li>
+                <li class="dashboard-text">Last login: ${dateString}</li>
+                <li class="dashboard-text">Your Twilight Airlines Loyalty Card is currently inactive</li>
+                `
+                // Set important notice section below the header
+                accountInformation.innerHTML=
+                `
+                <div class="account-card mx-auto">
+                    <p>Name: ${userFirstName} ${userLastName}</p>
+                    <p>Email: ${userEmail}</p>
+                    <p>User ID: ${userID}</p>
+                    <p>Last Login: ${dateString}</p>
+                </div>
+                `
+            }
         }  
         
     // Set notices card number. Must be done after for loop to get number of upcoming flights.
     // this was done outside async .then which cause numFlights to always be 0 as it was not awaited properly
-    numUpcomingFlights.textContent = `You have ${String(numFlights)} upcoming flights`;
+    //const numUpcomingFlights=document.getElementById("numUpcomingFlights")
+    // numUpcomingFlights.textContent = `You have ${String(numFlights)} upcoming flights`;
 
     //END OF THEN BLOCK
     }).catch((error) =>{

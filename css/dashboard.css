@@ -298,7 +298,7 @@ hr {
 
 #flight-chart {
     width: 100% !important;
-    /*height: auto !important; This caused the graph to violently shake. -Ethan */
+    height: auto !important;
     display: block;
 }
 

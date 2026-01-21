@@ -251,3 +251,20 @@ p.dashboard-text {
 hr {
   border: 1px solid var(--site-theme-color);
 }
+
+#loyalty-graph-container{
+  position: relative;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 1.75rem;
+  background-color: #292524;
+  border-radius: 8px;
+  border-color: #edc351;
+  border: 2px solid #edc351;
+}
+
+#flight-chart {
+    width: 100% !important;
+    height: auto !important;
+    display: block;
+}

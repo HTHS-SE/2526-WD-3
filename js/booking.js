@@ -8,7 +8,7 @@ It also dynamically generates flight cards for each available flight and provide
 Finally, there is a function that generates a function to handle the the booking process for when the user decides to actually dare a flight.
 */
 
-import {db,getUserName,signOutUser,updateData,getData} from './lib.js';
+import {db,getUserName,updateData,getData} from './lib.js';
 import {updateNavbar} from './main.js';
 
 //defining airports that u CAN attempt to book flights to/from. For legal reasons, we cannot call these destinations.
@@ -36,7 +36,7 @@ function dateObjToString(dateobj){
 // This function creates the html for a card of flight data. Basically.
 function generateFlightCard(flightData,date,baseId){    
     return `
-    <div class="p-3 mb-1 bg-white rounded d-md-flex justify-content-md-center" style="width:95vw;margin:1.5rem">
+    <div class="p-3 mb-1 bg-white rounded d-md-flex justify-content-md-center text-center text-md-start" style="width:95vw;margin:1.5rem">
             
             <div class="col-md-4 p-4">
                 <h4 role="button" class="card-title fw-bold text-primary mb-3" id="flight-destination-${baseId}">
@@ -57,7 +57,7 @@ function generateFlightCard(flightData,date,baseId){
                 </div>
             </div>
 
-            <img src="./img/${flightData['landing_at']}.jpg" alt="Arrival Airport" class="ms-auto" style="max-height:20vh">
+            <img src="./img/${flightData['landing_at']}.jpg" alt="Arrival Airport" class="ms-md-auto d-none d-md-block me-3" style="max-height:20vh">
             <div class="vr"></div>
             <div class="m-3 p-2">
                 <h3><b>$${Math.round(parseInt(flightData['price'],10)/100,3)*100}</b></h3> 
@@ -91,6 +91,7 @@ function returnbookingfunction(deets,path){
             document.getElementById('confirm-booking-button').addEventListener('click', function(){
                 updateData(db, path, 'avalable_space', parseInt(deets['avalable_space'],10)-1);
                 updateData(db, 'users/'+getUserName().uid+'/bookings', encodeURIComponent(path),new Date().toISOString());
+                updateData(db, 'users/'+getUserName().uid+'/accountInfo', 'active-loyalty-member',true);
                 alert('Booking Confirmed! Thank you for choosing Twilight Airlines!');
                 document.getElementById('booking-popup').style.display='none';
             },{ once: true });
@@ -113,6 +114,7 @@ window.onload = function(){
 
     populateAirportOptions('departure-airport-select'); //populate airport options dropdown
     document.getElementById('start-date').min=dateObjToString(date); //sets the minimum start date to the current date
+    document.getElementById('end-date').min=dateObjToString(date); //sets the minimum start date to the current date
 
     //Sooooooooooo like this isn't complicated at all but whatever I'll comment it out for u ur welcome :|
     this.document.getElementById('get-flights-btn').onclick = async function getflights(){

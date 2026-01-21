@@ -152,7 +152,7 @@ async function createFlightChart() {
                     }
                 },
                 legend: {
-                    display: true,
+                    //display: true,
                     position: 'top',
                     labels: {
                         font: {

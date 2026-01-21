@@ -1,3 +1,12 @@
+/*
+Author: Max Dolski 
+File: dashboard-chart.js
+Description: This is the javascript file for the graph on the dashboard page. 
+It fetches user data from local variables, and fetches flights from the db, 
+and create a graph to show the price of all flights booked by the user using chart.js 
+*/
+
+
 import {app, firebaseConfig, auth, db, getUserName, signOutUser, setData, updateData, getData} from './lib.js';
 import {updateNavbar} from './main.js';
 
@@ -85,8 +94,8 @@ async function createFlightChart() {
                 {
                     label:    `Price`,   
                     data:     data.yPrices,    // Reference to array of y-values
-                    backgroundColor:  '#292524',    // Color for data area
-                    borderColor:      '#edc351',      // Color for line
+                    backgroundColor:  '#60a5fa',    // Color for data area
+                    borderColor:      '#60a5fa',      // Color for line
                     borderWidth:      2,   // Line width
                     fill: false,           // Fill area under line
                 }
@@ -102,16 +111,16 @@ async function createFlightChart() {
                         size: 20,
                         weight: 'bold'
                         },
-                        color: '#edc351'
+                        color: '#60a5fa'
                     },
                     ticks: {
                         font: {
                         size: 12
                         },
-                        color: 'rgba(237, 195, 81, 0.5)'
+                        color: 'rgb(0, 0, 0)'
                     },
                     grid: {
-                        color: 'rgba(237, 195, 81, 0.3)'
+                        color: 'rgb(0, 0, 0)'
                     }
                 },
                 y: {
@@ -122,7 +131,7 @@ async function createFlightChart() {
                         size: 20,
                         weight: 'bold'
                         },
-                        color: '#edc351'
+                        color: '#60a5fa'
                     },
                     ticks: {
                         font: {
@@ -131,21 +140,21 @@ async function createFlightChart() {
                         callback: function(value) {
                             return '$' + value; // $ in front for y axis
                         },
-                        color: 'rgba(237, 195, 81, 0.5)'
+                        color: 'rgb(0, 0, 0)'
                     },
                     grid: {
-                        color: 'rgba(237, 195, 81, 0.3)'
+                        color: 'rgb(0, 0, 0)'
                     }
                 }
             },
             plugins: {                  // Display options for title and legend
                 title: {
                     display: true,
-                    text: 'Standard Flight Booking Prices',
+                    text: 'Flight Booking History',
                     font: {
                         size: 24,
                     },
-                    color: '#edc351',
+                    color: '#60a5fa',
                     padding: {
                         top: 10,
                         bottom: 30
@@ -159,7 +168,7 @@ async function createFlightChart() {
                             size: 14,
                             family: 'Arial, sans-serif'
                         },
-                        color: '#edc351' 
+                        color: '#60a5fa' 
                     }
                 }
             }

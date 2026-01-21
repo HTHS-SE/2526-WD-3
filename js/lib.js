@@ -106,10 +106,10 @@ async function removeData(db, path) {
   console.log(path);
   remove(ref(db, path))
     .then(() => {
-      alert('Data removed.')
+      //alert('Data removed.')
     })
     .catch((error) => {
-      alert('error:' + error)
+      //alert('error:' + error)
     })
 }
 

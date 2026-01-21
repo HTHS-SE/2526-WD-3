@@ -1,11 +1,3 @@
-/*
-Author: Max Dolski 
-File: dashboard-chart.js
-Description: This is the javascript file for the graph on the dashboard page. 
-It fetches user data from local variables, and fetches flights from the db, 
-and create a graph to show the price of all flights booked by the user using chart.js 
-*/
-
 import {app, firebaseConfig, auth, db, getUserName, signOutUser, setData, updateData, getData} from './lib.js';
 import {updateNavbar} from './main.js';
 

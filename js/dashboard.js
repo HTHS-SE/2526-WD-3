@@ -1,5 +1,5 @@
 /*
-Author: Sriyan Yarlagadda (neatened and debugged a bit by Ethan)
+Author: Sriyan Yarlagadda (neatened and debugged a bit by Ethan) and loyalty is max
 File: dashboard.js
 Description: This is the javascript file for the dashboard page. 
 It fetches user data from local variables, and fetches flights from the db.
@@ -36,16 +36,13 @@ window.onload= function(){
     let lastLogin = user.lastLogin;
     let userID = user.uid; // Get user fire name, last name, email, last login, and uid
 
+    //get info from db to see if user is a member of the loyalty program
     getData(db, `users/${userID}/accountInfo/active-loyalty-member`)
-    .then((isActive) => {
+    .then((isActive) => { //isactive is a bool
         const loyaltyStatus = document.getElementById("loyalty-status");
 
-        if (!loyaltyStatus) {
-            return;
-        }
-
-        if (isActive === true) {
-            loyaltyStatus.textContent = "Active";
+        if (isActive) {
+            loyaltyStatus.textContent = "Active"; //user is active
         } else {
             loyaltyStatus.textContent = "Not Active";
         }
@@ -54,7 +51,7 @@ window.onload= function(){
         console.log(error);
 
         const loyaltyStatus = document.getElementById("loyalty-status");
-        if (loyaltyStatus) {
+        if (loyaltyStatus) { 
             loyaltyStatus.textContent = "Not Active";
         }
     });
@@ -64,7 +61,6 @@ window.onload= function(){
     .then(  async (bookings) => {            
         for (let path in bookings) {
             let urlEncodedPath = path; // The key itself is a path which has to be encoded using encodeURIComponent() function
-            let bookingTime = bookings[path]; // The value of each key in the dict is the flight time
             let decodedPath = decodeURIComponent(path); // The key itself is a path which has to be decoded using decodeURIComponent() function
 
             let flightData = await getData(db, decodedPath);  // Fetch details of each flight using the decoded path
@@ -161,9 +157,13 @@ window.onload= function(){
                     const cancelButton = document.getElementById(`cancel-button-${flightNumber}`);
                     cancelButton.innerHTML = "Hope you enjoyed!";
                     // If the flight was before today, add to past flights section and set text for cancel button
-                } else {
+                } 
+                
+                else {
+
                     bookedFlights.appendChild(flightCard);  // If the flight is after today, add it to upcoming flights section and set onclick function for cancel button
                     const cancelButton = document.getElementById(`cancel-button-${flightNumber}`);
+
                     cancelButton.onclick = function (){ // Function to cancel flight
                         let rmpath = "users/" + userID + "/bookings/" + urlEncodedPath;
                         console.log("Removing flight at path: " + rmpath);
@@ -187,13 +187,15 @@ window.onload= function(){
             }
         }  
         
-    // Set notices card number. Must be done after for loop to get number of upcoming flights.
-    // this was done outside async .then which cause numFlights to always be 0 as it was not awaited properly
-    //const numUpcomingFlights=document.getElementById("numUpcomingFlights")
-    // numUpcomingFlights.textContent = `You have ${String(numFlights)} upcoming flights`;
+        // Set notices card number. Must be done after for loop to get number of upcoming flights.
+        // this was done outside async .then which cause numFlights to always be 0 as it was not awaited properly
+        // DO NOT COMMENT OUT. It must be edit here after we get the info. Read above.
+        const numUpcomingFlights=document.getElementById("numUpcomingFlights");
+        numUpcomingFlights.textContent = `You have ${String(numFlights)} upcoming flights`;
 
-    //END OF THEN BLOCK
-    }).catch((error) =>{
+        //END OF THEN BLOCK
+    })
+    .catch((error) =>{
         console.log(error); //error fetching bookings
 
         bookedFlights.innerHTML = "<p>There are no booked flights currently</p>"; // Set to default values for each section

@@ -149,7 +149,7 @@ async function createFlightChart() {
             plugins: {                  // Display options for title and legend
                 title: {
                     display: true,
-                    text: 'Flight Booking History',
+                    text: 'Standard Flight Prices',
                     font: {
                         size: 24,
                     },

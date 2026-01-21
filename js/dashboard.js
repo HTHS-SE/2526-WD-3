@@ -244,4 +244,42 @@ window.onload= function(){
     </div>
     `
 
+    const updateData = document.getElementById("updateAccountInfo");
+    updateData.onclick = function (){ // Checks each value, makes sure it is valid, then updates in database
+        console.log("")
+        let firstName = document.getElementById("updateFirstName").value.trim(); 
+        let lastName = document.getElementById("updateLastName").value.trim(); 
+        let email = document.getElementById("updateEmail").value.trim(); 
+
+        if (firstName === "") {
+            // Do nothing if a field is left blank
+        } else if (!/^[A-Za-z]{3,}$/.test(firstName)) {
+            // First name should be at least three letters, no numbers or symbols
+            alert("Invalid first name.");
+        } else {
+            let rmpath = "users/" + userID + "/accountInfo/";
+            updateData(db, rmpath, "firstName", firstName);
+        }
+
+        if (lastName === "") {
+            // Do nothing if a field is left blank
+        } else if (!/^[A-Za-z]{3,}$/.test(lastName)) {
+            // Last name should be at least three letters, no numbers or symbols
+            alert("Invalid last  name.");
+        } else {
+            let rmpath = "users/" + userID + "/accountInfo/";
+            updateData(db, rmpath, "lastName", lastName);
+        }
+
+        if (email === "") {
+            // Do nothing if a field is left blank
+        } else if (
+            // Email should be at least 5 characters, can have letters and numbers, and must have the @ symbol
+            email.length < 5 ||
+            !/^[A-Za-z0-9]+@[A-Za-z0-9]+$/.test(email)
+        ) {
+            alert("Invalid email address");
+            return false;
+        }
+    }
 }
